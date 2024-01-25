@@ -20,12 +20,9 @@ const config = {
   compiler: {
     styledComponents: true
   },
-  output: 'export'
-}
-
-module.exports = (_phase, { defaultConfig: _ }) => {
-  webpack(config) {
-    config.module.rules.push({
+  output: 'export',
+  module: {
+    rules: [{
       test: /\.(glb|gltf)$/,
       use: {
         loader: 'file-loader',
@@ -33,9 +30,12 @@ module.exports = (_phase, { defaultConfig: _ }) => {
           publicPath: "/_next/models",
           outputPath: "models",
         }
-      },
-    })
+      }
+    }]
   }
+}
+
+module.exports = (_phase, { defaultConfig: _ }) => {
   const plugins = [
     withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' }),
     withTM([]) // add modules you want to transpile here
