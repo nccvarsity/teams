@@ -2,8 +2,8 @@
   "name": "teams",
   "version": "1.0.0",
   "description": "Teams of Varsity!",
-  "repository": "https://github.com/keanotv/teams",
-  "author": "keanotv",
+  "repository": "https://github.com/nccvarsity/teams",
+  "author": "unknown",
   "private": false,
   "scripts": {
     "dev": "next",
