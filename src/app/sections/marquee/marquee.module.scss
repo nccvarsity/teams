@@ -1,0 +1,48 @@
+@import '../../../css/helpers';
+
+.section {
+  height: 500vh;
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-basement-grotesque, var(--font-system));
+}
+
+.pinned {
+  height: 61.8vh;
+  position: sticky;
+  top: 11.8vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+
+  --svg-width: #{tovw(674px)};
+  --right: calc(50vw - var(--svg-width) / 2);
+}
+
+.animated {
+  height: 61.8vh;
+  position: absolute;
+  right: var(--right);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  white-space: nowrap;
+  font-weight: 900;
+  font-size: tovw(400px);
+  cursor: default;
+  user-select: none;
+}
+
+.theSvg {
+  width: var(--svg-width);
+  height: tovw(777px);
+  margin-left: tovw(80px);
+
+  @media (min-width: 900px) {
+    height: tovw(425px);
+  }
+
+  @media (min-width: 1200px) {
+    height: tovw(225px);
+  }
+}

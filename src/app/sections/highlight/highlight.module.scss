@@ -1,0 +1,48 @@
+@import '../../../css/helpers';
+
+.spacer {
+  position: relative;
+  height: 500vh;
+}
+
+.pin {
+  position: relative;
+  /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+  position: sticky;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+
+  .canvas-container {
+    --offset-y: 40%;
+
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: calc(100% + var(--offset-y));
+    transform: translateY(-50%);
+    overflow: hidden;
+  }
+
+  .paragraph {
+    font-size: tovw(56px, 'desktop', 20px);
+    font-weight: 900;
+    font-family: var(--font-basement-grotesque, var(--font-system));
+    max-width: max-content;
+    margin: 0 auto;
+    text-transform: capitalize;
+    line-height: calc(86 / 72);
+
+    @media screen and (max-width: 800px) {
+      font-size: tovw(17px, 'mobile');
+    }
+
+    .highlight {
+      color: var(--color-orange);
+    }
+  }
+}

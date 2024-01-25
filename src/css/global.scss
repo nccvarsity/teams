@@ -1,0 +1,117 @@
+/* stylelint-disable custom-property-empty-line-before */
+@import './helpers';
+@import './reset.css';
+
+:root {
+  --font-system: -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen,
+    ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;
+  --inspect-color: #f00;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-orange: #e54602;
+  --color-gray: #0f0f0f;
+  --color-gray-lighter: #262626;
+
+  --color-background: #333;
+  --color-text-primary: #fff;
+
+  --color-background-highlight: #fff;
+  --color-background-box: #ffb0e9;
+  --color-text-highlight: #111;
+
+  --color-text-button: #111;
+  --color-background-button-1: #ffb0e9;
+  --color-background-button-2: #fff;
+
+  --color-background-tileboard: #ffb0e9;
+  --color-background-tile-primary: #555;
+  --color-background-tile-secondary: #777;
+  --color-background-tile-primary-expanded: #200;
+  --color-background-tile-secondary-expanded: #002;
+  --color-expand-chevron: #ffb0e9;
+
+  --wavy-1: #7ae582;
+  --wavy-2: #25a18e;
+  --wavy-3: #004e64;
+
+  --mask: linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 1) 0,
+      rgb(0 0 0 / 0.75) 50%,
+      rgb(0 0 0 / 0) 99%,
+      rgb(0 0 0 / 0) 0
+    )
+    100% 50% / 100% 100% repeat-x;
+
+  --black-fade: linear-gradient(
+    to top,
+    rgb(0 0 0 / 1) 0%,
+    rgb(0 0 0 / 0.25) 1%,
+    rgb(0 0 0 / 0) 100%
+  );
+  --black-fade-gentle: linear-gradient(
+    to top,
+    rgb(0 0 0 / 1) 0%,
+    rgb(0 0 0 / 0.15) 1%,
+    rgb(0 0 0 / 0) 100%
+  );
+}
+
+html {
+  line-height: 1.5;
+  box-sizing: border-box;
+  text-rendering: geometricprecision;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // tweak if site is light mode.
+  color-scheme: dark;
+  background-color: #333;
+}
+
+body {
+  background-color: #222;
+  font-family: var(--font-body);
+  transition: opacity #{$duration / 3 + 's'} ease-in;
+}
+
+body.inspect * {
+  outline: 1px solid var(--inspect-color) !important;
+}
+
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
+}
+
+// used in use-prevents-scroll hook
+
+html.no-scroll {
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+    touch-action: none;
+  }
+}
+
+// WARNING: if you don't want to use a fade in for the body, you can remove
+// this chunk of CSS. But ALSO make sure you remove the style tag in the body in _document.tsx
+// and the transition property on the body as well. thx.
+// If you're using the next app dir make sure you remove the style tag in the root layout too.
+html.fonts-loaded body {
+  opacity: 1 !important;
+}
+// end warning
+
+h2 {
+  font-size: 1.25rem;
+}
+
+::selection {
+  color: var(--wavy-1);
+}
