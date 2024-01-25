@@ -28,7 +28,8 @@ const config = {
   experimental: {},
   compiler: {
     styledComponents: true
-  }
+  },
+  output: 'export'
 }
 
 module.exports = (_phase, { defaultConfig: _ }) => {
