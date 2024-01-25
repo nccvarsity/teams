@@ -1,6 +1,10 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')
 const withTM = require('next-transpile-modules')
 
+const repo = 'teams'
+const assetPrefix = `/${repo}/`
+const basePath = `/${repo}`
+
 /**
  * @type {import('next').NextConfig}
  */
@@ -10,6 +14,8 @@ const config = {
   images: {
     formats: ['image/avif', 'image/webp']
   },
+  assetPrefix: assetPrefix,
+  basePath: basePath,
   experimental: {},
   compiler: {
     styledComponents: true
