@@ -21,17 +21,17 @@ const config = {
     styledComponents: true
   },
   output: 'export',
-  module: {
-    rules: [{
+  webpack: (config) => {
+    config.module.rules.push({
       test: /\.(glb|gltf)$/,
       use: {
         loader: 'file-loader',
         options: {
-          publicPath: "/_next/models",
           outputPath: "models",
         }
       }
-    }]
+    });
+    return config;
   }
 }
 

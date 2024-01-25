@@ -60,7 +60,7 @@ const capProps: { position: Vector3; rotation: Euler; progress: number }[] = [
 export const VlogosModel = () => {
   const innerRef = React.useRef<THREE.Group>(null);
   const { width } = useThree((state) => state.viewport);
-  const { nodes, materials } = useGLTF("/models/vlogo.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF("teams/models/vlogo.glb") as GLTFResult;
 
   const clonedMaterials: {
     "m_Vlogo": THREE.MeshStandardMaterial;
