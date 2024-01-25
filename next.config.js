@@ -24,6 +24,18 @@ const config = {
 }
 
 module.exports = (_phase, { defaultConfig: _ }) => {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.(glb|gltf)$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          publicPath: "/_next/models",
+          outputPath: "models",
+        }
+      },
+    })
+  }
   const plugins = [
     withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' }),
     withTM([]) // add modules you want to transpile here

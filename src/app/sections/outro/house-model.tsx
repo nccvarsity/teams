@@ -29,12 +29,12 @@ type GLTFResult = GLTF & {
   };
 };
 
-useGLTF.preload("/house.glb");
+useGLTF.preload("/models/house.glb");
 
 const HouseModel = () => {
   const { timeline } = useScrollytelling();
   const { nodes, materials } = useGLTF(
-    "/house.glb"
+    "/models/house.glb"
   ) as GLTFResult;
   const innerRef = useRef<THREE.Group>(null);
   const width = useThree((state: { viewport: { width: any; }; }) => state.viewport.width);
