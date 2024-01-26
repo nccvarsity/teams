@@ -8,7 +8,7 @@ import { GLTF } from 'three-stdlib'
 
 import { useMedia } from '~/hooks/use-media'
 import { isProd } from '~/lib/constants'
-import { useScrollytelling } from '~/lib/scrollytelling-client'
+import { Animation, useScrollytelling } from '~/lib/scrollytelling-client'
 
 import { ArrowModel } from './arrow-model'
 
@@ -113,36 +113,51 @@ export const CanvasWithDoorModel = ({ onPress }: { onPress: () => void }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   return (
-    <Canvas
-      camera={{ position: [1, 0, 1], fov: 77 }}
-      onCreated={() => {
-        gsap.set(canvasRef.current, {
-          width: '100%',
-          height: '100vh'
-        })
-        gsap.to(
-          canvasRef.current?.closest('[data-mac-canvas-container="true"]') ||
-            null,
-          { opacity: 1, scale: 1, duration: 1 }
-        )
+    <Animation
+      tween={{
+        start: 59,
+        end: 100,
+        fromTo: [
+          { scale: 1, opacity: 1 },
+          { scale: 2.2, opacity: 1, ease: 'power1' }
+        ]
       }}
-      gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
-      style={{ opacity: 0, scale: 1 }}
-      ref={canvasRef}
-      data-mac-canvas-container
     >
-      <pointLight position={[1, 0, 0]} intensity={1.5} />
-      <pointLight position={[0, 0, 1]} intensity={1.7} />
-      <pointLight position={[0, -1, 0]} intensity={2.2} />
-      <DoorModel onPress={onPress} />
-      <ArrowModel
-        locations={[
-          { position: [-1.3, 0.8, 0], rotation: [0.4, -0.1, -0.4] },
-          { position: [0, 0.6, -1.33], rotation: [-0.4, 0.5, 10] },
-          { position: [-1.4, -0.9, 0], rotation: [0.6, 0.2, 0.1] },
-          { position: [0, -1, -1.29], rotation: [0.2, 0.1, 9] }
-        ]}
-      />
-    </Canvas>
+      <Canvas
+        camera={{ position: [1, 0, 1], fov: 77 }}
+        onCreated={() => {
+          gsap.set(canvasRef.current, {
+            width: '100%',
+            height: '100vh'
+          })
+          gsap.to(
+            canvasRef.current?.closest('[data-mac-canvas-container="true"]') ||
+              null,
+            { opacity: 1, scale: 1, duration: 1 }
+          )
+        }}
+        gl={{
+          alpha: true,
+          antialias: true,
+          powerPreference: 'high-performance'
+        }}
+        style={{ opacity: 0, scale: 1 }}
+        ref={canvasRef}
+        data-mac-canvas-container
+      >
+        <pointLight position={[1, 0, 0]} intensity={1.5} />
+        <pointLight position={[0, 0, 1]} intensity={1.7} />
+        <pointLight position={[0, -1, 0]} intensity={2.2} />
+        <DoorModel onPress={onPress} />
+        <ArrowModel
+          locations={[
+            { position: [-1.3, 0.8, 0], rotation: [0.4, -0.1, -0.4] },
+            { position: [0, 0.6, -1.33], rotation: [-0.4, 0.5, 10] },
+            { position: [-1.4, -0.9, 0], rotation: [0.6, 0.2, 0.1] },
+            { position: [0, -1, -1.29], rotation: [0.2, 0.1, 9] }
+          ]}
+        />
+      </Canvas>
+    </Animation>
   )
 }

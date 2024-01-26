@@ -1,14 +1,14 @@
 'use client'
 
-import * as Scrollytelling from '~/lib/scrollytelling-client'
+import { Animation, Pin, Root } from '~/lib/scrollytelling-client'
 
 import { CanvasWithDoorModel } from './door-model'
 import s from './quiz.module.scss'
 
 export const Quiz = () => {
   return (
-    <Scrollytelling.Root defaults={{ ease: 'linear' }}>
-      <Scrollytelling.Pin
+    <Root defaults={{ ease: 'linear' }}>
+      <Pin
         childHeight={'100vh'}
         pinSpacerHeight={'300vh'}
         pinSpacerClassName={s['pin-spacer']}
@@ -17,9 +17,20 @@ export const Quiz = () => {
           <div className={s['pin']}>
             <div className="wrapper">
               <div className={s['content']}>
-                <p className={s['title']}>
-                  Not sure where to start? Let's go on a quest to find out!
-                </p>
+                <Animation
+                  tween={{
+                    start: 59,
+                    end: 100,
+                    fromTo: [
+                      { opacity: 1 },
+                      { y: -200, opacity: 0, ease: 'power1' }
+                    ]
+                  }}
+                >
+                  <span className={s['title']}>
+                    Not sure where to start? Let's go on a quest to find out!
+                  </span>
+                </Animation>
               </div>
             </div>
           </div>
@@ -32,7 +43,7 @@ export const Quiz = () => {
             />
           </div>
         </section>
-      </Scrollytelling.Pin>
-    </Scrollytelling.Root>
+      </Pin>
+    </Root>
   )
 }
