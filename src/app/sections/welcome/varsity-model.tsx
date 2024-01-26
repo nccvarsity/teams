@@ -18,12 +18,12 @@ type GLTFResult = GLTF & {
   };
 };
 
-useGLTF.preload("teams/models/varsity.glb");
+useGLTF.preload("/models/varsity.glb");
 
 const VarsityModel = () => {
   const { timeline } = useScrollytelling();
   const { nodes, materials } = useGLTF(
-    "teams/models/varsity.glb"
+    "/models/varsity.glb"
   ) as GLTFResult;
   const innerRef = useRef<THREE.Group>(null);
   const width = useThree((state: { viewport: { width: any; }; }) => state.viewport.width);
