@@ -32,7 +32,7 @@ type GLTFResult = GLTF & {
 
 useGLTF.preload((isProd ? '/teams' : '') + '/models/door.glb')
 
-const DoorModel = () => {
+const DoorModel = ({ onPress }: { onPress: () => void }) => {
   const { timeline } = useScrollytelling()
   const { nodes, materials } = useGLTF(
     (isProd ? '/teams' : '') + '/models/door.glb'
@@ -54,7 +54,7 @@ const DoorModel = () => {
   })
 
   return (
-    <Float onClick={() => console.log('click')}>
+    <Float onClick={onPress}>
       <group
         dispose={null}
         scale={isMobileSize ? width * 0.42 : width * 0.25}
@@ -107,7 +107,7 @@ const DoorModel = () => {
   )
 }
 
-export const CanvasWithDoorModel = () => {
+export const CanvasWithDoorModel = ({ onPress }: { onPress: () => void }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   return (
@@ -132,7 +132,7 @@ export const CanvasWithDoorModel = () => {
       <pointLight position={[1, 0, 0]} intensity={1.5} />
       <pointLight position={[0, 0, 1]} intensity={1.7} />
       <pointLight position={[0, -1, 0]} intensity={2.2} />
-      <DoorModel />
+      <DoorModel onPress={onPress} />
     </Canvas>
   )
 }

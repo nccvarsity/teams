@@ -24,7 +24,7 @@ export const Quiz = () => {
             </div>
           </div>
           <div className={s['model-container']}>
-            <CanvasWithDoorModel />
+            <CanvasWithDoorModel onPress={() => console.log('click')} />
           </div>
         </section>
       </Scrollytelling.Pin>
