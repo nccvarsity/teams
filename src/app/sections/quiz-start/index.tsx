@@ -1,6 +1,6 @@
 'use client'
 
-import { Animation, Pin, Root } from '~/lib/scrollytelling-client'
+import { Animation, Pin, Root } from '@bsmnt/scrollytelling'
 
 import { CanvasWithDoorModel } from './door-model'
 import s from './quiz.module.scss'

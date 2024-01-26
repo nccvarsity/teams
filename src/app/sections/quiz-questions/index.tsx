@@ -1,9 +1,21 @@
 'use client'
 
-import * as Scrollytelling from '~/lib/scrollytelling-client'
-
+import { Question } from './question'
 import questions from './questions.json'
 import s from './quiz.module.scss'
+
+interface Answer {
+  ans: string
+  tags: string[]
+  imageUrl: string
+}
+
+interface Question {
+  question: string
+  answers: Answer[]
+  hasImages: boolean
+  selection: number | null
+}
 
 export const QuizQuestions = () => {
   function groupBy(array: any[], key: string) {
@@ -41,49 +53,37 @@ export const QuizQuestions = () => {
 
   const questionsResponse = groupBy(questions.data, 'question')
 
-  const questionsData = Object.keys(questionsResponse).map(function (key) {
-    const answers = questionsResponse[key]
-    let imagesCount = 0
-    answers.forEach(function (answer: any) {
-      if (answer.imageurl) {
-        imagesCount++
+  const questionsData: Question[] = Object.keys(questionsResponse).map(
+    function (key) {
+      const answers = questionsResponse[key]
+      let imagesCount = 0
+      answers.forEach(function (answer: any) {
+        if (answer.imageUrl) {
+          imagesCount++
+        }
+      })
+
+      return {
+        question: key,
+        answers: shuffle(
+          answers.map(function (answer: any) {
+            return {
+              ans: answer.answer,
+              tags: answer.tags,
+              imageUrl: answer.imageUrl
+            }
+          })
+        ),
+        hasImages: imagesCount > 0,
+        selection: null
       }
-    })
-
-    return {
-      question: key,
-      answers: shuffle(
-        answers.map(function (answer: any) {
-          return {
-            ans: answer.answer,
-            tags: answer.tags,
-            imageurl: answer.imageurl
-          }
-        })
-      ),
-      hasImages: imagesCount > 0,
-      option: 0,
-      selection: null
     }
-  })
-
+  )
   return (
-    <Scrollytelling.Root defaults={{ ease: 'linear' }}>
-      <Scrollytelling.Pin
-        childHeight={'100vh'}
-        pinSpacerHeight={'300vh'}
-        pinSpacerClassName={s['pin-spacer']}
-      >
-        <section className={s['spacer']} id={'quiz-end'}>
-          <div className={s['pin']}>
-            <div className="wrapper">
-              <div className={s['content']}>
-                <p>{JSON.stringify(questionsData)}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </Scrollytelling.Pin>
-    </Scrollytelling.Root>
+    <div className={s.home} id={'quiz-end'}>
+      {questionsData.map((question: Question, questionIndex: number) => {
+        return <Question question={question} key={questionIndex} />
+      })}
+    </div>
   )
 }

@@ -1,5 +1,9 @@
 @import '../../../css/helpers';
 
+.home {
+  min-height: 100vh;
+}
+
 .pin-spacer {
   position: relative;
   z-index: 1;
@@ -61,44 +65,16 @@
   }
 }
 
-.footer {
-  padding: 16px;
-  display: grid;
-  column-gap: tovw(24px);
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
+.answer {
+  height: 30vh;
+  flex-direction: row;
+  flex: 1
+}
 
-  @media screen and (max-width: 800px) {
-    display: flex;
-    flex-direction: column;
-    margin-top: tovw(24px, 'tablet', 24px);
-    gap: tovw(24px, 'desktop', 24px);
-  }
-
-  p {
-    text-align: justify;
-    font-size: tovw(14px, 'desktop', 14px);
-
-    &:nth-child(1) {
-      grid-area: 1 / 1 / 2 / 5;
-    }
-
-    &:nth-child(3) {
-      grid-area: 1 / 8 / 2 / 11;
-    }
-
-    &:nth-child(4) {
-      grid-area: 1 / 11 / 2 / 13;
-    }
-  }
-
-  svg {
-    width: tovw(24px);
-    height: tovw(12px);
-    grid-area: 1 / 7 / 2 / 8;
-
-    @media screen and (max-width: 800px) {
-      display: none;
-    }
-  }
+.answer-image {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+  flex: .5;
 }

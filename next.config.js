@@ -1,7 +1,6 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')
 const withTM = require('next-transpile-modules')
 
-
 const isGithubActions = process.env.GITHUB_ACTIONS || false
 
 let assetPrefix = ''
@@ -20,7 +19,8 @@ const config = {
   reactStrictMode: false,
   swcMinify: true,
   images: {
-    formats: ['image/avif', 'image/webp']
+    formats: ['image/avif', 'image/webp'],
+    unoptimized: true
   },
   assetPrefix: assetPrefix,
   basePath: basePath,
@@ -35,11 +35,11 @@ const config = {
       use: {
         loader: 'file-loader',
         options: {
-          outputPath: "models",
+          outputPath: 'models'
         }
       }
-    });
-    return config;
+    })
+    return config
   }
 }
 
