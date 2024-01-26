@@ -2,14 +2,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')
 const withTM = require('next-transpile-modules')
 
 
-const isGithubActions = process.env.GITHUB_ACTIONS || false
+const isProd = process.env.NODE_ENV === 'production'
 
 let assetPrefix = ''
 let basePath = ''
 
-if (isGithubActions) {
+if (isProd) {
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
-  assetPrefix = `/${repo}`
+  assetPrefix = `/${repo}/`
   basePath = `/${repo}`
 }
 
