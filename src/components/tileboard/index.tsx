@@ -18,7 +18,41 @@ export interface tileMetaData {
 export const Tileboard = () => {
   const tileMetaData: tileMetaData[] = [
     {
-      name: 'VNX',
+      name: 'PHOTOGS',
+      url: 'https://www.newcreation.org.sg/',
+      description: `
+      (っ◔◡◔)っ📸💥| If you've got a case of serious shutterfinger, we
+      want you! As V Photogs, we document V life, culture, and events—curating
+      visuals for social media and service slides. Oh snap, come join us!
+      `,
+      jd: ['test'],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'SOCIAL',
+      url: 'https://www.newcreation.org.sg/',
+      description: `
+      ( *･ω･)✎📜 | We give life to words, supporting the ministry by crafting
+      written (& spoken) words through social media captions, e-mails,
+      video scripts, and more! If you want to see what God can do through
+      your story, join us!
+      `,
+      jd: ['test'],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'FOYER EXP',
+      url: 'https://www.newcreation.org.sg/',
+      description: `
+      (∩｀-´)⊃━☆ﾟ.*･｡ﾟ 💫☕ | Enjoy the fun and inviting atmosphere
+      of V Night? Bring out the warmth within and make V Night a beloved
+      place for people to return to.
+      `,
+      jd: ['test'],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'LORO',
       url: 'https://www.newcreation.org.sg/',
       description: `
       ( ｡◕‿◕｡)🏠 | V is family. From welcoming you at the door,
@@ -27,10 +61,38 @@ export const Tileboard = () => {
       Join the Varsity Night Experience team!
       `,
       jd: [
-        "🤗 Welcome the V fam to service 👋",
-        "🍞 Distribute Holy Communion elements 🍷",
-        "🚶🏻‍♀️ Manage the flow of people 🚶🏻‍♂️",
-        "👉🏼 Usher people in the auditorium 📍"
+        '🤗 Welcome the V fam to service 👋',
+        '🍞 Distribute Holy Communion elements 🍷',
+        '🚶🏻‍♀️ Manage the flow of people 🚶🏻‍♂️',
+        '👉🏼 Usher people in the auditorium 📍'
+      ],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'FOYER OPS',
+      url: 'https://www.newcreation.org.sg/',
+      description: `
+      ( ｡◕‿◕｡)🏠 | V is family. From welcoming you at the door,
+      bringing you to your seats, and connecting friends—both old and
+      new—our heart is to make sure everyone meets their V fam. 
+      Join the Varsity Night Experience team!
+      `,
+      jd: [
+        'test'
+      ],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'AUDI OPS',
+      url: 'https://www.newcreation.org.sg/',
+      description: `
+      ( ｡◕‿◕｡)🏠 | V is family. From welcoming you at the door,
+      bringing you to your seats, and connecting friends—both old and
+      new—our heart is to make sure everyone meets their V fam. 
+      Join the Varsity Night Experience team!
+      `,
+      jd: [
+        'test'
       ],
       toggleState: useToggleState()
     },
@@ -44,10 +106,10 @@ export const Tileboard = () => {
       always ready—all while having the best time in His house!
       `,
       jd: [
-        "📋 Account for logistics ✅",
-        "📻 Distribute and collect walkies 🗣️",
-        "🪧 Set up spaces/equipment 📺",
-        "💪🏼 Carry heavy props on stage 🪨"
+        '📋 Account for logistics ✅',
+        '📻 Distribute and collect walkies 🗣️',
+        '🪧 Set up spaces/equipment 📺',
+        '💪🏼 Carry heavy props on stage 🪨'
       ],
       toggleState: useToggleState()
     },
@@ -60,22 +122,10 @@ export const Tileboard = () => {
       freely! If you share our heart, come join us!
       `,
       jd: [
-        "👀 Observe and profile attendees 🕵🏻‍♂️",
-        "🎒 Oversee bag/bulky item checks 📦",
-        "🙌🏼 Make V Night a safe space 🥰",
+        '👀 Observe and profile attendees 🕵🏻‍♂️',
+        '🎒 Oversee bag/bulky item checks 📦',
+        '🙌🏼 Make V Night a safe space 🥰',
     ],
-      toggleState: useToggleState()
-    },
-    {
-      name: 'STAGE',
-      url: 'https://www.newcreation.org.sg/',
-      description: `
-      Σ(▼□▼ ﾒ ) ☆🎬☆ | We operate in the shadows, overseeing the entire
-      service programme by coordinating with the many other teams.
-      This dynamic experience is irreplaceable
-      and paramount to the success of V Night!
-      `,
-      jd: ["test"],
       toggleState: useToggleState()
     },
     {
@@ -87,69 +137,23 @@ export const Tileboard = () => {
       through magnifying the visible!
       `,
       jd: [
-        "🎵 Toggle lyrics during Praise &amp; Worship 🖱️",
-        "💻 Prepare slides with verses and media 🖼️",
-        "📽️ Project content on screen during service 🎞️",
-        "😎 Operate camera with live feed 📹"
+        '🎵 Toggle lyrics during Praise &amp; Worship 🖱️',
+        '💻 Prepare slides with verses and media 🖼️',
+        '📽️ Project content on screen during service 🎞️',
+        '😎 Operate camera with live feed 📹'
       ],
       toggleState: useToggleState()
     },
     {
-      name: 'PHOTOGS',
+      name: 'STAGE',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      (っ◔◡◔)っ📸💥| If you've got a case of serious shutterfinger, we
-      want you! As V Photogs, we document V life, culture, and events—curating
-      visuals for social media and service slides. Oh snap, come join us!
+      Σ(▼□▼ ﾒ ) ☆🎬☆ | We operate in the shadows, overseeing the entire
+      service programme by coordinating with the many other teams.
+      This dynamic experience is irreplaceable
+      and paramount to the success of V Night!
       `,
-      jd: ["test"],
-      toggleState: useToggleState()
-    },
-    {
-      name: 'DESIGNERS',
-      url: 'https://www.newcreation.org.sg/',
-      description: `
-      (っ˘ω˘ς )💡 | As visual artisans, we enhance visual comms at V.
-      Photoshop and InDesign are our weapons of choice when beautifying
-      our media assets. We're looking for anyone
-      with a keen visual eye and teachable spirit!
-      `,
-      jd: ["test"],
-      toggleState: useToggleState()
-    },
-    {
-      name: 'WRITERS',
-      url: 'https://www.newcreation.org.sg/',
-      description: `
-      ( *･ω･)✎📜 | We give life to words, supporting the ministry by crafting
-      written (& spoken) words through social media captions, e-mails,
-      video scripts, and more! If you want to see what God can do through
-      your story, join us!
-      `,
-      jd: ["test"],
-      toggleState: useToggleState()
-    },
-    {
-      name: 'VIBES',
-      url: 'https://www.newcreation.org.sg/',
-      description: `
-      (∩｀-´)⊃━☆ﾟ.*･｡ﾟ 💫☕ | Enjoy the fun and inviting atmosphere
-      of V Night? Bring out the warmth within and make V Night a beloved
-      place for people to return to.
-      `,
-      jd: ["test"],
-      
-      toggleState: useToggleState()
-    },
-    {
-      name: 'VENTURE',
-      url: 'https://www.newcreation.org.sg/',
-      description: `
-      ( ๑•̀ㅂ•́)و✧ ⛰️⛰️ | Step into bold new initiatives with us! Plan
-      and execute events that bring V together as a community in a fun
-      and refreshing way. Give me this mountain!
-      `,
-      jd: ["test"],
+      jd: ['test'],
       toggleState: useToggleState()
     }
   ]

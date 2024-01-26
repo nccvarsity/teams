@@ -32,6 +32,7 @@ const ExpandableTile: FC<ExpandableTileProps> = ({ metaData, zIndex, index }) =>
     metaData.toggleState.handleToggle();
   }
   const longName = metaData.name.length > 6;
+  const veryLongName = metaData.name.length > 8;
   return (
     <>
       <div onClick={handleClick} style={{ zIndex: zIndex }} className={tileClassName}>
@@ -42,12 +43,18 @@ const ExpandableTile: FC<ExpandableTileProps> = ({ metaData, zIndex, index }) =>
           </div>) : null}
         </div>
         <Link href={metaData.url} target="_blank">
-          <h1 onClick={handleTitleClick} style={{ zIndex: zIndex + 1 }} className={longName ? clsx((metaData.toggleState.isOn ? clsx(s.tileExpandedTitle, s.tileTitle, s.wavyText) : s.tileTitle), s.tileTitleReduced) : (metaData.toggleState.isOn ? clsx(s.tileExpandedTitle, s.tileTitle, s.wavyText) : s.tileTitle)}>
+          <h1
+            onClick={handleTitleClick}
+            style={{ zIndex: zIndex + 1 }}
+            className={
+              clsx((metaData.toggleState.isOn ? clsx(s.tileExpandedTitle, s.tileTitle, s.wavyText)
+                : s.tileTitle), (veryLongName ? s.tileTitleReducedMore : longName ? s.tileTitleReduced : s.tileTitle))}
+          >
             {metaData.name}
           </h1>
           {
             metaData.toggleState.isOn && (
-              <div style={{ zIndex: zIndex + 2 }} className={s.arrow}>
+              <div style={{ zIndex: zIndex + 2 }} className={veryLongName ? clsx(s.arrow, s.arrowLowest) : longName ? clsx(s.arrow, s.arrowLower) : s.arrow}>
                 <Icon icon="pixelarticons:reply" height={90}/>
               </div>
             )

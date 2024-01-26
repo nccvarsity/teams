@@ -22,11 +22,6 @@ const capProps: { position: Vector3; rotation: Euler; progress: number }[] = [
     progress: 0,
   },
   {
-    position: new Vector3(-0.5, -0.1, 0.55),
-    rotation: new Euler(0, -0.3, -0.5, "ZYX"),
-    progress: 0,
-  },
-  {
     position: new Vector3(0.22, 0.15, 0.4),
     rotation: new Euler(0.55, -0.6, 0.8, "XZY"),
     progress: 0,
@@ -39,16 +34,6 @@ const capProps: { position: Vector3; rotation: Euler; progress: number }[] = [
   {
     position: new Vector3(0.3, -0.13, 1.1),
     rotation: new Euler(0.1, -0.7, 0.5, "XZY"),
-    progress: 0,
-  },
-  {
-    position: new Vector3(0.48, 0.22, 0.8),
-    rotation: new Euler(0.5, 0, 0.5, "XZY"),
-    progress: 0,
-  },
-  {
-    position: new Vector3(-0.48, 0.26, 0.8),
-    rotation: new Euler(0.5, 0.9, 0.5, "XZY"),
     progress: 0,
   },
   {
@@ -104,7 +89,7 @@ export const VlogosModel = () => {
         .multiplyScalar(halfViewportWidth);
       const invProgress = 1 - currCapProps.progress;
 
-      currMaterials["m_Vlogo"].opacity = currCapProps.progress;
+      currMaterials["m_Vlogo"].opacity = currCapProps.progress - 0.5;
 
       currObj.rotation.y =
         currCapProps.rotation.y +

@@ -15,7 +15,7 @@
   transform: translateY(-50%);
 
   @media screen and (max-width: 800px) {
-    top: 45vh;
+    top: 50vh;
   }
 }
 
@@ -40,6 +40,7 @@
   @media screen and (max-width: 800px) {
     margin-top: tovw(24px, 'tablet', 24px);
     gap: tovw(24px, 'desktop', 24px);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   p {

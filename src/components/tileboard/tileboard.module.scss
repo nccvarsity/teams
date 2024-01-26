@@ -69,11 +69,16 @@
     transition-duration: 500ms / $duration;
     font-size: 5rem;
     text-transform: uppercase;
-    width: 100%;
+    width: 120%;
 
     &Reduced {
       font-size: 4.6rem;
       top: calc($tile-height - 4.5rem);
+    }
+
+    &ReducedMore {
+      font-size: 4.3rem;
+      top: calc($tile-height - 3.9rem);
     }
   }
 
@@ -101,6 +106,21 @@
   -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
   animation: left-right 0.5s infinite;
   animation-direction: alternate;
+
+  @media (min-width: 500px) {
+    -webkit-animation: left-right-wide 0.5s infinite; /* Chrome, Safari, Opera */
+    -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+    animation: left-right-wide 0.5s infinite;
+    animation-direction: alternate;
+  }
+
+  &Lower {
+    top: calc($tile-height - 3.95rem);
+  }
+
+  &Lowest {
+    top: calc($tile-height - 3.5rem);
+  }
 }
 
 @keyframes left-right {
@@ -110,6 +130,16 @@
 
   100% {
     right: 20px;
+  }
+}
+
+@keyframes left-right-wide {
+  0% {
+    left: 400px;
+  }
+
+  100% {
+    left: 420px;
   }
 }
 

@@ -9,11 +9,11 @@ import { Outro } from './sections/outro'
 const HomePage = () => {
   return (
     <main>
-      <Welcome />
+      <Outro />
       <Marquee />
       <TeamsTileboard />
       <Highlight />
-      <Outro />
+      <Welcome />
     </main>
   )
 }

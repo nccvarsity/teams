@@ -3,7 +3,6 @@
 import * as Scrollytelling from "~/lib/scrollytelling-client";
 
 import s from "./outro.module.scss";
-// import Link from "next/link";
 import { CanvasWithHouseModel } from "./house-model";
 
 export const Outro = () => {

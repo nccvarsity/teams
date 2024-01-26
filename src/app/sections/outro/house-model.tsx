@@ -49,7 +49,7 @@ const HouseModel = () => {
   return (
     <Float>
       <group dispose={null} scale={isMobileSize ? width * 0.42 : width * 0.25} ref={innerRef}>
-        <group position={[0, 0, 0]} rotation={[0, 0, 0]}>
+        <group position={[0, 0, 0]} rotation={[0, 10, 0]}>
           {/* <mesh
             castShadow
             receiveShadow
@@ -109,7 +109,7 @@ export const CanvasWithHouseModel = () => {
 
   return (
     <Canvas
-      camera={{ position: [1, 0, 1], fov: 50 }}
+      camera={{ position: [1, 0, 1], fov: 77 }}
       onCreated={() => {
         gsap.set(canvasRef.current, {
           width: "100%",
