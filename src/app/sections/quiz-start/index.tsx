@@ -13,7 +13,7 @@ export const Quiz = () => {
         pinSpacerHeight={'300vh'}
         pinSpacerClassName={s['pin-spacer']}
       >
-        <section className={s['spacer']}>
+        <section className={s['spacer']} id={'quiz-start'}>
           <div className={s['pin']}>
             <div className="wrapper">
               <div className={s['content']}>
@@ -24,7 +24,12 @@ export const Quiz = () => {
             </div>
           </div>
           <div className={s['model-container']}>
-            <CanvasWithDoorModel onPress={() => console.log('click')} />
+            <CanvasWithDoorModel
+              onPress={() => {
+                const end = document.getElementById('quiz-end')
+                end && end.scrollIntoView({ behavior: 'smooth' })
+              }}
+            />
           </div>
         </section>
       </Scrollytelling.Pin>

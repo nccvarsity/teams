@@ -6,7 +6,8 @@ import { Welcome } from '~/app/sections/welcome'
 
 import { Highlight } from './sections/highlight'
 import { Outro } from './sections/outro'
-import { Quiz } from './sections/quiz'
+import { QuizQuestions } from './sections/quiz-questions'
+import { Quiz } from './sections/quiz-start'
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <Highlight />
       <Welcome />
       <Quiz />
+      <QuizQuestions />
     </main>
   )
 }
