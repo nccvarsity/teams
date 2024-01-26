@@ -17,5 +17,9 @@
   },
   "[less]": {
     "editor.formatOnSave": false
-  }
+  },
+  "cSpell.words": [
+    "GLTF",
+    "Scrollytelling"
+  ]
 }
