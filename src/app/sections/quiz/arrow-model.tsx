@@ -1,0 +1,71 @@
+'use client'
+import { Float, useGLTF } from '@react-three/drei'
+import { Euler, useFrame, useThree, Vector3 } from '@react-three/fiber'
+import { useRef } from 'react'
+import * as THREE from 'three'
+import { GLTF } from 'three-stdlib'
+
+import { useMedia } from '~/hooks/use-media'
+import { isProd } from '~/lib/constants'
+import { useScrollytelling } from '~/lib/scrollytelling-client'
+
+type GLTFResult = GLTF & {
+  nodes: {
+    Arrow: THREE.Mesh
+  }
+  materials: {
+    material: THREE.Material
+  }
+}
+
+useGLTF.preload((isProd ? '/teams' : '') + '/models/arrow.glb')
+
+export const ArrowModel = ({
+  locations
+}: {
+  locations: { position: Vector3; rotation: Euler }[]
+}) => {
+  const { timeline } = useScrollytelling()
+  const { nodes, materials } = useGLTF(
+    (isProd ? '/teams' : '') + '/models/arrow.glb'
+  ) as GLTFResult
+
+  const width = useThree(
+    (state: { viewport: { width: any } }) => state.viewport.width
+  )
+  const isMobileSize = useMedia('(max-width: 768px)')
+
+  const innerRef = useRef<THREE.Group>(null)
+
+  useFrame(() => {
+    if (!innerRef.current || !timeline?.scrollTrigger) return
+
+    innerRef.current.rotation.y = Math.PI * 2 * timeline.scrollTrigger.progress
+  })
+
+  const arrows = locations.map(({ position, rotation }, index) => {
+    return (
+      <Float key={index}>
+        <group
+          dispose={null}
+          scale={isMobileSize ? width * 0.42 : width * 0.25}
+        >
+          <group
+            position={position}
+            rotation={rotation}
+            scale={[0.15, 0.15, 0.15]}
+          >
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes.Arrow.geometry}
+              material={materials.material}
+            />
+          </group>
+        </group>
+      </Float>
+    )
+  })
+
+  return <>{arrows}</>
+}
