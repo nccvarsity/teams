@@ -8,8 +8,8 @@ let assetPrefix = ''
 let basePath = ''
 
 if (isProd) {
-  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
-  assetPrefix = `/${repo}/`
+  const repo = 'teams'
+  assetPrefix = `/${repo}`
   basePath = `/${repo}`
 }
 
