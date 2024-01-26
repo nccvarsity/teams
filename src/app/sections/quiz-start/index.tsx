@@ -3,7 +3,7 @@
 import { Animation, Pin, Root } from '@bsmnt/scrollytelling'
 
 import { CanvasWithDoorModel } from './door-model'
-import s from './quiz.module.scss'
+import s from './quiz-start.module.scss'
 
 export const Quiz = () => {
   return (

@@ -79,6 +79,7 @@ export const QuizQuestions = () => {
       }
     }
   )
+
   return (
     <div className={s.home} id={'quiz-end'}>
       {questionsData.map((question: Question, questionIndex: number) => {
