@@ -8,6 +8,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useRef } from "react";
 import { useScrollytelling } from "~/lib/scrollytelling-client";
 import { useMedia } from "~/hooks/use-media";
+import { isProd } from "~/lib/constants";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -18,12 +19,12 @@ type GLTFResult = GLTF & {
   };
 };
 
-useGLTF.preload("/models/varsity.glb");
+useGLTF.preload((isProd ? "/teams" : "") + "/models/varsity.glb");
 
 const VarsityModel = () => {
   const { timeline } = useScrollytelling();
   const { nodes, materials } = useGLTF(
-    "/models/varsity.glb"
+    (isProd ? "/teams" : "") + "/models/varsity.glb"
   ) as GLTFResult;
   const innerRef = useRef<THREE.Group>(null);
   const width = useThree((state: { viewport: { width: any; }; }) => state.viewport.width);

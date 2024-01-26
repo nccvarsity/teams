@@ -1,18 +1,6 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')
 const withTM = require('next-transpile-modules')
 
-
-const isProd = process.env.NODE_ENV === 'production'
-
-let assetPrefix = ''
-let basePath = ''
-
-if (isProd) {
-  const repo = 'teams'
-  assetPrefix = `/${repo}`
-  basePath = `/${repo}`
-}
-
 /**
  * @type {import('next').NextConfig}
  */
@@ -22,8 +10,6 @@ const config = {
   images: {
     formats: ['image/avif', 'image/webp']
   },
-  assetPrefix: assetPrefix,
-  basePath: basePath,
   experimental: {},
   compiler: {
     styledComponents: true

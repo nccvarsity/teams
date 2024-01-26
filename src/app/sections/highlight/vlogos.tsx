@@ -4,6 +4,7 @@ import { Float, useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { Euler, Vector3 } from "three";
 import { useThree } from "@react-three/fiber";
+import { isProd } from "~/lib/constants";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -60,7 +61,7 @@ const capProps: { position: Vector3; rotation: Euler; progress: number }[] = [
 export const VlogosModel = () => {
   const innerRef = React.useRef<THREE.Group>(null);
   const { width } = useThree((state) => state.viewport);
-  const { nodes, materials } = useGLTF("/models/vlogo.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF((isProd ? "/teams" : "") + "/models/vlogo.glb") as GLTFResult;
 
   const clonedMaterials: {
     "m_Vlogo": THREE.MeshStandardMaterial;
