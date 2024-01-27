@@ -1,26 +1,8 @@
-@import '../../../css/helpers';
-
-.home {
-  min-height: 100vh;
-}
+@import '~/css/helpers';
 
 .pin-spacer {
   position: relative;
   z-index: 1;
-}
-
-.model-container {
-  position: absolute;
-  z-index: 100;
-  top: 50%;
-  right: 0;
-  width: tovw(500px, 'desktop-large', 300px);
-  height: tovw(500px, 'desktop-large', 300px);
-  transform: translateY(-50%);
-
-  @media screen and (max-width: 800px) {
-    top: 45vh;
-  }
 }
 
 .content {

@@ -13,7 +13,7 @@ export const Quiz = () => {
         pinSpacerHeight={'300vh'}
         pinSpacerClassName={s['pin-spacer']}
       >
-        <section className={s['spacer']} id={'quiz-start'}>
+        <section className={s['spacer']} id={'quiz'}>
           <div className={s['pin']}>
             <div className="wrapper">
               <div className={s['content']}>
@@ -37,7 +37,8 @@ export const Quiz = () => {
           <div className={s['model-container']}>
             <CanvasWithDoorModel
               onPress={() => {
-                const end = document.getElementById('quiz-end')
+                // Scroll to the next section
+                const end = document.getElementById('quiz-questions')
                 end && end.scrollIntoView({ behavior: 'smooth' })
               }}
             />

@@ -1,8 +1,10 @@
 'use client'
 
-import { Question } from './question'
+import { useEffect, useState } from 'react'
+
+import { Question } from '../../../components/quiz/question'
 import questions from './questions.json'
-import s from './quiz.module.scss'
+import s from './quiz-questions.module.scss'
 
 interface Answer {
   ans: string
@@ -18,6 +20,17 @@ interface Question {
 }
 
 export const QuizQuestions = () => {
+  const [hydrated, setHydrated] = useState(false)
+
+  useEffect(() => {
+    setHydrated(true)
+  }, [])
+
+  if (!hydrated) {
+    // Returns null on first render, so the client and server match
+    return null
+  }
+
   function groupBy(array: any[], key: string) {
     const grouped: any = {}
     array.forEach(function (item) {
@@ -81,7 +94,7 @@ export const QuizQuestions = () => {
   )
 
   return (
-    <div className={s.home} id={'quiz-end'}>
+    <div className={s.home} id={'quiz-questions'}>
       {questionsData.map((question: Question) => {
         return <Question question={question} key={question.question} />
       })}
