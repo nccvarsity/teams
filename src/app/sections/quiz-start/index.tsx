@@ -9,11 +9,11 @@ export const Quiz = () => {
   return (
     <Root defaults={{ ease: 'linear' }}>
       <Pin
-        childHeight={'100vh'}
+        childHeight={'120vh'}
         pinSpacerHeight={'300vh'}
         pinSpacerClassName={s['pin-spacer']}
       >
-        <section className={s['spacer']} id={'quiz'}>
+        <section id={'quiz'}>
           <div className={s['pin']}>
             <div className="wrapper">
               <div className={s['content']}>

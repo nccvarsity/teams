@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
+import { Form } from '~/components/form/form'
+
 import { Question } from '../../../components/quiz/question'
 import questions from './questions.json'
 import s from './quiz-questions.module.scss'
@@ -93,8 +95,11 @@ export const QuizQuestions = () => {
     }
   )
 
+  // TODO: calculation of answers' tags
+
   return (
     <div className={s.home} id={'quiz-questions'}>
+      <Form />
       {questionsData.map((question: Question) => {
         return <Question question={question} key={question.question} />
       })}
