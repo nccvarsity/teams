@@ -19,7 +19,6 @@
   }
 }
 
-
 .pin {
   position: relative;
   position: sticky;
@@ -28,7 +27,6 @@
   flex-direction: column;
   justify-content: center;
   top: 0;
-
   padding-right: 2vw;
   padding-left: 2vw;
 
@@ -37,8 +35,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
     row-gap: tovw(28px, 'desktop-large', 16px);
-    
-  
+
     div:nth-child(3) {
       height: tovw(115px);
     }
