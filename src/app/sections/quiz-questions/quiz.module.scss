@@ -25,16 +25,8 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, auto);
-  row-gap: tovw(28px, 'desktop-large', 16px);
-  
   padding-left: 2vw;
   padding-right: 2vw;
-
-  div:nth-child(3) {
-    height: tovw(115px);
-  }
 }
 
 .title {
@@ -53,16 +45,34 @@
   }
 }
 
-.answer {
-  height: 30vh;
-  flex-direction: row;
-  flex: 1
+.answerGridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  height: auto;
 }
 
-.answer-image {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  object-position: center;
-  flex: .5;
+.answerContainer {
+  background-color: var(--color-background-tile-primary);
+  padding: 1ch;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+
+  justify-items: center;
+  align-items: center;
+
+  &Description {
+    transition-duration: 500ms / $duration;
+    font-size: 1rem;
+    padding: 1ch;
+  }
+}
+
+.imageContainer{
+  // background-color: red;
+  padding: 1ch;
 }

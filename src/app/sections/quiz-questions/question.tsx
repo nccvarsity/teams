@@ -1,25 +1,32 @@
 'use client'
 
-import { Animation, Pin, Root } from '@bsmnt/scrollytelling'
-import Image from 'next/image'
+import { Pin } from '@bsmnt/scrollytelling'
 import React, { useEffect, useState } from 'react'
 
+import { Answer, AnswerType } from './answer'
 import s from './quiz.module.scss'
-
-interface Answer {
-  ans: string
-  tags: string[]
-  imageUrl: string
-}
 
 interface Question {
   question: string
-  answers: Answer[]
+  answers: AnswerType[]
   hasImages: boolean
   selection: number | null
 }
 
 export const Question = ({ question }: { question: Question }) => {
+  const [chosenAnswer, setChosenAnswer] = useState<string | null>(null)
+  const [chosenTags, setChosenTags] = useState<string[]>([])
+
+  function onPress(ans: string, tags: string[]) {
+    if (chosenAnswer === ans) {
+      setChosenAnswer(null)
+      setChosenTags([])
+      return
+    }
+    setChosenAnswer(ans)
+    setChosenTags(tags)
+  }
+
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
@@ -33,30 +40,21 @@ export const Question = ({ question }: { question: Question }) => {
 
   return (
     <Pin
-      childHeight={'200vh'}
-      pinSpacerHeight={'300vh'}
+      childHeight={'190vh'}
+      pinSpacerHeight={'400vh'}
       pinSpacerClassName={s['pin-spacer']}
     >
       <section className={s['content']}>
         <p className={s['title']}>{question.question}</p>
-        <div className={s['answer']}>
-          {question.answers.map((answer: Answer, answerIndex: number) => {
-            return (
-              <div key={answerIndex}>
-                <p className={s['non']}>{answer.ans}</p>
-                {answer.imageUrl && (
-                  <div className={s['answer-image']}>
-                    <Image
-                      src={answer.imageUrl}
-                      width={500}
-                      height={500}
-                      alt={''}
-                    />
-                  </div>
-                )}
-              </div>
-            )
-          })}
+        <div className={s['answerGridContainer']}>
+          {question.answers.map((answer: AnswerType) => (
+            <Answer
+              answer={answer}
+              key={answer.ans}
+              onPress={onPress}
+              isSelected={chosenAnswer === answer.ans}
+            />
+          ))}
         </div>
       </section>
     </Pin>

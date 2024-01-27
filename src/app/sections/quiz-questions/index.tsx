@@ -82,8 +82,8 @@ export const QuizQuestions = () => {
 
   return (
     <div className={s.home} id={'quiz-end'}>
-      {questionsData.map((question: Question, questionIndex: number) => {
-        return <Question question={question} key={questionIndex} />
+      {questionsData.map((question: Question) => {
+        return <Question question={question} key={question.question} />
       })}
     </div>
   )
