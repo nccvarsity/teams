@@ -8,7 +8,7 @@ import s from './quiz.module.scss'
 export interface AnswerType {
   ans: string
   tags: string[]
-  imageUrl: string
+  imageUrl?: string
 }
 
 export const Answer = ({

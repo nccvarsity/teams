@@ -39,62 +39,52 @@
       "key": "Choose the one that describes you most accurately:/Observant",
       "question": "Choose the one that describes you most accurately:",
       "answer": "You're usually the first few to notice when your friend has a new haircut/new clothes/new bag etc. ",
-      "tags": ["Observant"],
-      "imageUrl": 0
+      "tags": ["Observant"]
   }, {
       "key": 0,
       "question": "Choose the one that describes you most accurately:",
       "answer": "You're always open to spontaneous outings with friends and you're okay to change your plans. ",
-      "tags": ["Go with the flow/Adaptable"],
-      "imageUrl": 0
+      "tags": ["Go with the flow/Adaptable"]
   }, {
       "key": 0,
       "question": "Choose the one that describes you most accurately:",
       "answer": "You're calm and collected while playing MLBB, cool and composed in many situations. ",
-      "tags": ["Calm under pressure"],
-      "imageUrl": 0
+      "tags": ["Calm under pressure"]
   }, {
       "key": "If I were at a board game cafe with my friends, I would... /Detailed",
       "question": "If I were at a board game cafe with my friends, I would... ",
       "answer": "Already have an ordered list of games that I want to play from beginning to end. ",
-      "tags": ["Structured/Planning"],
-      "imageUrl": 0
+      "tags": ["Structured/Planning"]
   }, {
       "key": 0,
       "question": "If I were at a board game cafe with my friends, I would... ",
       "answer": "Come up with a convoluted strategy on how to win the game. ",
-      "tags": ["Creative"],
-      "imageUrl": 0
+      "tags": ["Creative"]
   }, {
       "key": 0,
       "question": "If I were at a board game cafe with my friends, I would... ",
       "answer": "Buy some snacks and drinks from the counter.",
-      "tags": ["Front-facing"],
-      "imageUrl": 0
+      "tags": ["Front-facing"]
   }, {
       "key": "My study notes are... /Detailed",
       "question": "My study notes are... ",
       "answer": "Detailed. I have all the important stuff written down. ",
-      "tags": ["Detailed"],
-      "imageUrl": 0
+      "tags": ["Detailed"]
   }, {
       "key": 0,
       "question": "My study notes are... ",
       "answer": "In the form of doodles, mind-maps or word clouds. Free and easy. \n",
-      "tags": ["Creative"],
-      "imageUrl": 0
+      "tags": ["Creative"]
   }, {
       "key": 0,
       "question": "My study notes are... ",
       "answer": "Structured. Written on my computer with neat bullet points, headers and sub-headers in a standard font. ",
-      "tags": ["Structured/Planning"],
-      "imageUrl": 0
+      "tags": ["Structured/Planning"]
   }, {
       "key": 0,
       "question": "My study notes are... ",
       "answer": "Partially written on my notebook, partially typed out. I dont have a fixed way of taking notes. ",
-      "tags": ["Go with the flow/Adaptable"],
-      "imageUrl": 0
+      "tags": ["Go with the flow/Adaptable"]
   }, {
       "key": "If I were a GIF I would be... /Behind",
       "question": "If I were a GIF I would be... ",
@@ -135,50 +125,42 @@
       "key": "My favourite activity at V Camp is.../Behind",
       "question": "My favourite activity at V Camp is...",
       "answer": "Worship sessions with my VG.",
-      "tags": ["Behind"],
-      "imageUrl": 0
+      "tags": ["Behind"]
   }, {
       "key": 0,
       "question": "My favourite activity at V Camp is...",
       "answer": "Taking photos with my friends.",
-      "tags": ["Front-facing"],
-      "imageUrl": 0
+      "tags": ["Front-facing"]
   }, {
       "key": 0,
       "question": "My favourite activity at V Camp is...",
       "answer": "Praying and/or writing notes for people.",
-      "tags": ["Encouraging"],
-      "imageUrl": 0
+      "tags": ["Encouraging"]
   }, {
       "key": 0,
       "question": "My favourite activity at V Camp is...",
       "answer": "Planning in advance how I spend the pockets of free time.",
-      "tags": ["Detailed"],
-      "imageUrl": 0
+      "tags": ["Detailed"]
   }, {
       "key": "When singing Karaoke with my friends, I... /Observant",
       "question": "When singing Karaoke with my friends, I... ",
       "answer": "Tend to notice who sings off-key. ",
-      "tags": ["Observant"],
-      "imageUrl": 0
+      "tags": ["Observant"]
   }, {
       "key": 0,
       "question": "When singing Karaoke with my friends, I... ",
       "answer": "Have a curated list of songs I want to sing with my friends.",
-      "tags": ["Detailed"],
-      "imageUrl": 0
+      "tags": ["Detailed"]
   }, {
       "key": 0,
       "question": "When singing Karaoke with my friends, I... ",
       "answer": "Immediately search for my favourite JJ Lin song.",
-      "tags": [],
-      "imageUrl": 0
+      "tags": []
   }, {
       "key": 0,
       "question": "When singing Karaoke with my friends, I... ",
       "answer": "Ask who wants to order food or drinks. ",
-      "tags": ["Front-facing"],
-      "imageUrl": 0
+      "tags": ["Front-facing"]
   }, {
       "key": 0,
       "question": "I share similar traits with...",
@@ -231,50 +213,42 @@
       "key": "On free Fridays, I am most likely to.../Front-facing",
       "question": "On free Fridays, I am most likely to...",
       "answer": "Try some new activity.",
-      "tags": ["Front-facing"],
-      "imageUrl": 0
+      "tags": ["Front-facing"]
   }, {
       "key": 0,
       "question": "On free Fridays, I am most likely to...",
       "answer": "Go ahead with whatever plans I've made.",
-      "tags": ["Structured/Planning"],
-      "imageUrl": 0
+      "tags": ["Structured/Planning"]
   }, {
       "key": 0,
       "question": "On free Fridays, I am most likely to...",
       "answer": "Go wherever my friends are going.",
-      "tags": ["Go with the flow/Adaptable"],
-      "imageUrl": 0
+      "tags": ["Go with the flow/Adaptable"]
   }, {
       "key": 0,
       "question": "On free Fridays, I am most likely to...",
       "answer": "Stay home and chill with a hot cuppa.",
-      "tags": ["Coffee"],
-      "imageUrl": 0
+      "tags": ["Coffee"]
   }, {
       "key": "It's exam season - what do you do?/Encouraging",
       "question": "It's exam season - what do you do?",
       "answer": "Create welfare packs for my friends and study with them. I'll share my notes too. ",
-      "tags": ["Encouraging"],
-      "imageUrl": 0
+      "tags": ["Encouraging"]
   }, {
       "key": 0,
       "question": "It's exam season - what do you do?",
       "answer": "Study whatever I can and pray that what I study appears in the test.",
-      "tags": ["Go with the flow/Adaptable"],
-      "imageUrl": 0
+      "tags": ["Go with the flow/Adaptable"]
   }, {
       "key": 0,
       "question": "It's exam season - what do you do?",
       "answer": "I've got it all under control. I usually have a study plan.",
-      "tags": ["Calm under pressure"],
-      "imageUrl": 0
+      "tags": ["Calm under pressure"]
   }, {
       "key": 0,
       "question": "It's exam season - what do you do?",
       "answer": "Exams..? I raise a hallelujah~",
-      "tags": [],
-      "imageUrl": 0
+      "tags": []
   }, {
       "key": 0,
       "question": "The Brooklyn 99 character that is most like me is... ",
@@ -333,25 +307,21 @@
       "key": 0,
       "question": "The Brooklyn 99 character that is most like me is... ",
       "answer": "What's Brooklyn 99??",
-      "tags": ["Front-facing"],
-      "imageUrl": 0
+      "tags": ["Front-facing"]
   }, {
       "key": "When my friend shares that they are going through a tough season, I...  /Behind",
       "question": "When my friend shares that they are going through a tough season, I...  ",
       "answer": "Listen and then make a mental note to pray for them in my own time.",
-      "tags": ["Behind"],
-      "imageUrl": 0
+      "tags": ["Behind"]
   }, {
       "key": "When my friend shares that they are going through a tough season, I...  /Encouraging",
       "question": "When my friend shares that they are going through a tough season, I...  ",
       "answer": "Listen and give them a hug and encourage them.",
-      "tags": ["Encouraging"],
-      "imageUrl": 0
+      "tags": ["Encouraging"]
   }, {
       "key": "When my friend shares that they are going through a tough season, I...  /Detailed",
       "question": "When my friend shares that they are going through a tough season, I...  ",
       "answer": "Listen and remember what they shared; follow-up with them next time we meet. ",
-      "tags": ["Detailed"],
-      "imageUrl": 0
+      "tags": ["Detailed"]
   }]
 }

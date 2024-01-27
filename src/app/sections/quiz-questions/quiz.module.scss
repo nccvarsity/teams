@@ -47,10 +47,18 @@
 
 .answerGridContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 15px;
   padding: 15px;
   height: auto;
+
+  &.auto-column {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  &.single-column {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 .answerContainer {
@@ -69,10 +77,9 @@
     transition-duration: 500ms / $duration;
     font-size: 1rem;
     padding: 1ch;
+    font-family: var(--font-basement-grotesque, var(--font-system));
   }
 }
 
 .imageContainer{
-  // background-color: red;
-  padding: 1ch;
 }

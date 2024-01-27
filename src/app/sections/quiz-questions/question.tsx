@@ -38,6 +38,7 @@ export const Question = ({ question }: { question: Question }) => {
     return null
   }
 
+  const isOdd = question.answers.length % 2 !== 0
   return (
     <Pin
       childHeight={'190vh'}
@@ -46,7 +47,11 @@ export const Question = ({ question }: { question: Question }) => {
     >
       <section className={s['content']}>
         <p className={s['title']}>{question.question}</p>
-        <div className={s['answerGridContainer']}>
+        <div
+          className={`${s['answerGridContainer']} ${
+            isOdd ? s['single-column'] : s['auto-column']
+          }`}
+        >
           {question.answers.map((answer: AnswerType) => (
             <Answer
               answer={answer}
