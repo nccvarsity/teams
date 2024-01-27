@@ -6,23 +6,37 @@ import React, { useEffect, useState } from 'react'
 import { Answer, AnswerType } from './answer'
 import s from './quiz.module.scss'
 
-interface Question {
+export interface QuestionType {
   question: string
   answers: AnswerType[]
   hasImages: boolean
   selection: number | null
 }
 
-export const Question = ({ question }: { question: Question }) => {
+export const Question = ({
+  question,
+  incrementTag
+}: {
+  question: QuestionType
+  incrementTag: (tags: string[], isDecrement?: boolean) => void
+}) => {
   const [chosenAnswer, setChosenAnswer] = useState<string | null>(null)
   const [chosenTags, setChosenTags] = useState<string[]>([])
 
   function onPress(ans: string, tags: string[]) {
+    // Unselect itself
     if (chosenAnswer === ans) {
       setChosenAnswer(null)
+      incrementTag(chosenTags, true)
       setChosenTags([])
       return
     }
+
+    // Decrement the previous answer
+    incrementTag(chosenTags, true)
+    // Increment the new answer
+    incrementTag(tags)
+
     setChosenAnswer(ans)
     setChosenTags(tags)
   }

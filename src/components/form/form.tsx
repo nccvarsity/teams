@@ -1,24 +1,21 @@
 'use client'
 
 import { Pin, Root } from '@bsmnt/scrollytelling'
-import { SetStateAction, useState } from 'react'
+import { ChangeEvent } from 'react'
+
+import { UserData } from '~/app/sections/quiz-questions'
 
 import s from './form.module.scss'
 
-export const Form = () => {
-  const [name, setName] = useState('')
-  const [cluster, setCluster] = useState('')
-
-  const handleNameChange = (e: {
-    target: { value: SetStateAction<string> }
-  }) => {
-    setName(e.target.value)
+export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
+  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const name = e.target.value.toString()
+    setData({ name })
   }
 
-  const handleClusterChange = (e: {
-    target: { value: SetStateAction<string> }
-  }) => {
-    setCluster(e.target.value)
+  const handleClusterChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const cluster = e.target.value.toString()
+    setData({ cluster })
   }
 
   return (
@@ -31,12 +28,20 @@ export const Form = () => {
         <section id={'form'} className={s['pin']}>
           <div className={s.content}>
             <h2>What's your name?</h2>
-            <input type="text" value={name} onChange={handleNameChange} />
+            <input
+              type="text"
+              placeholder={'Name'}
+              onChange={handleNameChange}
+            />
           </div>
 
           <div className={s.content}>
             <h2>Which varsity cluster are you in?</h2>
-            <input type="text" value={cluster} onChange={handleClusterChange} />
+            <input
+              type="text"
+              placeholder={'Cluster'}
+              onChange={handleClusterChange}
+            />
           </div>
         </section>
       </Pin>

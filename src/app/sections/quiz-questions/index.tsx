@@ -1,37 +1,49 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { Form } from '~/components/form/form'
 
-import { Question } from '../../../components/quiz/question'
+import { Question, QuestionType } from '../../../components/quiz/question'
 import questions from './questions.json'
 import s from './quiz-questions.module.scss'
 
-interface Answer {
-  ans: string
-  tags: string[]
-  imageUrl: string
-}
-
-interface Question {
-  question: string
-  answers: Answer[]
-  hasImages: boolean
-  selection: number | null
+export interface UserData {
+  name?: string
+  cluster?: string
+  answerTags?: Map<string, number>
 }
 
 export const QuizQuestions = () => {
+  const [userData, setUserData] = useState<UserData>({
+    name: '',
+    cluster: '',
+    answerTags: new Map()
+  })
+
+  function setData(data: UserData) {
+    const newData = { ...userData, ...data }
+    setUserData(newData)
+  }
+
+  function incrementTag(tags: string[], isDecrement = false) {
+    const newUserData = { ...userData }
+    tags.forEach(function (tag) {
+      const currentCount = userData.answerTags?.get(tag) ?? 0
+      userData.answerTags?.set(tag, currentCount + (isDecrement ? -1 : 1))
+    })
+    setUserData(newUserData)
+  }
+
+  useEffect(() => {
+    console.log(userData)
+  }, [userData])
+
   const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
     setHydrated(true)
   }, [])
-
-  if (!hydrated) {
-    // Returns null on first render, so the client and server match
-    return null
-  }
 
   function groupBy(array: any[], key: string) {
     const grouped: any = {}
@@ -66,10 +78,10 @@ export const QuizQuestions = () => {
     return array
   }
 
-  const questionsResponse = groupBy(questions.data, 'question')
+  const questionsData: QuestionType[] = useMemo(() => {
+    const questionsResponse = groupBy(questions.data, 'question')
 
-  const questionsData: Question[] = Object.keys(questionsResponse).map(
-    function (key) {
+    return Object.keys(questionsResponse).map(function (key) {
       const answers = questionsResponse[key]
       let imagesCount = 0
       answers.forEach(function (answer: any) {
@@ -92,16 +104,27 @@ export const QuizQuestions = () => {
         hasImages: imagesCount > 0,
         selection: null
       }
-    }
-  )
+    })
+  }, [])
+
+  if (!hydrated) {
+    // Returns null on first render, so the client and server match
+    return null
+  }
 
   // TODO: calculation of answers' tags
 
   return (
     <div className={s.home} id={'quiz-questions'}>
-      <Form />
-      {questionsData.map((question: Question) => {
-        return <Question question={question} key={question.question} />
+      <Form setData={setData} />
+      {questionsData.map((question: QuestionType) => {
+        return (
+          <Question
+            question={question}
+            key={question.question}
+            incrementTag={incrementTag}
+          />
+        )
       })}
     </div>
   )
