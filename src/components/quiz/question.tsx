@@ -1,8 +1,8 @@
 'use client'
 
-import { Pin } from '@bsmnt/scrollytelling'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
+import { FadeInOut } from '../fade/fadeInOut'
 import { Answer, AnswerType } from './answer'
 import s from './quiz.module.scss'
 
@@ -41,24 +41,10 @@ export const Question = ({
     setChosenTags(tags)
   }
 
-  const [hydrated, setHydrated] = useState(false)
-
-  useEffect(() => {
-    setHydrated(true)
-  }, [])
-
-  if (!hydrated) {
-    // Returns null on first render, so the client and server match
-    return null
-  }
-
   const isOdd = question.answers.length % 2 !== 0
+
   return (
-    <Pin
-      childHeight={'190vh'}
-      pinSpacerHeight={'400vh'}
-      pinSpacerClassName={s['pin-spacer']}
-    >
+    <FadeInOut>
       <section className={s['content']}>
         <p className={s['title']}>{question.question}</p>
         <div
@@ -76,6 +62,6 @@ export const Question = ({
           ))}
         </div>
       </section>
-    </Pin>
+    </FadeInOut>
   )
 }

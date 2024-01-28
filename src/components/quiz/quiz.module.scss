@@ -5,12 +5,6 @@
   z-index: 1;
 }
 
-.content {
-  display: grid;
-  padding-left: 2vw;
-  padding-right: 2vw;
-}
-
 .title {
   font-size: tovw(56px, 'desktop', 20px);
   font-weight: 900;
@@ -20,7 +14,7 @@
   text-transform: capitalize;
   line-height: calc(86 / 72);
   text-align: center;
-  margin-top: 10vh;
+  // margin-top: 10vh;
 
   @media screen and (max-width: 800px) {
     font-size: tovw(17px, 'mobile');

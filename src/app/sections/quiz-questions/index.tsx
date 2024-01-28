@@ -6,7 +6,6 @@ import { Form } from '~/components/form/form'
 
 import { Question, QuestionType } from '../../../components/quiz/question'
 import questions from './questions.json'
-import s from './quiz-questions.module.scss'
 
 export interface UserData {
   name?: string
@@ -38,12 +37,6 @@ export const QuizQuestions = () => {
   useEffect(() => {
     console.log(userData)
   }, [userData])
-
-  const [hydrated, setHydrated] = useState(false)
-
-  useEffect(() => {
-    setHydrated(true)
-  }, [])
 
   function groupBy(array: any[], key: string) {
     const grouped: any = {}
@@ -107,15 +100,10 @@ export const QuizQuestions = () => {
     })
   }, [])
 
-  if (!hydrated) {
-    // Returns null on first render, so the client and server match
-    return null
-  }
-
   // TODO: calculation of answers' tags
 
   return (
-    <div className={s.home} id={'quiz-questions'}>
+    <>
       <Form setData={setData} />
       {questionsData.map((question: QuestionType) => {
         return (
@@ -126,6 +114,6 @@ export const QuizQuestions = () => {
           />
         )
       })}
-    </div>
+    </>
   )
 }

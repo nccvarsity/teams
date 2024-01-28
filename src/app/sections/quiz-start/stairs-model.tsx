@@ -117,11 +117,11 @@ export const CanvasWithStairsModel = ({ onPress }: { onPress: () => void }) => {
   return (
     <Animation
       tween={{
-        start: 59,
+        start: 50,
         end: 100,
         fromTo: [
           { scale: 1, opacity: 1 },
-          { scale: 2.2, opacity: 1, ease: 'power1' }
+          { scale: 2.2, opacity: 0, ease: 'power1' }
         ]
       }}
     >

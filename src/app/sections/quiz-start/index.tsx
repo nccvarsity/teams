@@ -2,6 +2,8 @@
 
 import { Animation, Pin, Root } from '@bsmnt/scrollytelling'
 
+import navigateToElementId from '~/lib/utils/navigate'
+
 import s from './quiz-start.module.scss'
 import { CanvasWithStairsModel } from './stairs-model'
 
@@ -19,12 +21,9 @@ export const Quiz = () => {
               <div className={s['content']}>
                 <Animation
                   tween={{
-                    start: 59,
+                    start: 50,
                     end: 100,
-                    fromTo: [
-                      { opacity: 1 },
-                      { y: -200, opacity: 0, ease: 'power1' }
-                    ]
+                    fromTo: [{ opacity: 1 }, { opacity: 0, ease: 'power1' }]
                   }}
                 >
                   <span className={s['title']}>
@@ -36,11 +35,7 @@ export const Quiz = () => {
           </div>
           <div className={s['model-container']}>
             <CanvasWithStairsModel
-              onPress={() => {
-                // Scroll to the next section
-                const end = document.getElementById('quiz-questions')
-                end && end.scrollIntoView({ behavior: 'smooth' })
-              }}
+              onPress={() => navigateToElementId('form')}
             />
           </div>
         </section>

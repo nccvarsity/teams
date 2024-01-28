@@ -1,0 +1,17 @@
+@import '~/css/helpers';
+
+.pin-spacer {
+  position: relative;
+  z-index: 1;
+}
+
+.pin {
+  position: relative;
+  position: sticky;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  padding: 2vw;
+}

@@ -1,10 +1,10 @@
 'use client'
 
-import { Pin, Root } from '@bsmnt/scrollytelling'
 import { ChangeEvent, useState } from 'react'
 
 import { UserData } from '~/app/sections/quiz-questions'
 
+import { FadeInOut } from '../fade/fadeInOut'
 import clusters from './clusters.json'
 import s from './form.module.scss'
 
@@ -22,13 +22,9 @@ export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
   }
 
   return (
-    <Root defaults={{ ease: 'linear' }}>
-      <Pin
-        childHeight={'100vh'}
-        pinSpacerHeight={'300vh'}
-        pinSpacerClassName={s['pin-spacer']}
-      >
-        <section id={'form'} className={s['pin']}>
+    <FadeInOut>
+      <div className={s['pin']}>
+        <section id={'form'}>
           <div className={s.content}>
             <h2>What's your name?</h2>
             <input
@@ -37,7 +33,6 @@ export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
               onChange={handleNameChange}
             />
           </div>
-
           <div className={s.content}>
             <h2>Which varsity cluster are you in?</h2>
             <div className={s.gridContainer}>
@@ -55,7 +50,7 @@ export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
             </div>
           </div>
         </section>
-      </Pin>
-    </Root>
+      </div>
+    </FadeInOut>
   )
 }
