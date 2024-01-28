@@ -31,11 +31,12 @@
   padding-left: 2vw;
 
   .content {
-    padding: 1ch;
+    padding: 3ch;
 
     input {
-      width: 70%;
+      width: 80%;
       padding: 0.5ch;
+      background-color: var(--color-background-tile-primary);
     }
   }
 
@@ -52,6 +53,27 @@
     @media screen and (max-width: 800px) {
       font-size: tovw(17px, 'mobile');
     }
+  }
+}
+
+
+
+.gridContainer {
+  display: grid;
+  gap: 15px;
+  padding-top: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
+}
+
+.clusterButton {
+  background-color: var(--color-background-tile-primary);
+  padding: 1ch;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+
+  &.selected {
+    background-color: var(--color-orange);
   }
 }
 

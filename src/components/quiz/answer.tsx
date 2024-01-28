@@ -37,15 +37,20 @@ export const Answer = ({
 
   return (
     <div
-      className={s['answerContainer']}
+      className={`${s.answerContainer} ${isSelected ? s.selected : ''}`}
       key={answer.ans}
       onClick={handleClick}
-      style={{ backgroundColor: isSelected ? '#e54602' : undefined }}
     >
       <p className={s.answerContainerDescription}>{answer.ans}</p>
       {answer.imageUrl && (
         <div className={s['imageContainer']}>
-          <Image src={answer.imageUrl} width={500} height={500} alt={''} />
+          <Image
+            src={answer.imageUrl}
+            width={500}
+            height={500}
+            alt={''}
+            style={{ borderRadius: 8 }}
+          />
         </div>
       )}
     </div>

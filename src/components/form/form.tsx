@@ -1,21 +1,24 @@
 'use client'
 
 import { Pin, Root } from '@bsmnt/scrollytelling'
-import { ChangeEvent } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 import { UserData } from '~/app/sections/quiz-questions'
 
+import clusters from './clusters.json'
 import s from './form.module.scss'
 
 export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
+  const [selectedCluster, setSelectedCluster] = useState<string>('')
+
+  const handleClusterSelection = (cluster: string) => {
+    setSelectedCluster(cluster)
+    setData({ cluster })
+  }
+
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const name = e.target.value.toString()
     setData({ name })
-  }
-
-  const handleClusterChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const cluster = e.target.value.toString()
-    setData({ cluster })
   }
 
   return (
@@ -37,11 +40,19 @@ export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
 
           <div className={s.content}>
             <h2>Which varsity cluster are you in?</h2>
-            <input
-              type="text"
-              placeholder={'Cluster'}
-              onChange={handleClusterChange}
-            />
+            <div className={s.gridContainer}>
+              {clusters.data.map((cluster, index) => (
+                <div
+                  key={index}
+                  className={`${s.clusterButton} ${
+                    selectedCluster === cluster ? s.selected : ''
+                  }`}
+                  onClick={() => handleClusterSelection(cluster)}
+                >
+                  {cluster}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </Pin>

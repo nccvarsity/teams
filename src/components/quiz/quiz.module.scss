@@ -59,6 +59,10 @@
     padding: 1ch;
     font-family: var(--font-basement-grotesque, var(--font-system));
   }
+
+  &.selected {
+    background-color: var(--color-orange);
+  }
 }
 
 .imageContainer {
