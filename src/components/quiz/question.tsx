@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 
-import { FadeInOut } from '../fade/fadeInOut'
+import { FadeInOut, useResumeFadeInOut } from '../fade/fadeInOut'
 import { Answer, AnswerType } from './answer'
 import s from './quiz.module.scss'
 
@@ -23,7 +23,11 @@ export const Question = ({
   const [chosenAnswer, setChosenAnswer] = useState<string | null>(null)
   const [chosenTags, setChosenTags] = useState<string[]>([])
 
+  const { isDisable, disableAnimation } = useResumeFadeInOut()
+
   function onPress(ans: string, tags: string[]) {
+    disableAnimation()
+
     // Unselect itself
     if (chosenAnswer === ans) {
       setChosenAnswer(null)
@@ -44,7 +48,7 @@ export const Question = ({
   const isOdd = question.answers.length % 2 !== 0
 
   return (
-    <FadeInOut>
+    <FadeInOut disable={isDisable}>
       <section className={s['content']}>
         <p className={s['title']}>{question.question}</p>
         <div

@@ -4,25 +4,31 @@ import { ChangeEvent, useState } from 'react'
 
 import { UserData } from '~/app/sections/quiz-questions'
 
-import { FadeInOut } from '../fade/fadeInOut'
+import { FadeInOut, useResumeFadeInOut } from '../fade/fadeInOut'
 import clusters from './clusters.json'
 import s from './form.module.scss'
 
 export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
   const [selectedCluster, setSelectedCluster] = useState<string>('')
 
+  const { isDisable, disableAnimation } = useResumeFadeInOut()
+
   const handleClusterSelection = (cluster: string) => {
+    disableAnimation()
+
     setSelectedCluster(cluster)
     setData({ cluster })
   }
 
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    disableAnimation()
+
     const name = e.target.value.toString()
     setData({ name })
   }
 
   return (
-    <FadeInOut>
+    <FadeInOut disable={isDisable}>
       <div className={s['pin']}>
         <section id={'form'}>
           <div className={s.content}>
