@@ -1,13 +1,11 @@
 'use client'
 import { Float, useGLTF } from '@react-three/drei'
-import { Euler, useFrame, useThree, Vector3 } from '@react-three/fiber'
-import { useRef } from 'react'
+import { Euler, useThree, Vector3 } from '@react-three/fiber'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
 
 import { useMedia } from '~/hooks/use-media'
 import { isProd } from '~/lib/constants'
-import { useScrollytelling } from '~/lib/scrollytelling-client'
 
 type GLTFResult = GLTF & {
   nodes: {
