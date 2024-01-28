@@ -25,7 +25,6 @@ export const ArrowModel = ({
 }: {
   locations: { position: Vector3; rotation: Euler }[]
 }) => {
-  const { timeline } = useScrollytelling()
   const { nodes, materials } = useGLTF(
     (isProd ? '/teams' : '') + '/models/arrow.glb'
   ) as GLTFResult
@@ -35,17 +34,9 @@ export const ArrowModel = ({
   )
   const isMobileSize = useMedia('(max-width: 768px)')
 
-  const innerRef = useRef<THREE.Group>(null)
-
-  useFrame(() => {
-    if (!innerRef.current || !timeline?.scrollTrigger) return
-
-    innerRef.current.rotation.y = Math.PI * 2 * timeline.scrollTrigger.progress
-  })
-
   const arrows = locations.map(({ position, rotation }, index) => {
     return (
-      <Float key={index}>
+      <Float key={index} floatIntensity={0.5} rotationIntensity={0.5}>
         <group
           dispose={null}
           scale={isMobileSize ? width * 0.42 : width * 0.25}

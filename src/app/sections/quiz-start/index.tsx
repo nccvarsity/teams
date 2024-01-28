@@ -2,8 +2,8 @@
 
 import { Animation, Pin, Root } from '@bsmnt/scrollytelling'
 
-import { CanvasWithDoorModel } from './door-model'
 import s from './quiz-start.module.scss'
+import { CanvasWithStairsModel } from './stairs-model'
 
 export const Quiz = () => {
   return (
@@ -28,14 +28,14 @@ export const Quiz = () => {
                   }}
                 >
                   <span className={s['title']}>
-                    Not sure where to start? Let's go on a quest to find out!
+                    Not sure where to start? Let's go find out!
                   </span>
                 </Animation>
               </div>
             </div>
           </div>
           <div className={s['model-container']}>
-            <CanvasWithDoorModel
+            <CanvasWithStairsModel
               onPress={() => {
                 // Scroll to the next section
                 const end = document.getElementById('quiz-questions')
