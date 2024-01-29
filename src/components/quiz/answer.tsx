@@ -41,8 +41,7 @@ export const Answer = ({
       key={answer.ans}
       onClick={handleClick}
     >
-      <p className={s.answerContainerDescription}>{answer.ans}</p>
-      {answer.imageUrl && (
+      {answer.imageUrl ? (
         <div className={s['imageContainer']}>
           <Image
             src={answer.imageUrl}
@@ -52,6 +51,8 @@ export const Answer = ({
             style={{ borderRadius: 8 }}
           />
         </div>
+      ) : (
+        <p className={s.answerContainerDescription}>{answer.ans}</p>
       )}
     </div>
   )
