@@ -1,4 +1,5 @@
-const Y_OFFSET = 300
+const DOWN_Y_OFFSET = 300
+const UP_Y_OFFSET = -600
 
 // https://stackoverflow.com/questions/24665602/scrollintoview-scrolls-just-too-far
 function navigateToElementId(id: string) {
@@ -6,7 +7,14 @@ function navigateToElementId(id: string) {
   const end = document.getElementById(id)
   if (end === null) return
 
-  const y = end.getBoundingClientRect().top + window.scrollY + Y_OFFSET
+  let y = end.getBoundingClientRect().top + window.scrollY
+
+  if (y > window.scrollY) {
+    y += DOWN_Y_OFFSET
+  } else {
+    y += UP_Y_OFFSET
+  }
+
   window.scrollTo({ top: y, behavior: 'smooth' })
 }
 
