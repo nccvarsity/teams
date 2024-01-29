@@ -1,5 +1,5 @@
 const DOWN_Y_OFFSET = 300
-const UP_Y_OFFSET = -600
+const UP_Y_OFFSET = -900
 
 // https://stackoverflow.com/questions/24665602/scrollintoview-scrolls-just-too-far
 function navigateToElementId(id: string) {
