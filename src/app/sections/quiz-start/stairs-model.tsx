@@ -76,16 +76,14 @@ const StairsModel = ({ onPress }: { onPress: () => void }) => {
         scale={isMobileSize ? width * 0.42 : width * 0.25}
         ref={innerRef}
       >
-        <group scale={[scale, scale - 0.01, scale]}>
+        <group scale={[scale, scale * 1.2, scale]}>
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Column.geometry}
             material={vMaterials.m_transparent}
-            scale={[1, 1.3, 1]}
-            position={[0, 1.7, 0]}
           />
-          <mesh
+          {/* <mesh
             castShadow
             receiveShadow
             geometry={nodes.GuardRail.geometry}
@@ -98,7 +96,7 @@ const StairsModel = ({ onPress }: { onPress: () => void }) => {
             geometry={nodes.Rail.geometry}
             material={vMaterials.m_transparent}
             position={[0, 2.2, 0]}
-          />
+          /> */}
           <mesh
             castShadow
             receiveShadow
