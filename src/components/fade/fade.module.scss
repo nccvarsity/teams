@@ -14,4 +14,18 @@
   justify-content: center;
   top: 0;
   padding: 2vw;
+
+
+  button {
+    border-radius: 8px;
+    border-width: 1px; 
+    padding: 1vw;
+    margin: 20px 15px 0 0;
+    width: 20%;
+    border-color: var(--color-text-primary);
+  }
+  
+  button:focus{
+    background-color:var(--color-background-box);
+  }
 }
