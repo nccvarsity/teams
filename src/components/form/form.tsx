@@ -52,7 +52,9 @@ export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
           </div>
 
           <button onClick={() => navigateToElementId('quiz')}>Prev</button>
-          <button onClick={() => navigateToElementId('quiz')}>Next</button>
+          <button onClick={() => navigateToElementId('question-0')}>
+            Next
+          </button>
         </div>
       </section>
     </FadeInOut>

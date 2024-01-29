@@ -105,11 +105,12 @@ export const QuizQuestions = () => {
   return (
     <>
       <Form setData={setData} />
-      {questionsData.map((question: QuestionType) => {
+      {questionsData.map((question: QuestionType, index: number) => {
         return (
           <Question
-            question={question}
+            id={index}
             key={question.question}
+            question={question}
             incrementTag={incrementTag}
           />
         )

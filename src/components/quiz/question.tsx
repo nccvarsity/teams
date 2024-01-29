@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 
+import navigateToElementId from '~/lib/utils/navigate'
+
 import { FadeInOut, useResumeFadeInOut } from '../fade/fadeInOut'
 import { Answer, AnswerType } from './answer'
 import s from './quiz.module.scss'
@@ -14,9 +16,11 @@ export interface QuestionType {
 }
 
 export const Question = ({
+  id,
   question,
   incrementTag
 }: {
+  id: number
   question: QuestionType
   incrementTag: (tags: string[], isDecrement?: boolean) => void
 }) => {
@@ -49,7 +53,7 @@ export const Question = ({
 
   return (
     <FadeInOut disable={isDisable}>
-      <section className={s['content']}>
+      <section className={s['content']} id={`question-${id}`}>
         <p className={s['title']}>{question.question}</p>
         <div
           className={`${s['answerGridContainer']} ${
@@ -65,6 +69,18 @@ export const Question = ({
             />
           ))}
         </div>
+
+        {id !== 0 ? (
+          <button onClick={() => navigateToElementId(`question-${id - 1}`)}>
+            Prev
+          </button>
+        ) : (
+          <button onClick={() => navigateToElementId(`form`)}>Prev</button>
+        )}
+
+        <button onClick={() => navigateToElementId(`question-${id + 1}`)}>
+          Next
+        </button>
       </section>
     </FadeInOut>
   )
