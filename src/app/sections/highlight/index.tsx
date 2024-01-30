@@ -3,8 +3,8 @@
 import * as Scrollytelling from "@bsmnt/scrollytelling";
 
 import s from "./highlight.module.scss";
-import { VlogosModel } from "./vlogos";
-import { Canvas } from "@react-three/fiber";
+// import { VlogosModel } from "./vlogos";
+// import { Canvas } from "@react-three/fiber";
 import { useMemo } from "react";
 
 const splitText = (text: string, wordClass?: string) => {
@@ -53,7 +53,7 @@ export const Highlight = () => {
     >
       <section className={s["spacer"]}>
         <div className={s["pin"]}>
-          <div className={s["canvas-container"]}>
+          {/* <div className={s["canvas-container"]}>
             <Canvas
               camera={{ position: [0, 0, 10], fov: 35 }}
               gl={{
@@ -64,7 +64,7 @@ export const Highlight = () => {
             >
               <VlogosModel />
             </Canvas>
-          </div>
+          </div> */}
 
           <p className={s["paragraph"]}>
             <Scrollytelling.Stagger

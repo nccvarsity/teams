@@ -21,50 +21,53 @@ export const Tileboard = () => {
       name: 'PHO₸OGS',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      (っ◔◡◔)っ📸💥| If you've got a case of serious shutterfinger, we
-      want you! As V Photogs, we document V life, culture, and events—curating
-      visuals for social media and service slides. Oh snap, come join us!
+      Hello fellow shutter-fingers! If you feel a resonance to tell stories with a camera, join us to document V life, culture, and events. Snap, don’t nap and see you soon! 
       `,
-      jd: ['test'],
+      jd: [
+        '♾️ Capture God-moments 🙌🏼',
+        '📸 Take photographs at V events ⚡',
+        '🪄 Edit photos to be used for publicity ✨',
+        '👩🏻‍💻 Collaborate with social media team 📱',
+      ],
       toggleState: useToggleState()
     },
     {
       name: 'SÖCIAL',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      ( *･ω･)✎📜 | We give life to words, supporting the ministry by crafting
-      written (& spoken) words through social media captions, e-mails,
-      video scripts, and more! If you want to see what God can do through
-      your story, join us!
+      We’re seeking all with energy and heart to collaborate on our social team. If you have an eye for content and visuals, and have a passion for creating memories and messages for our V family, we would love to hear from you!
       `,
-      jd: ['test'],
+      jd: [
+        '🌐 Show V off to the world! 🔥',
+        '🤳🏽 Create content for IG - reels/visuals 🎨',
+        '🤔 Ideate for social media content 💭'
+      ],
       toggleState: useToggleState()
     },
     {
       name: 'ƑOYER ℓXP',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      (∩｀-´)⊃━☆ﾟ.*･｡ﾟ 💫☕ | Enjoy the fun and inviting atmosphere
-      of V Night? Bring out the warmth within and make V Night a beloved
-      place for people to return to.
+      Pre-service is where the party begins! If you have hands available and time to sow into the pre-service experience, come and be part of our ninja team doing the creative setup and installations. Legend has it that some make a friend or two during this magic hour.
       `,
-      jd: ['test'],
+      jd: [
+        '🛠️ Be part of building God’s house 🏠',
+        '🏗️ Set up pre-service activities 🏓',
+        '🤲🏻 Be the creative hands and feet 👟'
+      ],
       toggleState: useToggleState()
     },
     {
       name: 'L○R○',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      ( ｡◕‿◕｡)🏠 | V is family. From welcoming you at the door,
-      bringing you to your seats, and connecting friends—both old and
-      new—our heart is to make sure everyone meets their V fam. 
-      Join the Varsity Night Experience team!
+      If you have a love for befriending new faces, and have a desire to grow into our hosting team here in the Fathers’ house, we can’t wait to meet you. LORO is where your warmth and love can go a long way for one person–come speak to us and we’ll tell you more!
       `,
       jd: [
-        '🤗 Welcome the V fam to service 👋',
-        '🍞 Distribute Holy Communion elements 🍷',
-        '🚶🏻‍♀️ Manage the flow of people 🚶🏻‍♂️',
-        '👉🏼 Usher people in the auditorium 📍'
+        '🤗 Welcome the V fam ✌🏽',
+        '🆕 Be a friend to newcomers 🤝🏼',
+        '🔗 Connect with NBNCs after service ☕',
+        '🙏🏼 Be a prayer warrior! ⚔️'
       ],
       toggleState: useToggleState()
     },
@@ -72,13 +75,12 @@ export const Tileboard = () => {
       name: 'FOŸER OPS',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      ( ｡◕‿◕｡)🏠 | V is family. From welcoming you at the door,
-      bringing you to your seats, and connecting friends—both old and
-      new—our heart is to make sure everyone meets their V fam. 
-      Join the Varsity Night Experience team!
+      We make sure you get where you need to be, bringing you from the entrance all the way into the Father’s embrace—safely and swiftly. Wayfinding doesn’t get more meaningful than this! 
       `,
       jd: [
-        'test'
+        '🚶🏻‍♀️ Manage and direct the flow of people 🚶🏻‍♂️',
+        '🚧 Control access points 🚦',
+        '🍞 Prepare Holy Communion elements 🍷',
       ],
       toggleState: useToggleState()
     },
@@ -86,13 +88,13 @@ export const Tileboard = () => {
       name: 'ΔUDI OPS',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      ( ｡◕‿◕｡)🏠 | V is family. From welcoming you at the door,
-      bringing you to your seats, and connecting friends—both old and
-      new—our heart is to make sure everyone meets their V fam. 
-      Join the Varsity Night Experience team!
+      V is family. We believe that every V youth has a seat at the table in the Father’s house with their name on it. We make sure that they find it—with warm smiles and even warmer hearts!
       `,
       jd: [
-        'test'
+        '🚪 Doorkeep the Father’s house ✋🏼',
+        '👉🏻 Guide lost sheep in the auditorium 🐑',
+        '🚩 Direct people to unoccupied seats 🪑',
+        '🙇🏻‍♀️ Support during ministering 🤲🏽'
       ],
       toggleState: useToggleState()
     },
@@ -100,16 +102,13 @@ export const Tileboard = () => {
       name: 'L●GS',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      ᕦ( ⏓ ͜ʖ ⏓ )ᕥ 💨⛺ | First to arrive on scene, we ensure everything is
-      up and running for a smooth V Night experience! Whether it's
-      moving items on stage or anywhere else, we're
-      always ready—all while having the best time in His house!
+      First to arrive on scene, we ensure everything is up and running for a smooth Varsity experience! Whether it’s moving items on stage or anywhere else, we’re always ready—all while having the best time in His house!
       `,
       jd: [
         '📋 Account for logistics ✅',
         '📻 Distribute and collect walkies 🗣️',
         '🪧 Set up spaces/equipment 📺',
-        '💪🏼 Carry heavy props on stage 🪨'
+        '💪🏼 Carry props up stage 🪨'
       ],
       toggleState: useToggleState()
     },
@@ -117,7 +116,7 @@ export const Tileboard = () => {
       name: 'S℮CURĪTY',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      🛡️( ⌐■_■)🛡️ | Alert and swift to respond to changes on the ground,
+      Alert and swift to respond to changes on the ground,
       our desire is to create a safe space for everyone to enjoy V
       freely! If you share our heart, come join us!
       `,
@@ -132,15 +131,13 @@ export const Tileboard = () => {
       name: 'VIÐE∅',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      💻 (⌨️•‿•⌨️) 💻| Excited about the dazzling visuals on screen? From lyrics
-      and verses to videos and more, we make known the invisible God 
-      through magnifying the visible!
+      Excited about the dazzling visuals on screen? From lyrics and verses—to videos and more, we make known the invisible God through magnifying the visible!
       `,
       jd: [
-        '🎵 Toggle lyrics during Praise &amp; Worship 🖱️',
+        '🎵 Lead Praise &amp; Worship through lyrics🖱️',
         '💻 Prepare slides with verses and media 🖼️',
         '📽️ Project content on screen during service 🎞️',
-        '😎 Operate camera with live feed 📹'
+        '😎 Operate camera for live feed 📹'
       ],
       toggleState: useToggleState()
     },
@@ -148,12 +145,13 @@ export const Tileboard = () => {
       name: 'STΔGE',
       url: 'https://www.newcreation.org.sg/',
       description: `
-      Σ(▼□▼ ﾒ ) ☆🎬☆ | We operate in the shadows, overseeing the entire
-      service programme by coordinating with the many other teams.
-      This dynamic experience is irreplaceable
-      and paramount to the success of V Night!
+      This is where behind-the-scenes fully comes alive! If you have a gift to articulate, to anticipate and would love to participate in programme and production, come and make V happen with us!
       `,
-      jd: ['test'],
+      jd: [
+        '🎬 Produce amazing V services 💫',
+        '📢 Liaise with showcaller and talents 🙋🏻‍♂️',
+        '🎤 Manage the movement of mics ✊🏽'
+      ],
       toggleState: useToggleState()
     }
   ]
