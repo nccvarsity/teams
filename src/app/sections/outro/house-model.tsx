@@ -4,9 +4,8 @@ import * as THREE from "three";
 import { Float, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { GLTF } from "three-stdlib";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useThree } from "@react-three/fiber";
 import { useRef } from "react";
-import { useScrollytelling } from "~/lib/scrollytelling-client";
 import { useMedia } from "~/hooks/use-media";
 import { isProd } from "~/lib/constants";
 
@@ -33,18 +32,12 @@ type GLTFResult = GLTF & {
 useGLTF.preload((isProd ? "/teams" : "") + "/models/house.glb");
 
 const HouseModel = () => {
-  const { timeline } = useScrollytelling();
   const { nodes, materials } = useGLTF(
     (isProd ? "/teams" : "") + "/models/house.glb"
   ) as GLTFResult;
   const innerRef = useRef<THREE.Group>(null);
   const width = useThree((state: { viewport: { width: any; }; }) => state.viewport.width);
   const isMobileSize = useMedia("(max-width: 768px)");
-  useFrame(() => {
-    if (!innerRef.current || !timeline?.scrollTrigger) return;
-
-    innerRef.current.rotation.y = Math.PI * 2 * timeline.scrollTrigger.progress;
-  });
 
   return (
     <Float>
