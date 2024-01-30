@@ -2,7 +2,7 @@
 
 .spacer {
   position: relative;
-  height: 500vh;
+  height: 350vh;
 }
 
 .pin {
@@ -29,16 +29,16 @@
   }
 
   .paragraph {
-    font-size: tovw(56px, 'desktop', 20px);
-    font-weight: 900;
-    font-family: var(--font-basement-grotesque, var(--font-system));
+    font-size: tovw(57px, 20px, 'desktop');
+    font-weight: 600;
+    font-family: var(--font-pp-mori, var(--font-system));
     max-width: max-content;
     margin: 0 auto;
     text-transform: capitalize;
     line-height: calc(86 / 72);
 
     @media screen and (max-width: 800px) {
-      font-size: tovw(17px, 'mobile');
+      font-size: tovw(28px, 22px, 'mobile');
     }
 
     .highlight {

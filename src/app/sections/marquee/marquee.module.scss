@@ -1,10 +1,10 @@
 @import '../../../css/helpers';
 
 .section {
-  height: 500vh;
+  height: 420vh;
   position: relative;
   z-index: 1;
-  font-family: var(--font-basement-grotesque, var(--font-system));
+  font-family: var(--font-pp-mori, var(--font-system));
 }
 
 .pinned {
@@ -15,7 +15,7 @@
   display: flex;
   justify-content: flex-end;
 
-  --svg-width: #{tovw(674px)};
+  --svg-width: #{tovw(777px)};
   --right: calc(50vw - var(--svg-width) / 2);
 }
 
@@ -28,7 +28,7 @@
   width: fit-content;
   white-space: nowrap;
   font-weight: 900;
-  font-size: tovw(400px);
+  font-size: tovw(700px);
   cursor: default;
   user-select: none;
 }

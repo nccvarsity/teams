@@ -2,7 +2,7 @@ import * as Scrollytelling from "~/lib/scrollytelling-client";
 import s from "./marquee.module.scss";
 import { forwardRef } from "react";
 
-const phrase = "...THE DREAM TEAM...";
+const phrase = "THE DR∑AM  TEÅM  →";
 const splitted = phrase.split("");
 const charsLength = splitted.length;
 

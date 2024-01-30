@@ -16,23 +16,24 @@
   --color-text-primary: #fff;
 
   --color-background-highlight: #fff;
-  --color-background-box: #ffb0e9;
+  --color-background-box: #e54602;
   --color-text-highlight: #111;
 
   --color-text-button: #111;
-  --color-background-button-1: #ffb0e9;
-  --color-background-button-2: #fff;
 
-  --color-background-tileboard: #ffb0e9;
+  --color-background-tileboard: #e54602;
   --color-background-tile-primary: #555;
   --color-background-tile-secondary: #777;
-  --color-background-tile-primary-expanded: #200;
-  --color-background-tile-secondary-expanded: #002;
-  --color-expand-chevron: #ffb0e9;
+  --color-background-tile-primary-expanded: #321515;
+  --color-background-tile-secondary-expanded: #170202;
+  --color-expand-chevron: #e54602;
 
-  --wavy-1: #7ae582;
-  --wavy-2: #25a18e;
-  --wavy-3: #004e64;
+  // --wavy-1: #7ae582;
+  // --wavy-2: #25a18e;
+  // --wavy-3: #004e64;
+  --wavy-1: #e59d02;
+  --wavy-2: #e55502;
+  --wavy-3: #970122;
 
   --mask: linear-gradient(
       to bottom,
@@ -55,7 +56,6 @@
     rgb(0 0 0 / 0.15) 1%,
     rgb(0 0 0 / 0) 100%
   );
-
 }
 
 html {
@@ -70,13 +70,12 @@ html {
   // tweak if site is light mode.
   color-scheme: dark;
   background-color: #333;
-
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-tap-highlight-color: rgb(255 255 255 / 0) !important;
 }
 
 body {
   background-color: #222;
-  font-family: var(--font-body);
+  font-family: var(--font-pp-mori), var(--font-body);
   transition: opacity #{$duration / 3 + 's'} ease-in;
 }
 

@@ -18,7 +18,7 @@ export interface tileMetaData {
 export const Tileboard = () => {
   const tileMetaData: tileMetaData[] = [
     {
-      name: 'PHOTOGS',
+      name: 'PHO₸OGS',
       url: 'https://www.newcreation.org.sg/',
       description: `
       (っ◔◡◔)っ📸💥| If you've got a case of serious shutterfinger, we
@@ -29,7 +29,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'SOCIAL',
+      name: 'SÖCIAL',
       url: 'https://www.newcreation.org.sg/',
       description: `
       ( *･ω･)✎📜 | We give life to words, supporting the ministry by crafting
@@ -41,7 +41,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'FOYER EXP',
+      name: 'ƑOYER ℓXP',
       url: 'https://www.newcreation.org.sg/',
       description: `
       (∩｀-´)⊃━☆ﾟ.*･｡ﾟ 💫☕ | Enjoy the fun and inviting atmosphere
@@ -52,7 +52,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'LORO',
+      name: 'L○R○',
       url: 'https://www.newcreation.org.sg/',
       description: `
       ( ｡◕‿◕｡)🏠 | V is family. From welcoming you at the door,
@@ -69,7 +69,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'FOYER OPS',
+      name: 'FOŸER OPS',
       url: 'https://www.newcreation.org.sg/',
       description: `
       ( ｡◕‿◕｡)🏠 | V is family. From welcoming you at the door,
@@ -83,7 +83,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'AUDI OPS',
+      name: 'ΔUDI OPS',
       url: 'https://www.newcreation.org.sg/',
       description: `
       ( ｡◕‿◕｡)🏠 | V is family. From welcoming you at the door,
@@ -97,7 +97,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'LOGS',
+      name: 'L●GS',
       url: 'https://www.newcreation.org.sg/',
       description: `
       ᕦ( ⏓ ͜ʖ ⏓ )ᕥ 💨⛺ | First to arrive on scene, we ensure everything is
@@ -114,7 +114,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'SECURITY',
+      name: 'S℮CURĪTY',
       url: 'https://www.newcreation.org.sg/',
       description: `
       🛡️( ⌐■_■)🛡️ | Alert and swift to respond to changes on the ground,
@@ -129,7 +129,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'VIDEO',
+      name: 'VIÐE∅',
       url: 'https://www.newcreation.org.sg/',
       description: `
       💻 (⌨️•‿•⌨️) 💻| Excited about the dazzling visuals on screen? From lyrics
@@ -145,7 +145,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'STAGE',
+      name: 'STΔGE',
       url: 'https://www.newcreation.org.sg/',
       description: `
       Σ(▼□▼ ﾒ ) ☆🎬☆ | We operate in the shadows, overseeing the entire

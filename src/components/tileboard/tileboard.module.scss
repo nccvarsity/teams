@@ -65,15 +65,17 @@
   &Title {
     padding-left: 4px;
     position: absolute;
-    top: calc($tile-height - 4.7rem);
+    top: calc($tile-height - 4.3rem);
     transition-duration: 500ms / $duration;
     font-size: 5rem;
+    font-family: var(--font-pp-rader), var(--font-system);
+    letter-spacing: 2px;
     text-transform: uppercase;
     width: 120%;
 
     &Reduced {
       font-size: 4.6rem;
-      top: calc($tile-height - 4.5rem);
+      top: calc($tile-height - 4.2rem);
     }
 
     &ReducedMore {
@@ -147,7 +149,7 @@
   height: $tile-height-expanded;
 
   &Title {
-    font-weight: bold;
+    letter-spacing: 4px;
   }
 }
 

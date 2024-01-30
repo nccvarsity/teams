@@ -31,8 +31,8 @@ const ExpandableTile: FC<ExpandableTileProps> = ({ metaData, zIndex, index }) =>
   function handleTitleClick() {
     metaData.toggleState.handleToggle();
   }
-  const longName = metaData.name.length > 6;
-  const veryLongName = metaData.name.length > 8;
+  const longName = metaData.name.length > 7;
+  const veryLongName = metaData.name.length > 10;
   return (
     <>
       <div onClick={handleClick} style={{ zIndex: zIndex }} className={tileClassName}>

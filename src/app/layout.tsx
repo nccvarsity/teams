@@ -12,14 +12,31 @@ import { Providers } from './providers'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body' })
 
-const basementGrotesque = localFont({
+// const basementGrotesque = localFont({
+//   src: [
+//     { path: "./fonts/BasementGrotesque-Regular.woff2", weight: "400" },
+//     { path: "./fonts/BasementGrotesque-BlackExpanded.woff2", weight: "800" },
+//     {
+//       path: "./fonts/BasementGrotesqueDisplay-UltraBlackExtraExpanded.woff2",
+//       weight: "900",
+//     },
+//   ],
+//   fallback: ["var(--font-system)"],
+//   preload: true,
+// });
+
+const ppRader = localFont({
   src: [
-    { path: "./fonts/BasementGrotesque-Regular.woff2", weight: "400" },
-    { path: "./fonts/BasementGrotesque-BlackExpanded.woff2", weight: "800" },
-    {
-      path: "./fonts/BasementGrotesqueDisplay-UltraBlackExtraExpanded.woff2",
-      weight: "900",
-    },
+    { path: "./fonts/PPRader-Bold.otf", weight: "900" }
+  ],
+  fallback: ["var(--font-system)"],
+  preload: true,
+});
+
+const ppMori = localFont({
+  src: [
+    { path: "./fonts/PPMori-Regular.otf", weight: "400" },
+    { path: "./fonts/PPMori-SemiBold.otf", weight: "600" }
   ],
   fallback: ["var(--font-system)"],
   preload: true,
@@ -46,7 +63,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <html
       lang="en"
       style={{
-        ["--font-basement-grotesque" as string]: `${basementGrotesque.style.fontFamily}, var(--font-system), sans-serif`
+        ["--font-pp-rader" as string]: `${ppRader.style.fontFamily}, var(--font-system), sans-serif`,
+        ["--font-pp-mori" as string]: `${ppMori.style.fontFamily}, var(--font-system), sans-serif`
       }}
       >
       <body style={{ opacity: 0 }} className={inter.variable}>
