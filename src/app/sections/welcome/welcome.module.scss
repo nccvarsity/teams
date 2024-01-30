@@ -40,13 +40,14 @@
   @media screen and (max-width: 800px) {
     display: flex;
     flex-direction: column;
-    margin-top: tovw(24px, 'tablet', 24px);
-    gap: tovw(24px, 'desktop', 24px);
+    margin-top: tovw(18px, 18px, 'tablet');
+    gap: tovw(18px, 18px, 'desktop');
   }
 
   p {
     text-align: justify;
-    font-size: tovw(14px, 'desktop', 14px);
+    font-size: tovw(24px, 18px, 'desktop');
+    color: var(--color-text-manifesto);
 
     &:nth-child(1) {
       grid-area: 1 / 1 / 2 / 5;

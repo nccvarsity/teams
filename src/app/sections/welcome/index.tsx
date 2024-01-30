@@ -26,12 +26,7 @@ export const Welcome = () => {
             <div className={s["content"]}>
               <div className={s["footer"]}>
                 <p>
-                  We are the Varsity dream team, serving in the Father's house
-                  as His chosen and beloved sons and daughters. We come with whatever we
-                  have—sometimes with only empty hands yet with hearts fully open.
-                  To think that we would get to serve the King of kings, one can hardly fathom.
-                  Yet before we even lifted a finger, He was already so proud of us. <i>How can this be?</i>
-                  <br />
+                  We are the Varsity dream team, serving in the Father's house as His chosen and beloved sons and daughters. We come with what we have—sometimes only empty hands yet with hearts full and fully open. Open to hear His heart, and open to be the channel through which His heartbeat can be heard.
                 </p>
                 <br />
                 <svg
@@ -45,21 +40,15 @@ export const Welcome = () => {
                   />
                 </svg>
                 <p>
-                  We are intentional in creating God-moments, and experiencing
-                  them ourselves. Wherever you or the state of your heart may be,
-                  there will always be a seat at the table—with your name on it!
-                  Though there might be times you may be asked to give up your seat.
-                  That's because He desires for you to come and sit closer.
-                  <br />
+                  We are intentional in creating God-moments, and experiencing them ourselves. Wherever you or the state of your heart may be, there will always be a seat at the table—with your name on it! 
                 </p>
                 <br />
                 <p>
-                  So what are you waiting for? There is nothing to prove,
-                  nothing to lose, and everything to gain. We know that eternity is too great for us
-                  to spare a second of hesitation. Surely, we are called for such a time as this.
+                  So what are you waiting for? We know that eternity is too great for us to spare a second for hesitation. Surely, we were called for such a time as this.
                   <br />
                   <br />
-                  We are the dream team, because we are His dream, and we make His dream our own.
+                  <br />
+                  Come home to the heartbeat of the house.
                 </p>
               </div>
             </div>

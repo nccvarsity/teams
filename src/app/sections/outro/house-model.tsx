@@ -50,12 +50,6 @@ const HouseModel = () => {
     <Float>
       <group dispose={null} scale={isMobileSize ? width * 0.42 : width * 0.25} ref={innerRef}>
         <group position={[0, 0, 0]} rotation={[0, 10, 0]}>
-          {/* <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.House.geometry}
-            material={materials.m_wall}
-          /> */}
           <mesh
             castShadow
             receiveShadow
@@ -116,7 +110,7 @@ export const CanvasWithHouseModel = () => {
           height: "100vh",
         });
         gsap.to(
-          canvasRef.current?.closest('[data-mac-canvas-container="true"]') ||
+          canvasRef.current?.closest('[data-house-canvas-container="true"]') ||
             null,
           { opacity: 1, scale: 1, duration: 0.15 }
         );
@@ -124,7 +118,7 @@ export const CanvasWithHouseModel = () => {
       gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       style={{ opacity: 0, scale: 1 }}
       ref={canvasRef}
-      data-mac-canvas-container
+      data-house-canvas-container
     >
       <pointLight position={[1, 0, 0]} intensity={1.5} />
       <pointLight position={[0, 0, 1]} intensity={1.7} />
