@@ -37,7 +37,7 @@ const VarsityModel = () => {
 
   return (
     <Float>
-      <group dispose={null} scale={isMobileSize ? width * 1.2 : width * 0.5} ref={innerRef}>
+      <group dispose={null} scale={isMobileSize ? width * 1.2 : width * 0.42} ref={innerRef}>
         <group position={[0, 0, 0]} rotation={[0, 0.05, 0.05]}>
           <mesh
             castShadow
@@ -63,7 +63,7 @@ export const CanvasWithVarsityModel = () => {
           height: "100vh",
         });
         gsap.to(
-          canvasRef.current?.closest('[data-mac-canvas-container="true"]') ||
+          canvasRef.current?.closest('[data-vlogo-canvas-container="true"]') ||
             null,
           { opacity: 0.7, scale: 1, duration: 0.15 }
         );
@@ -71,7 +71,7 @@ export const CanvasWithVarsityModel = () => {
       gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       style={{ opacity: 0, scale: 1 }}
       ref={canvasRef}
-      data-mac-canvas-container
+      data-vlogo-canvas-container
     >
       <pointLight position={[1, 0, 0]} intensity={1.5} />
       <pointLight position={[0, 0, 1]} intensity={1.7} />

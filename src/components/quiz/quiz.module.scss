@@ -12,10 +12,9 @@
 .title {
   font-size: tovw(56px, 'desktop', 20px);
   font-weight: 900;
-  font-family: var(--font-pp-rader, var(--font-system));
+  font-family: var(--font-pp-mori, var(--font-system));
   max-width: max-content;
   margin: 0 auto;
-  text-transform: capitalize;
   line-height: calc(86 / 72);
   text-align: center;
   // margin-top: 10vh;
@@ -55,7 +54,7 @@
     transition-duration: 500ms / $duration;
     font-size: 1rem;
     padding: 1ch;
-    font-family: var(--font-pp-rader, var(--font-system));
+    font-family: var(--font-pp-mori, var(--font-system));
   }
 
   &.selected {

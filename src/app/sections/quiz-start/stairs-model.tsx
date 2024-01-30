@@ -73,7 +73,7 @@ const StairsModel = ({ onPress }: { onPress: () => void }) => {
     <Float onClick={onPress} floatIntensity={0.1} rotationIntensity={0.5}>
       <group
         dispose={null}
-        scale={isMobileSize ? width * 0.42 : width * 0.25}
+        scale={isMobileSize ? width * 0.42 : width * 0.18}
         ref={innerRef}
       >
         <group scale={[scale, scale * 1.2, scale]}>

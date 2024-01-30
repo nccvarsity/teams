@@ -32,11 +32,14 @@ export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
     <FadeInOut disable={isDisable}>
       <section id={'form'}>
         <div className={s.content}>
-          <h2>What's your name?</h2>
+          <p className={s.disclaimer}>For a more personalized experience, please provide the following details. Your personal information will not be saved. Otherwise, skip by clicking 'Next'.</p>
+        </div>
+        <div className={s.content}>
+          <h2 className={s.formQuestion}>What is your name?</h2>
           <input type="text" placeholder={'Name'} onChange={handleNameChange} />
         </div>
         <div className={s.content}>
-          <h2>Which varsity cluster are you in?</h2>
+          <h2 className={s.formQuestion}>Which cluster are you in?</h2>
           <div className={s.gridContainer}>
             {clusters.data.map((cluster, index) => (
               <div

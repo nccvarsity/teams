@@ -48,7 +48,7 @@ const HouseModel = () => {
 
   return (
     <Float>
-      <group dispose={null} scale={isMobileSize ? width * 0.42 : width * 0.25} ref={innerRef}>
+      <group dispose={null} scale={isMobileSize ? width * 0.42 : width * 0.22} ref={innerRef}>
         <group position={[0, 0, 0]} rotation={[0, 10, 0]}>
           <mesh
             castShadow

@@ -17,20 +17,20 @@ export const Quiz = () => {
       >
         <section id={'quiz'}>
           <div className={s['pin']}>
-            <div className="wrapper">
-              <div className={s['content']}>
-                <Animation
-                  tween={{
-                    start: 50,
-                    end: 100,
-                    fromTo: [{ opacity: 1 }, { opacity: 0, ease: 'power1' }]
-                  }}
-                >
-                  <span className={s['title']}>
-                    Not sure where to start? Let's go find out!
-                  </span>
-                </Animation>
-              </div>
+            <div className={s['content']}>
+              <Animation
+                tween={{
+                  start: 50,
+                  end: 100,
+                  fromTo: [{ opacity: 1 }, { opacity: 0, ease: 'power1' }]
+                }}
+              >
+                <span className={s['title']}>
+                  Not sure where to start?
+                  <br/>
+                  Head to the Upper Room to find out!
+                </span>
+              </Animation>
             </div>
           </div>
           <div className={s['model-container']}>
