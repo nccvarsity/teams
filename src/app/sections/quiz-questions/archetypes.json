@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "type": "Dreamer",
+      "tags": ["Creative", "Friendly", "Capture", "Hands-on", "Adaptable"],
+      "teams": ["Photogs", "Foyer Experience", "Lights"],
+      "sees_you": []
+    },
+    {
+      "type": "Artisan",
+      "tags": ["Creative", "Detailed", "Focused", "Capture", "Worshipful"],
+      "teams": ["Social", "Photogs", "Lights"],
+      "sees_you": []
+    },
+    {
+      "type": "Scribe",
+      "tags": ["Detailed", "Observant", "Focused", "Adaptable", "Calm"],
+      "teams": ["Security", "Social", "Video"],
+      "sees_you": []
+    },
+    {
+      "type": "Psalmist",
+      "tags": ["Worshipful", "Friendly", "Observant", "Focused", "Capture"],
+      "teams": ["Social", "LORO", "Audi Ops"],
+      "sees_you": []
+    },
+    {
+      "type": "Builder",
+      "tags": ["Hands-on", "Behind", "Observant", "Detailed", "Decisive"],
+      "teams": ["Logistics", "Security", "Foyer Experience"],
+      "sees_you": []
+    },
+    {
+      "type": "Storyteller",
+      "tags": ["Friendly", "Adaptable", "Calm", "Capture", "Worshipful"],
+      "teams": ["LORO", "Foyer Experience", "Video"],
+      "sees_you": []
+    },
+    {
+      "type": "Waymaker",
+      "tags": ["Hands-on", "Creative", "Calm", "Adaptable", "Decisive"],
+      "teams": ["Foyer Ops", "Logistics", "Stage"],
+      "sees_you": []
+    },
+    {
+      "type": "Explorer",
+      "tags": ["Hands-on", "Creative", "Friendly", "Observant", "Capture"],
+      "teams": ["Audi Ops", "Foyer Experience", "Social"],
+      "sees_you": []
+    },
+    {
+      "type": "Unnamed Servant",
+      "tags": ["Behind", "Focused", "Calm", "Hands-on", "Worshipful"],
+      "teams": ["Logistics", "Security", "Video"],
+      "sees_you": []
+    },
+    {
+      "type": "Forerunner",
+      "tags": ["Behind", "Observant", "Focused", "Hands-on", "Decisive"],
+      "teams": ["Logistics", "Security", "Foyer Ops"],
+      "sees_you": []
+    },
+    {
+      "type": "One whom Jesus loves",
+      "tags": ["Worshipful", "Behind", "Calm", "Creative", "Detailed"],
+      "teams": ["Audi Ops", "Photogs", "LORO"],
+      "sees_you": []
+    }
+  ]
+}

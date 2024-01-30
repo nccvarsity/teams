@@ -1,327 +1,154 @@
 {
-  "data": [{
-      "key": 0,
-      "question": "Me playing Jenga:",
-      "answer": "Calm, poised zen like",
-      "tags": ["Calm under pressure"],
-      "imageUrl": "https://media.giphy.com/media/Wum3xN8DvquIw/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "Me playing Jenga:",
-      "answer": "Freaking Out",
-      "tags": ["Detailed"],
-      "imageUrl": "https://media.giphy.com/media/9GJ2pJZjSBs9V7RxVX/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "Me at a social gathering:",
-      "answer": "sheldon anxiety gif",
-      "tags": ["Behind"],
-      "imageUrl": "https://media.giphy.com/media/Rpf6p54DttJEk/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "Me at a social gathering:",
-      "answer": "Door Greeter",
-      "tags": ["Front-facing"],
-      "imageUrl": "https://media.giphy.com/media/4VlbCwmZlV2U0/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "Me at a social gathering:",
-      "answer": "People Watching",
-      "tags": ["Observant"],
-      "imageUrl": "https://media.giphy.com/media/SYABnw07wJsV7G8ju5/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "Me at a social gathering:",
-      "answer": "Free Flow Dancing",
-      "tags": ["Creative"],
-      "imageUrl": "https://media.giphy.com/media/d9r0mMnFYmq7S/giphy.gif"
-  }, {
-      "key": "Choose the one that describes you most accurately:/Observant",
-      "question": "Choose the one that describes you most accurately:",
-      "answer": "You're usually the first few to notice when your friend has a new haircut/new clothes/new bag etc. ",
-      "tags": ["Observant"]
-  }, {
-      "key": 0,
-      "question": "Choose the one that describes you most accurately:",
-      "answer": "You're always open to spontaneous outings with friends and you're okay to change your plans. ",
-      "tags": ["Go with the flow/Adaptable"]
-  }, {
-      "key": 0,
-      "question": "Choose the one that describes you most accurately:",
-      "answer": "You're calm and collected while playing MLBB, cool and composed in many situations. ",
-      "tags": ["Calm under pressure"]
-  }, {
-      "key": "If I were at a board game cafe with my friends, I would... /Detailed",
-      "question": "If I were at a board game cafe with my friends, I would... ",
-      "answer": "Already have an ordered list of games that I want to play from beginning to end. ",
-      "tags": ["Structured/Planning"]
-  }, {
-      "key": 0,
-      "question": "If I were at a board game cafe with my friends, I would... ",
-      "answer": "Come up with a convoluted strategy on how to win the game. ",
-      "tags": ["Creative"]
-  }, {
-      "key": 0,
-      "question": "If I were at a board game cafe with my friends, I would... ",
-      "answer": "Buy some snacks and drinks from the counter.",
-      "tags": ["Front-facing"]
-  }, {
-      "key": "My study notes are... /Detailed",
-      "question": "My study notes are... ",
-      "answer": "Detailed. I have all the important stuff written down. ",
-      "tags": ["Detailed"]
-  }, {
-      "key": 0,
-      "question": "My study notes are... ",
-      "answer": "In the form of doodles, mind-maps or word clouds. Free and easy. \n",
-      "tags": ["Creative"]
-  }, {
-      "key": 0,
-      "question": "My study notes are... ",
-      "answer": "Structured. Written on my computer with neat bullet points, headers and sub-headers in a standard font. ",
-      "tags": ["Structured/Planning"]
-  }, {
-      "key": 0,
-      "question": "My study notes are... ",
-      "answer": "Partially written on my notebook, partially typed out. I dont have a fixed way of taking notes. ",
-      "tags": ["Go with the flow/Adaptable"]
-  }, {
-      "key": "If I were a GIF I would be... /Behind",
-      "question": "If I were a GIF I would be... ",
-      "answer": "fade into background",
-      "tags": ["Behind"],
-      "imageUrl": "https://media.giphy.com/media/a93jwI0wkWTQs/giphy.gif"
-  }, {
-      "key": "If I were a GIF I would be... /Front-facing",
-      "question": "If I were a GIF I would be... ",
-      "answer": "extrovert gif ",
-      "tags": ["Front-facing"],
-      "imageUrl": "https://media.giphy.com/media/5heRf3BAtwUtwnCc2m/giphy.gif"
-  }, {
-      "key": "If I were a GIF I would be... /Encouraging",
-      "question": "If I were a GIF I would be... ",
-      "answer": "You go glen coco gif",
-      "tags": ["Encouraging"],
-      "imageUrl": "https://media.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif"
-  }, {
-      "key": "If I were a GIF I would be... /Creative",
-      "question": "If I were a GIF I would be... ",
-      "answer": "Abstract art image",
-      "tags": ["Creative"],
-      "imageUrl": "https://media.giphy.com/media/MvovQGsMBY9H2/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "If I were a GIF I would be... ",
-      "answer": "i love excel gif",
-      "tags": ["Structured/Planning"],
-      "imageUrl": "https://media.giphy.com/media/OlfmxuWHCmw2Q/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "If I were a GIF I would be... ",
-      "answer": "cool as a cucumber",
-      "tags": ["Calm under pressure"],
-      "imageUrl": "https://media.giphy.com/media/VHwGQNt8L0Pv7BYWB0/giphy.gif"
-  }, {
-      "key": "My favourite activity at V Camp is.../Behind",
-      "question": "My favourite activity at V Camp is...",
-      "answer": "Worship sessions with my VG.",
-      "tags": ["Behind"]
-  }, {
-      "key": 0,
-      "question": "My favourite activity at V Camp is...",
-      "answer": "Taking photos with my friends.",
-      "tags": ["Front-facing"]
-  }, {
-      "key": 0,
-      "question": "My favourite activity at V Camp is...",
-      "answer": "Praying and/or writing notes for people.",
-      "tags": ["Encouraging"]
-  }, {
-      "key": 0,
-      "question": "My favourite activity at V Camp is...",
-      "answer": "Planning in advance how I spend the pockets of free time.",
-      "tags": ["Detailed"]
-  }, {
-      "key": "When singing Karaoke with my friends, I... /Observant",
-      "question": "When singing Karaoke with my friends, I... ",
-      "answer": "Tend to notice who sings off-key. ",
-      "tags": ["Observant"]
-  }, {
-      "key": 0,
-      "question": "When singing Karaoke with my friends, I... ",
-      "answer": "Have a curated list of songs I want to sing with my friends.",
-      "tags": ["Detailed"]
-  }, {
-      "key": 0,
-      "question": "When singing Karaoke with my friends, I... ",
-      "answer": "Immediately search for my favourite JJ Lin song.",
-      "tags": []
-  }, {
-      "key": 0,
-      "question": "When singing Karaoke with my friends, I... ",
-      "answer": "Ask who wants to order food or drinks. ",
-      "tags": ["Front-facing"]
-  }, {
-      "key": 0,
-      "question": "I share similar traits with...",
-      "answer": "minions",
-      "tags": [],
-      "imageUrl": "https://media.giphy.com/media/m6OomwWCojfS8/giphy.gif"
-  }, {
-      "key": "I share similar traits with.../Observant",
-      "question": "I share similar traits with...",
-      "answer": "sherlock",
-      "tags": ["Observant"],
-      "imageUrl": "https://media.giphy.com/media/l0MYGtCMbPTYWOzaU/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "I share similar traits with...",
-      "answer": "marie kondo",
-      "tags": ["Structured/Planning"],
-      "imageUrl": "https://media.giphy.com/media/XI1FvkWa2oCx8DXAHo/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "I share similar traits with...",
-      "answer": "lumiere",
-      "tags": ["Coffee"],
-      "imageUrl": "https://media.giphy.com/media/z6eLU1st8hAvm/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "My favorite beverage is...",
-      "answer": "Hot Tea",
-      "tags": [],
-      "imageUrl": "https://media.giphy.com/media/qrOTVsvYm1JIc/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "My favorite beverage is...",
-      "answer": "Milo Dinosaur",
-      "tags": [],
-      "imageUrl": "https://media.giphy.com/media/ACymXQPupuJfa/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "My favorite beverage is...",
-      "answer": "Bubble Tea",
-      "tags": [],
-      "imageUrl": "https://media.giphy.com/media/3b9OHGvLptiuGSGpib/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "My favorite beverage is...",
-      "answer": ["Coffee"],
-      "tags": ["Coffee"],
-      "imageUrl": "https://media.giphy.com/media/rsQu1BC0BF8wo/giphy.gif"
-  }, {
-      "key": "On free Fridays, I am most likely to.../Front-facing",
-      "question": "On free Fridays, I am most likely to...",
-      "answer": "Try some new activity.",
-      "tags": ["Front-facing"]
-  }, {
-      "key": 0,
-      "question": "On free Fridays, I am most likely to...",
-      "answer": "Go ahead with whatever plans I've made.",
-      "tags": ["Structured/Planning"]
-  }, {
-      "key": 0,
-      "question": "On free Fridays, I am most likely to...",
-      "answer": "Go wherever my friends are going.",
-      "tags": ["Go with the flow/Adaptable"]
-  }, {
-      "key": 0,
-      "question": "On free Fridays, I am most likely to...",
-      "answer": "Stay home and chill with a hot cuppa.",
-      "tags": ["Coffee"]
-  }, {
-      "key": "It's exam season - what do you do?/Encouraging",
-      "question": "It's exam season - what do you do?",
-      "answer": "Create welfare packs for my friends and study with them. I'll share my notes too. ",
-      "tags": ["Encouraging"]
-  }, {
-      "key": 0,
-      "question": "It's exam season - what do you do?",
-      "answer": "Study whatever I can and pray that what I study appears in the test.",
-      "tags": ["Go with the flow/Adaptable"]
-  }, {
-      "key": 0,
-      "question": "It's exam season - what do you do?",
-      "answer": "I've got it all under control. I usually have a study plan.",
-      "tags": ["Calm under pressure"]
-  }, {
-      "key": 0,
-      "question": "It's exam season - what do you do?",
-      "answer": "Exams..? I raise a hallelujah~",
-      "tags": []
-  }, {
-      "key": 0,
-      "question": "The Brooklyn 99 character that is most like me is... ",
-      "answer": "doug judy",
-      "tags": ["Behind"],
-      "imageUrl": "https://media.giphy.com/media/8mdUDkUoAPvEpR8ZIl/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "The Brooklyn 99 character that is most like me is... ",
-      "answer": "jake",
-      "tags": ["Front-facing"],
-      "imageUrl": "https://media.giphy.com/media/dsvAYoyx98FnWVNAnt/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "The Brooklyn 99 character that is most like me is... ",
-      "answer": "boyle",
-      "tags": ["Encouraging"],
-      "imageUrl": "https://media.giphy.com/media/dy4hUOmmCSuoM5aCQs/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "The Brooklyn 99 character that is most like me is... ",
-      "answer": "terry",
-      "tags": ["Observant"],
-      "imageUrl": "https://media.giphy.com/media/BBdydM1hwC4VO/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "The Brooklyn 99 character that is most like me is... ",
-      "answer": "roza",
-      "tags": ["Detailed"],
-      "imageUrl": "https://media.giphy.com/media/9zWVbGDeqbOJa/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "The Brooklyn 99 character that is most like me is... ",
-      "answer": "gina",
-      "tags": ["Creative"],
-      "imageUrl": "https://media.giphy.com/media/RL26WMq9eDAuA/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "The Brooklyn 99 character that is most like me is... ",
-      "answer": "santiago",
-      "tags": ["Coffee"],
-      "imageUrl": "https://media.giphy.com/media/d829tkYjf1BZDGPgPX/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "The Brooklyn 99 character that is most like me is... ",
-      "answer": "hitchcock and scully",
-      "tags": ["Go with the flow/Adaptable"],
-      "imageUrl": "https://media.giphy.com/media/Mc1q8G7PAibP17BU84/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "The Brooklyn 99 character that is most like me is... ",
-      "answer": "holt",
-      "tags": ["Calm under pressure"],
-      "imageUrl": "https://media.giphy.com/media/JBAguE5Kq1Hy0/giphy.gif"
-  }, {
-      "key": 0,
-      "question": "The Brooklyn 99 character that is most like me is... ",
-      "answer": "What's Brooklyn 99??",
-      "tags": ["Front-facing"]
-  }, {
-      "key": "When my friend shares that they are going through a tough season, I...  /Behind",
-      "question": "When my friend shares that they are going through a tough season, I...  ",
-      "answer": "Listen and then make a mental note to pray for them in my own time.",
-      "tags": ["Behind"]
-  }, {
-      "key": "When my friend shares that they are going through a tough season, I...  /Encouraging",
-      "question": "When my friend shares that they are going through a tough season, I...  ",
-      "answer": "Listen and give them a hug and encourage them.",
-      "tags": ["Encouraging"]
-  }, {
-      "key": "When my friend shares that they are going through a tough season, I...  /Detailed",
-      "question": "When my friend shares that they are going through a tough season, I...  ",
-      "answer": "Listen and remember what they shared; follow-up with them next time we meet. ",
-      "tags": ["Detailed"]
-  }]
+  "data": [
+    {
+      "key": 1,
+      "question": "You see a man carrying a pitcher of water. What do you do?",
+      "answer": "Go to him and offer him help",
+      "tags": ["Hands-on", "Decisive", "Friendly"]
+    },
+    {
+      "key": 1,
+      "question": "You see a man carrying a pitcher of water. What do you do?",
+      "answer": "Follow him to wherever he's going",
+      "tags": ["Calm", "Adaptable", "Worshipful"]
+    },
+    {
+      "key": 1,
+      "question": "You see a man carrying a pitcher of water. What do you do?",
+      "answer": "Observe him and do a vibe check",
+      "tags": ["Observant", "Behind", "Focused", "Detailed"]
+    },
+    {
+      "key": 2,
+      "question": "You follow the man to a flight of stairs. As you head up, you...",
+      "answer": "Light up a candle for better vision, and for better vibes",
+      "tags": ["Adaptable", "Detailed", "Creative", "Hands-on"]
+    },
+    {
+      "key": 2,
+      "question": "You follow the man to a flight of stairs. As you head up, you...",
+      "answer": "Appreciate the beauty of the spiral staircase",
+      "tags": ["Creative", "Calm"]
+    },
+    {
+      "key": 2,
+      "question": "You follow the man to a flight of stairs. As you head up, you...",
+      "answer": "Wish you could take some photos, but alas, the year is ~30 AD",
+      "tags": ["Capture", "Behind"]
+    },
+    {
+      "key": 3,
+      "question": "You reach a large Upper Room, fully prepared and fully furnished.",
+      "answer": "\"Yo, where's Jesus?\"",
+      "tags": ["Worshipful", "Focused"]
+    },
+    {
+      "key": 3,
+      "question": "You reach a large Upper Room, fully prepared and fully furnished.",
+      "answer": "\"Yo, where're my homies Peter and John?\"",
+      "tags": ["Friendly", "Creative"]
+    },
+    {
+      "key": 3,
+      "question": "You reach a large Upper Room, fully prepared and fully furnished.",
+      "answer": "\"Yo, where do I wash my feet?\"",
+      "tags": ["Behind", "Hands-on"]
+    },
+    {
+      "key": 4,
+      "question": "Choose the one you relate to the most:",
+      "answer": "John; I am the disciple whom Jesus loves",
+      "tags": ["Worshipful", "Calm", "Focused"]
+    },
+    {
+      "key": 4,
+      "question": "Choose the one you relate to the most:",
+      "answer": "Peter; I often reply when nobody's asking",
+      "tags": ["Decisive", "Detailed", "Creative"]
+    },
+    {
+      "key": 4,
+      "question": "Choose the one you relate to the most:",
+      "answer": "James; I'm always there when Jesus does amazing things",
+      "tags": ["Observant", "Hands-on"]
+    },
+    {
+      "key": 4,
+      "question": "Choose the one you relate to the most:",
+      "answer": "Thomas; I doubt this quiz is legit",
+      "tags": ["Adaptable", "Behind"]
+    },
+    {
+      "key": 5,
+      "question": "Everyone has arrived and it's time for the Last Supper.",
+      "answer": "Why is everyone sitting on the same side of the table?",
+      "tags": ["Observant", "Capture"]
+    },
+    {
+      "key": 5,
+      "question": "Everyone has arrived and it's time for the Last Supper.",
+      "answer": "*Looks around to see if everyone has their cutlery and utensils*",
+      "tags": ["Focused", "Behind", "Detailed"]
+    },
+    {
+      "key": 5,
+      "question": "Everyone has arrived and it's time for the Last Supper.",
+      "answer": "Start a conversation... perhaps something about greatness?",
+      "tags": ["Calm", "Decisive", "Creative"]
+    },
+    {
+      "key": 6,
+      "question": "Supper's over and your boy Peter starts spittin claims that he's the greatest. What do you do?",
+      "answer": "Do a rugby tackle and take him down",
+      "tags": ["Decisive", "Hands-on"]
+    },
+    {
+      "key": 6,
+      "question": "Supper's over and your boy Peter starts spittin claims that he's the greatest. What do you do?",
+      "answer": "Wait for Jesus to tell him about the roosters",
+      "tags": ["Adaptable", "Worshipful", "Calm"]
+    },
+    {
+      "key": 6,
+      "question": "Supper's over and your boy Peter starts spittin claims that he's the greatest. What do you do?",
+      "answer": "Root for him, but consider how the others might feel",
+      "tags": ["Friendly", "Observant"]
+    },
+    {
+      "key": 7,
+      "question": "Jesus politely interrupts the conversation and talks about true greatness. At this point, you would be:",
+      "answer": "Sitting at His feet to listen to everything He has to say",
+      "tags": ["Focused", "Worshipful", "Adaptable"]
+    },
+    {
+      "key": 7,
+      "question": "Jesus politely interrupts the conversation and talks about true greatness. At this point, you would be:",
+      "answer": "Getting a glass of water in case Jesus gets thirsty",
+      "tags": ["Observant", "Hands-on", "Behind"]
+    },
+    {
+      "key": 7,
+      "question": "Jesus politely interrupts the conversation and talks about true greatness. At this point, you would be:",
+      "answer": "Patting Peter on the back, saying \"There, there.\"",
+      "tags": ["Friendly", "Decisive", "Capture"]
+    },
+    {
+      "key": 8,
+      "question": "It's time to leave the Upper Room. Before leaving, you...",
+      "answer": "Make sure everything is in its original place for the owner of the house",
+      "tags": ["Observant", "Hands-on", "Behind"]
+    },
+    {
+      "key": 8,
+      "question": "It's time to leave the Upper Room. Before leaving, you...",
+      "answer": "Take some selfies with the homies or post an IG reel",
+      "tags": ["Capture", "Decisive"]
+    },
+    {
+      "key": 8,
+      "question": "It's time to leave the Upper Room. Before leaving, you...",
+      "answer": "Thank the owner of the house and ask if you can come again in the future",
+      "tags": ["Friendly", "Calm", "Adaptable"]
+    }
+  ]
 }
