@@ -12,9 +12,9 @@ import clsx from 'clsx'
 const Results = ({ id, data }: { id: number; data: UserData }) => {
   const { name, cluster } = data
   const [displayedArchetype, setDisplayedArchetype] = useState<string>('')
-  const [servingTraits, setServingTraits] = useState<string[]>([]);
-  const [seesYou, setSeesYou] = useState<string[]>([]);
-  const [teams, setTeams] = useState<string[]>([]);
+  const [servingTraits, setServingTraits] = useState<string[]>([])
+  const [seesYou, setSeesYou] = useState<string[]>([])
+  const [teams, setTeams] = useState<string[]>([])
   useEffect(() => {
     // Tabulate the highest archetype
     const archetypeScore = new Map<string, number>()
@@ -35,14 +35,14 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
     const topArchetypesIfTied = new Set<string>([sortedArchetype[0]?.[0] as string]);
     for (let i = 1; i < 3; i++) {
       if (sortedArchetype[i]?.[1] == sortedArchetype[0]?.[1]) {
-        topArchetypesIfTied.add(sortedArchetype[i]?.[0]!)
+        topArchetypesIfTied.add(sortedArchetype[i]?.[0] || '')
       }
     }
     setDisplayedArchetype(Array.from(topArchetypesIfTied)[Math.floor(Math.random() * topArchetypesIfTied.size)]!)
-    const archetypeData = archetypes.data.find(type => type.type === displayedArchetype);
-    setServingTraits(archetypeData?.serving_traits || []);
-    setSeesYou(archetypeData?.sees_you || []);
-    setTeams(archetypeData?.teams || []);
+    const archetypeData = archetypes.data.find(type => type.type === displayedArchetype)
+    setServingTraits(archetypeData?.serving_traits || [])
+    setSeesYou(archetypeData?.sees_you || [])
+    setTeams(archetypeData?.teams || [])
   }, [data])
 
   return (
