@@ -1,6 +1,6 @@
-import s from './teams-tileboard.module.css'
+import { Tileboard } from '~/components/tileboard'
 
-import { Tileboard } from "~/components/tileboard"
+import s from './teams-tileboard.module.css'
 
 export const TeamsTileboard = () => {
   return (

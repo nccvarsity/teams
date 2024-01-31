@@ -2,10 +2,11 @@
 
 import clsx from 'clsx'
 
-import s from './tileboard.module.scss'
-import ExpandableTile from './expandable-tile'
 import { ToggleState, useToggleState } from '~/hooks/use-toggle-state'
-import { Teams, createLinkFromTeamClusterName } from '~/lib/utils/signuplink'
+import { createLinkFromTeamClusterName, Teams } from '~/lib/utils/signuplink'
+
+import ExpandableTile from './expandable-tile'
+import s from './tileboard.module.scss'
 
 export interface tileMetaData {
   icon?: string
@@ -28,7 +29,7 @@ export const Tileboard = () => {
         '♾️ Capture God-moments 🙌🏼',
         '📸 Take photographs at V events ⚡',
         '🪄 Edit photos to be used for publicity ✨',
-        '👩🏻‍💻 Collaborate with social media team 📱',
+        '👩🏻‍💻 Collaborate with social media team 📱'
       ],
       toggleState: useToggleState()
     },
@@ -81,7 +82,7 @@ export const Tileboard = () => {
       jd: [
         '🚶🏻‍♀️ Manage and direct the flow of people 🚶🏻‍♂️',
         '🚧 Control access points 🚦',
-        '🍞 Prepare Holy Communion elements 🍷',
+        '🍞 Prepare Holy Communion elements 🍷'
       ],
       toggleState: useToggleState()
     },
@@ -121,9 +122,7 @@ export const Tileboard = () => {
       our desire is to create a safe space for everyone to enjoy V
       freely! If you share our heart, come join us!
       `,
-      jd: [
-        '🙌🏼 Create a safe space for V events 🥰',
-    ],
+      jd: ['🙌🏼 Create a safe space for V events 🥰'],
       toggleState: useToggleState()
     },
     {
