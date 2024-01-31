@@ -1,6 +1,3 @@
-const DOWN_Y_OFFSET = 500
-const UP_Y_OFFSET = -900
-
 function customSmoothScroll(targetY: number, duration = 800) {
   const startingY = window.scrollY
   const startTime =
@@ -38,6 +35,8 @@ function customSmoothScroll(targetY: number, duration = 800) {
 
 // https://stackoverflow.com/questions/24665602/scrollintoview-scrolls-just-too-far
 function navigateToElementId(id: string) {
+  const screenHeight = window.innerHeight
+
   // Scrolls to target section
   const end = document.getElementById(id)
   if (end === null) return
@@ -45,9 +44,9 @@ function navigateToElementId(id: string) {
   let y = end.getBoundingClientRect().top + window.scrollY
 
   if (y > window.scrollY) {
-    y += DOWN_Y_OFFSET
+    y += screenHeight / 2
   } else {
-    y += UP_Y_OFFSET
+    y += -screenHeight
   }
 
   customSmoothScroll(y)
