@@ -11,13 +11,15 @@ export interface UserData {
   name?: string
   cluster?: string
   answerTags?: Map<string, number>
+  answeredQns?: Set<number>
 }
 
 export const QuizQuestions = () => {
   const [userData, setUserData] = useState<UserData>({
     name: '',
     cluster: '',
-    answerTags: new Map()
+    answerTags: new Map(),
+    answeredQns: new Set()
   })
 
   function setData(data: UserData) {
@@ -25,12 +27,22 @@ export const QuizQuestions = () => {
     setUserData(newData)
   }
 
-  function incrementTag(tags: string[], isDecrement = false) {
+  function incrementTag(id: number, tags: string[], isDecrement = false) {
     const newUserData = { ...userData }
+
+    // Increment the tag count
     tags.forEach(function (tag) {
       const currentCount = userData.answerTags?.get(tag) ?? 0
       userData.answerTags?.set(tag, currentCount + (isDecrement ? -1 : 1))
     })
+
+    // Add or remove the question id
+    if (isDecrement) {
+      newUserData.answeredQns?.delete(id)
+    } else {
+      newUserData.answeredQns?.add(id)
+    }
+
     setUserData(newUserData)
   }
 

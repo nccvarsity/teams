@@ -9,6 +9,8 @@ import { createLinkFromTeamClusterName } from '~/lib/utils/signuplink'
 import { FadeInOut } from '../fade/fadeInOut'
 import s from './quiz.module.scss'
 
+const MINIMUM_ANSWERED_QNS = 5
+
 const Results = ({ id, data }: { id: number; data: UserData }) => {
   const { name, cluster } = data
 
@@ -58,50 +60,68 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
     setTeams(archetypeData?.teams || [])
   }, [data])
 
+  const notEnoughAnsweredQns = data.answeredQns
+    ? data.answeredQns.size < MINIMUM_ANSWERED_QNS
+    : true
+
   return (
     <FadeInOut disable={true}>
       <section className={s.content} id={`question-${id}`}>
         <p className={s.name}>Hey {name ? name : 'there'}!</p>
         <div className={s.resultsGridContainer}>
-          <p>Your serving type is...</p>
-          <p className={clsx(s.archetype, s.wavyText)}>
-            {displayedArchetype?.toUpperCase()}
-          </p>
-          <p>How Jesus sees you:</p>
-          <div className={clsx(s.commonContainer, s.seesYou)}>
-            {seesYou.map((item) => {
-              return (
-                <span key={item} className={s.common}>
-                  {item}
-                </span>
-              )
-            })}
-          </div>
-          <p>Your serving traits:</p>
-          <div className={clsx(s.commonContainer, s.servingTraits)}>
-            {servingTraits.map((item) => {
-              return (
-                <span key={item} className={s.common}>
-                  {item}
-                </span>
-              )
-            })}
-          </div>
-          <p>
-            We believe that you will be a huge blessing in these teams:{' '}
-            {teams.join(', ')}.
-          </p>
+          {notEnoughAnsweredQns ? (
+            <>
+              <p>Sorry 😔 We'd love to serve you better. </p>
+              <p style={{ paddingTop: 10 }}>
+                Do complete MORE questions before viewing for your results!
+              </p>
+            </>
+          ) : (
+            <>
+              <p>Your serving type is...</p>
+              <p className={clsx(s.archetype, s.wavyText)}>
+                {displayedArchetype?.toUpperCase()}
+              </p>
+              <p>How Jesus sees you:</p>
+              <div className={clsx(s.commonContainer, s.seesYou)}>
+                {seesYou.map((item) => {
+                  return (
+                    <span key={item} className={s.common}>
+                      {item}
+                    </span>
+                  )
+                })}
+              </div>
+              <p>Your serving traits:</p>
+              <div className={clsx(s.commonContainer, s.servingTraits)}>
+                {servingTraits.map((item) => {
+                  return (
+                    <span key={item} className={s.common}>
+                      {item}
+                    </span>
+                  )
+                })}
+              </div>
+              <p>
+                We believe that you will be a huge blessing in these teams:{' '}
+                {teams.join(', ')}.
+              </p>
+            </>
+          )}
         </div>
-        <button>
-          <a
-            href={createLinkFromTeamClusterName(teams, cluster, name)}
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            Sign Up Now!
-          </a>
-        </button>
-        <button onClick={() => navigateToElementId('quiz')}>Restart</button>
+
+        <div className={s.center}>
+          <button>
+            <a
+              href={createLinkFromTeamClusterName(teams, cluster, name)}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Sign Up Now!
+            </a>
+          </button>
+          <button onClick={() => navigateToElementId('quiz')}>Restart</button>
+        </div>
       </section>
     </FadeInOut>
   )

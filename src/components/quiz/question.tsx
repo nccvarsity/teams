@@ -22,7 +22,7 @@ export const Question = ({
 }: {
   id: number
   question: QuestionType
-  incrementTag: (tags: string[], isDecrement?: boolean) => void
+  incrementTag: (id: number, tags: string[], isDecrement?: boolean) => void
 }) => {
   const [chosenAnswer, setChosenAnswer] = useState<string | null>(null)
   const [chosenTags, setChosenTags] = useState<string[]>([])
@@ -35,15 +35,15 @@ export const Question = ({
     // Unselect itself
     if (chosenAnswer === ans) {
       setChosenAnswer(null)
-      incrementTag(chosenTags, true)
+      incrementTag(id, chosenTags, true)
       setChosenTags([])
       return
     }
 
     // Decrement the previous answer
-    incrementTag(chosenTags, true)
+    incrementTag(id, chosenTags, true)
     // Increment the new answer
-    incrementTag(tags)
+    incrementTag(id, tags)
 
     setChosenAnswer(ans)
     setChosenTags(tags)
