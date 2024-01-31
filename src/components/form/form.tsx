@@ -3,10 +3,10 @@
 import { ChangeEvent, useState } from 'react'
 
 import { UserData } from '~/app/sections/quiz-questions'
+import clusters from '~/data/clusters.json'
 import navigateToElementId from '~/lib/utils/navigate'
 
 import { FadeInOut, useResumeFadeInOut } from '../fade/fadeInOut'
-import clusters from './clusters.json'
 import s from './form.module.scss'
 
 export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
@@ -58,7 +58,11 @@ export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
         </div>
       </section>
       <div className={s.content}>
-        <p className={s.disclaimer}>Provide your details above for a more personalized experience. Your personal information will not be saved. Otherwise, skip by clicking 'Next'.</p>
+        <p className={s.disclaimer}>
+          Provide your details above for a more personalized experience. Your
+          personal information will not be saved. Otherwise, skip by clicking
+          'Next'.
+        </p>
       </div>
     </FadeInOut>
   )

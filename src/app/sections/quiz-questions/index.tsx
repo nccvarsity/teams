@@ -5,8 +5,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Form } from '~/components/form/form'
 import { Question, QuestionType } from '~/components/quiz/question'
 import Results from '~/components/quiz/results'
-
-import questions from './questions.json'
+import questions from '~/data/questions.json'
 
 export interface UserData {
   name?: string
