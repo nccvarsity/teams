@@ -1,70 +1,81 @@
 {
   "data": [
     {
-      "type": "Dreamer",
+      "type": "The Blessed Dreamer",
       "tags": ["Creative", "Friendly", "Capture", "Hands-on", "Adaptable"],
       "teams": ["Photogs", "Foyer Experience", "Lights"],
-      "sees_you": []
+      "sees_you": ["deeply loved", "a sight to behold", "unstoppable & irresistible", "fun", "a peculiar treasure", "blessing magnet"],
+      "serving_traits": ["idea generator", "light bearer", "picture perfector", "sandcastle builder", "visionary creator", "rule breaker"]
     },
     {
-      "type": "Artisan",
+      "type": "The Gifted Artisan",
       "tags": ["Creative", "Detailed", "Focused", "Capture", "Worshipful"],
       "teams": ["Social", "Photogs", "Lights"],
-      "sees_you": []
+      "sees_you": ["greatly blessed", "childlike faith", "wonderfully made", "no spot in you", "precious in His sight", "charizzma"],
+      "serving_traits": ["theory crafter", "serial thanksgiver", "unstoppable wordsmith", "light bringer", "much wisdom", "look Abba I made this"]
     },
     {
-      "type": "Scribe",
+      "type": "The Visionary Scribe",
       "tags": ["Detailed", "Observant", "Focused", "Adaptable", "Calm"],
       "teams": ["Security", "Social", "Video"],
-      "sees_you": []
+      "sees_you": ["fearfully made", "His best creation", "righteous & glorious", "man greatly beloved"],
+      "serving_traits": ["wanders & wonders", "is giving", "the thinker", "words stringer", "detail king/queen", "truth seeker"]
     },
     {
-      "type": "Psalmist",
+      "type": "The Beloved Psalmist",
       "tags": ["Worshipful", "Friendly", "Observant", "Focused", "Capture"],
       "teams": ["Social", "LORO", "Audi Ops"],
-      "sees_you": []
+      "sees_you": ["apple of His eye", "sweet-smelling fragrance", "after His heart"],
+      "serving_traits": ["loves the one", "heart warmer", "bouta drop slay hits", "good vibes", "goliath slayer"]
     },
     {
-      "type": "Builder",
+      "type": "The Master Builder",
       "tags": ["Hands-on", "Behind", "Observant", "Detailed", "Decisive"],
       "teams": ["Logistics", "Security", "Foyer Experience"],
-      "sees_you": []
+      "sees_you": ["indispensible to His heart", "good & faithful", "His masterpiece", "strong pillar"],
+      "serving_traits": ["gap filler", "solution finder", "can do spirit", "true thermostat"]
     },
     {
-      "type": "Storyteller",
+      "type": "The Great Storyteller",
       "tags": ["Friendly", "Adaptable", "Calm", "Capture", "Worshipful"],
       "teams": ["LORO", "Foyer Experience", "Video"],
-      "sees_you": []
+      "sees_you": ["dearly beloved", "His best friend"],
+      "serving_traits": ["reach out to the one", "friendly hand shaker", "fam of fams", "gucci gang", "super host"]
     },
     {
-      "type": "Waymaker",
+      "type": "The Way Maker",
       "tags": ["Hands-on", "Creative", "Calm", "Adaptable", "Decisive"],
       "teams": ["Foyer Ops", "Logistics", "Stage"],
-      "sees_you": []
+      "sees_you": ["accepted in the Beloved", "champion", "hand-picked/chosen"],
+      "serving_traits": ["problem solver", "let's get this bread", "mountain mover", "confirm can one", "game changer"]
     },
     {
-      "type": "Explorer",
+      "type": "The Epic Explorer",
       "tags": ["Hands-on", "Creative", "Friendly", "Observant", "Capture"],
       "teams": ["Audi Ops", "Foyer Experience", "Social"],
-      "sees_you": []
+      "sees_you": ["childlike", "more than a conqueror"],
+      "serving_traits": ["why not me?", "let's get it", "mountain conqueror", "river crosser", "great & might exploits"]
     },
     {
-      "type": "Unnamed Servant",
+      "type": "The Unnamed Servant",
       "tags": ["Behind", "Focused", "Calm", "Hands-on", "Worshipful"],
       "teams": ["Logistics", "Security", "Video"],
-      "sees_you": []
+      "sees_you": ["set apart"],
+      "serving_traits": ["find me everywhere", "behind-the-scenes", "prayer warrior", "doing stuff", "how did I get here?"]
     },
     {
-      "type": "Forerunner",
+      "type": "The Forerunner",
       "tags": ["Behind", "Observant", "Focused", "Hands-on", "Decisive"],
       "teams": ["Logistics", "Security", "Foyer Ops"],
-      "sees_you": []
+      "sees_you": ["in sync with Him", "right place right time"],
+      "serving_traits": ["5 steps ahead", "eyes closed heart opened", "spoils sharer"]
     },
     {
-      "type": "One whom Jesus loves",
+      "type": "The One whom Jesus loves",
       "tags": ["Worshipful", "Behind", "Calm", "Creative", "Detailed"],
       "teams": ["Audi Ops", "Photogs", "LORO"],
-      "sees_you": []
+      "sees_you": ["daily His delight", "sweet psalmist", "highly favoured"],
+      "serving_traits": ["Jesus' bosom buddy", "I am a sheep", "my heart burns for You"]
     }
   ]
 }

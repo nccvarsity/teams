@@ -18,7 +18,7 @@ export interface tileMetaData {
 export const Tileboard = () => {
   const tileMetaData: tileMetaData[] = [
     {
-      name: 'PHO₸OGS',
+      name: 'PHOTOGS',
       url: 'https://www.newcreation.org.sg/',
       description: `
       Hello fellow shutter-fingers! If you feel a resonance to tell stories with a camera, join us to document V life, culture, and events. Snap, don’t nap and see you soon! 
@@ -32,7 +32,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'SÖCIAL',
+      name: 'SOCIAL',
       url: 'https://www.newcreation.org.sg/',
       description: `
       We’re seeking all with energy and heart to collaborate on our social team. If you have an eye for content and visuals, and have a passion for creating memories and messages for our V family, we would love to hear from you!
@@ -45,7 +45,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'ƑOYER ℓXP',
+      name: 'FOYER EXP',
       url: 'https://www.newcreation.org.sg/',
       description: `
       Pre-service is where the party begins! If you have hands available and time to sow into the pre-service experience, come and be part of our ninja team doing the creative setup and installations. Legend has it that some make a friend or two during this magic hour.
@@ -58,7 +58,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'L○R○',
+      name: 'LORO',
       url: 'https://www.newcreation.org.sg/',
       description: `
       If you have a love for befriending new faces, and have a desire to grow into our hosting team here in the Fathers’ house, we can’t wait to meet you. LORO is where your warmth and love can go a long way for one person–come speak to us and we’ll tell you more!
@@ -72,7 +72,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'FOŸER OPS',
+      name: 'FOYER OPS',
       url: 'https://www.newcreation.org.sg/',
       description: `
       We make sure you get where you need to be, bringing you from the entrance all the way into the Father’s embrace—safely and swiftly. Wayfinding doesn’t get more meaningful than this! 
@@ -85,7 +85,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'ΔUDI OPS',
+      name: 'AUDI OPS',
       url: 'https://www.newcreation.org.sg/',
       description: `
       V is family. We believe that every V youth has a seat at the table in the Father’s house with their name on it. We make sure that they find it—with warm smiles and even warmer hearts!
@@ -99,7 +99,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'L●GS',
+      name: 'LOGS',
       url: 'https://www.newcreation.org.sg/',
       description: `
       First to arrive on scene, we ensure everything is up and running for a smooth Varsity experience! Whether it’s moving items on stage or anywhere else, we’re always ready—all while having the best time in His house!
@@ -113,7 +113,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'S℮CURĪTY',
+      name: 'SECURITY',
       url: 'https://www.newcreation.org.sg/',
       description: `
       Alert and swift to respond to changes on the ground,
@@ -128,7 +128,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'VIÐE∅',
+      name: 'VIDEO',
       url: 'https://www.newcreation.org.sg/',
       description: `
       Excited about the dazzling visuals on screen? From lyrics and verses—to videos and more, we make known the invisible God through magnifying the visible!
@@ -142,7 +142,7 @@ export const Tileboard = () => {
       toggleState: useToggleState()
     },
     {
-      name: 'STΔGE',
+      name: 'STAGE',
       url: 'https://www.newcreation.org.sg/',
       description: `
       This is where behind-the-scenes fully comes alive! If you have a gift to articulate, to anticipate and would love to participate in programme and production, come and make V happen with us!

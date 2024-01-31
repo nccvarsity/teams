@@ -105,7 +105,7 @@
     {
       "key": 6,
       "question": "Supper's over and your boy Peter starts spittin claims that he's the greatest. What do you do?",
-      "answer": "Wait for Jesus to tell him about the roosters",
+      "answer": "Wait for Jesus to tell him about the rooster",
       "tags": ["Adaptable", "Worshipful", "Calm"]
     },
     {
@@ -147,7 +147,7 @@
     {
       "key": 8,
       "question": "It's time to leave the Upper Room. Before leaving, you...",
-      "answer": "Thank the owner of the house and ask if you can come again in the future",
+      "answer": "Thank the owner of the house and ask if you can visit again next time",
       "tags": ["Friendly", "Calm", "Adaptable"]
     }
   ]
