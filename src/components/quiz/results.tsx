@@ -60,7 +60,7 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
           <p>{servingTraits.join(', ')}</p>
           <br />
           <p>We believe that you will be a blessing to one of these teams: {teams.join(', ')}.</p>
-          <button onClick={() => navigateToElementId('quiz')}>
+          <button>
             <a href={createLinkFromTeamClusterName(teams, cluster, name)} target="_blank" rel="noreferrer noopener">Sign Up</a>
           </button>
           <button onClick={() => navigateToElementId('quiz')}>
