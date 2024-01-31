@@ -16,9 +16,9 @@ const HomePage = () => {
       <Marquee />
       <TeamsTileboard />
       <Highlight />
-      <Welcome />
       <Quiz />
       <QuizQuestions />
+      <Welcome />
     </main>
   )
 }
