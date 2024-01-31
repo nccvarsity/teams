@@ -116,6 +116,7 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
               href={createLinkFromTeamClusterName(teams, cluster, name)}
               target="_blank"
               rel="noreferrer noopener"
+              className={s.wavyText}
             >
               Sign Up Now!
             </a>
