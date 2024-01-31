@@ -120,7 +120,7 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
               Sign Up Now!
             </a>
           </button>
-          <button onClick={() => navigateToElementId('quiz')}>Restart</button>
+          <button onClick={() => navigateToElementId('form')}>Restart</button>
         </div>
       </section>
     </FadeInOut>
