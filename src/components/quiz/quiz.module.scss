@@ -28,6 +28,7 @@
   max-width: max-content;
   line-height: 0.85;
   overflow-y: visible;
+  margin: 1rem 0;
 
   @media screen and (max-width: 800px) {
     font-size: tovw(49px, 40px, 'mobile');

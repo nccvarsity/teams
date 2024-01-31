@@ -49,7 +49,7 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
   return (
     <FadeInOut disable={true}>
       <section className={s.content} id={`question-${id}`}>
-        <p className={s.name}>HEY {name ? name.toUpperCase() : 'THERE'}!</p>
+        <p className={s.name}>Hey {name ? name : 'there'}!</p>
         <div className={s.resultsGridContainer}>
           <p>Your serving type is...</p>
           <p className={clsx(s.archetype, s.wavyText)}>{displayedArchetype?.toUpperCase()}</p>
