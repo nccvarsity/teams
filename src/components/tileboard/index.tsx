@@ -109,7 +109,7 @@ export const Tileboard = () => {
         '📋 Account for logistics ✅',
         '📻 Distribute and collect walkies 🗣️',
         '🪧 Set up spaces/equipment 📺',
-        '💪🏼 Carry props up stage 🪨'
+        '💪🏼 Assist production on stage 🪨'
       ],
       toggleState: useToggleState()
     },
@@ -122,9 +122,7 @@ export const Tileboard = () => {
       freely! If you share our heart, come join us!
       `,
       jd: [
-        '👀 Observe and profile attendees 🕵🏻‍♂️',
-        '🎒 Oversee bag/bulky item checks 📦',
-        '🙌🏼 Make V Night a safe space 🥰',
+        '🙌🏼 Create a safe space for V events 🥰',
     ],
       toggleState: useToggleState()
     },

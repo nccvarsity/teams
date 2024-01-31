@@ -26,7 +26,6 @@
   font-weight: 600;
   font-family: var(--font-pp-rader, var(--font-system));
   max-width: max-content;
-  margin: 0 auto;
   line-height: 0.85;
   overflow-y: visible;
 
@@ -109,10 +108,8 @@
 
 .answerContainer {
   background-color: var(--color-background-tile-primary);
-  padding: 1ch;
-  border-radius: 8px;
+  border-radius: 0.5ch;
   text-align: center;
-  font-size: 16px;
   display: flex;
   flex-direction: column;
   justify-items: center;

@@ -149,6 +149,30 @@
       "question": "It's time to leave the Upper Room. Before leaving, you...",
       "answer": "Thank the owner of the house and ask if you can visit again next time",
       "tags": ["Friendly", "Calm", "Adaptable"]
+    },
+    {
+      "key": 9,
+      "question": "Bonus question! How many loaves of bread does it take to feed 5,000 men (not including women and children)?",
+      "answer": "More than 5,000",
+      "tags": ["Detailed", "Capture", "Hands-on"]
+    },
+    {
+      "key": 9,
+      "question": "Bonus question! How many loaves of bread does it take to feed 5,000 men (not including women and children)?",
+      "answer": "5, and 2 small fish",
+      "tags": ["Focused", "Observant"]
+    },
+    {
+      "key": 9,
+      "question": "Bonus question! How many loaves of bread does it take to feed 5,000 men (not including women and children)?",
+      "answer": "Probably 42",
+      "tags": ["Decisive", "Calm", "Adaptable"]
+    },
+    {
+      "key": 9,
+      "question": "Bonus question! How many loaves of bread does it take to feed 5,000 men (not including women and children)?",
+      "answer": "I loave bread",
+      "tags": ["Creative", "Worshipful", "Friendly"]
     }
   ]
 }

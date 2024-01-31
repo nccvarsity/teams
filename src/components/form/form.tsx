@@ -32,9 +32,6 @@ export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
     <FadeInOut disable={isDisable}>
       <section id={'form'}>
         <div className={s.content}>
-          <p className={s.disclaimer}>For a more personalized experience, please provide the following details. Your personal information will not be saved. Otherwise, skip by clicking 'Next'.</p>
-        </div>
-        <div className={s.content}>
           <h2 className={s.formQuestion}>What is your name?</h2>
           <input type="text" placeholder={'Name'} onChange={handleNameChange} />
         </div>
@@ -60,6 +57,9 @@ export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
           </button>
         </div>
       </section>
+      <div className={s.content}>
+        <p className={s.disclaimer}>Provide your details above for a more personalized experience. Your personal information will not be saved. Otherwise, skip by clicking 'Next'.</p>
+      </div>
     </FadeInOut>
   )
 }

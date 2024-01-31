@@ -53,7 +53,6 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
         <div className={s.resultsGridContainer}>
           <p>Your serving type is...</p>
           <p className={clsx(s.archetype, s.wavyText)}>{displayedArchetype?.toUpperCase()}</p>
-          <br />
           <p>How Jesus sees you:</p>
           <div className={clsx(s.commonContainer, s.seesYou)}>
             {seesYou.map((item) => {
@@ -66,7 +65,6 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
               return <span key={item} className={s.common}>{item}</span>
             })}
           </div>
-          <br />
           <p>We believe that you will be a huge blessing in these teams: {teams.join(', ')}.</p>
         </div>
         <button>
