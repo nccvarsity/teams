@@ -25,7 +25,7 @@ const splitText = (text: string, wordClass?: string) => {
   return htmlWords;
 };
 
-const lines = ["We're here to make", "Varsity ministry", "the best place to be."];
+const lines = ["We're here to", "build God's house,", "and make it warm & fuzzy."];
 
 export const Highlight = () => {
   const splittedText = useMemo(

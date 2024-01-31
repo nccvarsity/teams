@@ -38,7 +38,7 @@
     line-height: calc(86 / 72);
 
     @media screen and (max-width: 800px) {
-      font-size: tovw(28px, 22px, 'mobile');
+      font-size: tovw(22px, 20px, 'mobile');
     }
 
     .highlight {
