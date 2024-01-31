@@ -1,25 +1,39 @@
-"use client";
+'use client'
 
-import s from "./outro.module.scss";
-import { CanvasWithHouseModel } from "./house-model";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
+
+import { CanvasWithHouseModel } from './house-model'
+import s from './outro.module.scss'
 
 export const Outro = () => {
-  const [opacityValue, setOpacityValue] = useState(0);
+  const [opacityValue, setOpacityValue] = useState(0)
+
   useEffect(() => {
-    setTimeout(() => {
-      setOpacityValue(1);
-    }, 555)
-  })
+    const timerId = setTimeout(() => {
+      setOpacityValue(1)
+    }, 800)
+
+    return () => clearTimeout(timerId)
+  }, [])
+
   return (
     <section>
-      <div style={{opacity: opacityValue, transition: "1.5s"}} className={s["model-container"]}>
+      <div
+        className={s['loader']}
+        style={{
+          opacity: 1 - opacityValue,
+          transition: '1.5s'
+        }}
+      />
+      <div
+        className={s['model-container']}
+        style={{ opacity: opacityValue, transition: '1.5s' }}
+      >
         <CanvasWithHouseModel />
       </div>
-
-      <div className="wrapper">
-        <div className={s["content"]}>
-          <div className={s["footer"]}>
+      <div style={{ opacity: opacityValue, transition: '1.5s' }}>
+        <div className={s['content']}>
+          <div className={s['footer']}>
             <p>
               Welcome home to V.
               <br />
@@ -29,5 +43,5 @@ export const Outro = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
