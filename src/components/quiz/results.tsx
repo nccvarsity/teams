@@ -57,13 +57,13 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
           <p>How Jesus sees you:</p>
           <div className={clsx(s.commonContainer, s.seesYou)}>
             {seesYou.map((item) => {
-              return <span className={s.common}>{item}</span>
+              return <span key={item} className={s.common}>{item}</span>
             })}
           </div>
           <p>Your serving traits:</p>
           <div className={clsx(s.commonContainer, s.servingTraits)}>
             {servingTraits.map((item) => {
-              return <span className={s.common}>{item}</span>
+              return <span key={item} className={s.common}>{item}</span>
             })}
           </div>
           <br />
