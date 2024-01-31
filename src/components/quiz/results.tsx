@@ -38,8 +38,9 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
         topArchetypesIfTied.add(sortedArchetype[i]?.[0] || '')
       }
     }
-    setDisplayedArchetype(Array.from(topArchetypesIfTied)[Math.floor(Math.random() * topArchetypesIfTied.size)]!)
-    const archetypeData = archetypes.data.find(type => type.type === displayedArchetype)
+    const archetype: string = Array.from(topArchetypesIfTied)[Math.floor(Math.random() * topArchetypesIfTied.size)]!;
+    setDisplayedArchetype(archetype)
+    const archetypeData = archetypes.data.find(type => type.type === archetype)
     setServingTraits(archetypeData?.serving_traits || [])
     setSeesYou(archetypeData?.sees_you || [])
     setTeams(archetypeData?.teams || [])
@@ -54,19 +55,26 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
           <p className={clsx(s.archetype, s.wavyText)}>{displayedArchetype?.toUpperCase()}</p>
           <br />
           <p>How Jesus sees you:</p>
-          <p>{seesYou.join(', ')}</p>
-          <br />
+          <div className={clsx(s.commonContainer, s.seesYou)}>
+            {seesYou.map((item) => {
+              return <span className={s.common}>{item}</span>
+            })}
+          </div>
           <p>Your serving traits:</p>
-          <p>{servingTraits.join(', ')}</p>
+          <div className={clsx(s.commonContainer, s.servingTraits)}>
+            {servingTraits.map((item) => {
+              return <span className={s.common}>{item}</span>
+            })}
+          </div>
           <br />
-          <p>We believe that you will be a blessing to one of these teams: {teams.join(', ')}.</p>
-          <button>
-            <a href={createLinkFromTeamClusterName(teams, cluster, name)} target="_blank" rel="noreferrer noopener">Sign Up</a>
-          </button>
-          <button onClick={() => navigateToElementId('quiz')}>
-            Back
-          </button>
+          <p>We believe that you will be a huge blessing in these teams: {teams.join(', ')}.</p>
         </div>
+        <button>
+          <a href={createLinkFromTeamClusterName(teams, cluster, name)} target="_blank" rel="noreferrer noopener">Sign Up Now!</a>
+        </button>
+        <button onClick={() => navigateToElementId('quiz')}>
+          Restart
+        </button>
       </section>
     </FadeInOut>
   )

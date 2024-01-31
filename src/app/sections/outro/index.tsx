@@ -9,7 +9,7 @@ export const Outro = () => {
   useEffect(() => {
     setTimeout(() => {
       setOpacityValue(1);
-    }, 1000)
+    }, 555)
   })
   return (
     <section>

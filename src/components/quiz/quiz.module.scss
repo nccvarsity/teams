@@ -14,7 +14,6 @@
   font-weight: 600;
   max-width: max-content;
   margin: 0 auto;
-  line-height: calc(86 / 72);
   text-align: center;
 
   @media screen and (max-width: 800px) {
@@ -28,10 +27,11 @@
   font-family: var(--font-pp-rader, var(--font-system));
   max-width: max-content;
   margin: 0 auto;
-  line-height: 1;
+  line-height: 0.85;
+  overflow-y: visible;
 
   @media screen and (max-width: 800px) {
-    font-size: tovw(34px, 24px, 'mobile');
+    font-size: tovw(49px, 40px, 'mobile');
   }
 }
 
@@ -80,14 +80,31 @@
   padding-top: 15px;
   height: auto;
   text-align: center;
+}
 
-  &.auto-column {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
+.commonContainer {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  padding: 0.5ch;
+  margin: 0.75ch -1.5ch;
+  border-radius: 2ch;
+}
 
-  &.single-column {
-    grid-template-columns: 1fr;
-  }
+.seesYou {
+  background-color: var(--color-expand-chevron);
+}
+
+.servingTraits {
+  background-color: var(--wavy-3);
+}
+
+.common {
+  padding: 0.25ch 0.75ch;
+  margin: 0.25ch;
+  border: 1px;
+  border-radius: 2ch;
+  border-style: solid;
 }
 
 .answerContainer {
