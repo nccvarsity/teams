@@ -27,8 +27,15 @@ export const Quiz = () => {
               >
                 <span className={s['title']}>
                   Not sure where to start?
-                  <br/>
-                  Head to the Upper Room to find out!
+                  <br />
+                  Head to the{' '}
+                  <span
+                    className={s['highlight']}
+                    onClick={() => navigateToElementId('form')}
+                  >
+                    Upper Room
+                  </span>{' '}
+                  to find out!
                 </span>
               </Animation>
             </div>

@@ -53,5 +53,11 @@
       font-size: tovw(18px, 18px, 'mobile');
       margin-top: 55vh;
     }
+
+    .highlight {
+      color: var(--color-orange);
+      font-weight: 600;
+      font-style: italic;
+    }
   }
 }
