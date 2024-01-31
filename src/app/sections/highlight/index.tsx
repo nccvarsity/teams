@@ -3,8 +3,6 @@
 import * as Scrollytelling from "@bsmnt/scrollytelling";
 
 import s from "./highlight.module.scss";
-// import { VlogosModel } from "./vlogos";
-// import { Canvas } from "@react-three/fiber";
 import { useMemo } from "react";
 
 const splitText = (text: string, wordClass?: string) => {
@@ -25,7 +23,7 @@ const splitText = (text: string, wordClass?: string) => {
   return htmlWords;
 };
 
-const lines = ["We're here to", "build God's house,", "and make it warm & fuzzy."];
+const lines = ["Welcome home", "to V. where we build", "God’s house together."];
 
 export const Highlight = () => {
   const splittedText = useMemo(
@@ -53,19 +51,6 @@ export const Highlight = () => {
     >
       <section className={s["spacer"]}>
         <div className={s["pin"]}>
-          {/* <div className={s["canvas-container"]}>
-            <Canvas
-              camera={{ position: [0, 0, 10], fov: 35 }}
-              gl={{
-                alpha: true,
-                antialias: true,
-                powerPreference: "high-performance",
-              }}
-            >
-              <VlogosModel />
-            </Canvas>
-          </div> */}
-
           <p className={s["paragraph"]}>
             <Scrollytelling.Stagger
               overlap={0}

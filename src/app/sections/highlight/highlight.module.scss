@@ -30,7 +30,7 @@
 
   .paragraph {
     font-size: tovw(57px, 20px, 'desktop');
-    font-weight: 600;
+    font-weight: 300;
     font-family: var(--font-pp-mori, var(--font-system));
     max-width: max-content;
     margin: 0 auto;
@@ -38,11 +38,12 @@
     line-height: calc(86 / 72);
 
     @media screen and (max-width: 800px) {
-      font-size: tovw(22px, 20px, 'mobile');
+      font-size: tovw(24px, 22px, 'mobile');
     }
 
     .highlight {
       color: var(--color-orange);
+      font-weight: 600;
     }
   }
 }

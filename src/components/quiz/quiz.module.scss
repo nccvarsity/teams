@@ -9,26 +9,77 @@
   padding: 15px;
 }
 
-.title {
+.name {
   font-size: tovw(56px, 'desktop', 20px);
-  font-weight: 900;
-  font-family: var(--font-pp-mori, var(--font-system));
+  font-weight: 600;
   max-width: max-content;
   margin: 0 auto;
   line-height: calc(86 / 72);
   text-align: center;
-  // margin-top: 10vh;
 
   @media screen and (max-width: 800px) {
     font-size: tovw(17px, 'mobile');
   }
 }
 
+.archetype {
+  font-size: tovw(56px, 20px, 'desktop');
+  font-weight: 600;
+  font-family: var(--font-pp-rader, var(--font-system));
+  max-width: max-content;
+  margin: 0 auto;
+  line-height: 1;
+
+  @media screen and (max-width: 800px) {
+    font-size: tovw(34px, 24px, 'mobile');
+  }
+}
+
+.wavyText {
+  background: linear-gradient(
+    to right,
+    var(--wavy-1) 20%,
+    var(--wavy-2) 30%,
+    var(--wavy-3) 70%,
+    var(--wavy-1) 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: text-shine 4s ease-in-out infinite;
+}
+
+@keyframes text-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 .answerGridContainer {
   display: grid;
-  gap: 15px;
+  gap: 16px;
+  padding: 16px 0;
+  height: auto;
+
+  &.auto-column {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  &.single-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resultsGridContainer {
+  display: grid;
   padding-top: 15px;
   height: auto;
+  text-align: center;
 
   &.auto-column {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
