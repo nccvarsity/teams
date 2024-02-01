@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import navigateToElementId from '~/lib/utils/navigate'
 
@@ -12,17 +12,18 @@ export interface QuestionType {
   question: string
   answers: AnswerType[]
   hasImages: boolean
-  selection: number | null
 }
 
 export const Question = ({
   id,
   question,
-  incrementTag
+  incrementTag,
+  wasReset
 }: {
   id: number
   question: QuestionType
   incrementTag: (id: number, tags: string[], isDecrement?: boolean) => void
+  wasReset: boolean
 }) => {
   const [chosenAnswer, setChosenAnswer] = useState<string | null>(null)
   const [chosenTags, setChosenTags] = useState<string[]>([])
@@ -50,6 +51,14 @@ export const Question = ({
   }
 
   const isOdd = question.answers.length % 2 !== 0
+
+  useEffect(() => {
+    if (wasReset && chosenAnswer !== null) {
+      disableAnimation()
+      setChosenAnswer(null)
+      setChosenTags([])
+    }
+  }, [wasReset])
 
   return (
     <FadeInOut disable={isDisable}>

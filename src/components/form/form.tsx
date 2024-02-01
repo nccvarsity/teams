@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, createRef, useEffect, useState } from 'react'
 
 import { UserData } from '~/app/sections/quiz-questions'
 import clusters from '~/data/clusters.json'
@@ -9,7 +9,13 @@ import navigateToElementId from '~/lib/utils/navigate'
 import { FadeInOut, useResumeFadeInOut } from '../fade/fadeInOut'
 import s from './form.module.scss'
 
-export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
+export const Form = ({
+  setData,
+  wasReset
+}: {
+  setData: (data: UserData) => void
+  wasReset: boolean
+}) => {
   const [selectedCluster, setSelectedCluster] = useState<string>('')
 
   const { isDisable, disableAnimation } = useResumeFadeInOut()
@@ -28,12 +34,28 @@ export const Form = ({ setData }: { setData: (data: UserData) => void }) => {
     setData({ name })
   }
 
+  const nameRef = createRef<HTMLInputElement>()
+
+  useEffect(() => {
+    if (wasReset && (selectedCluster !== '' || nameRef.current?.value !== '')) {
+      disableAnimation()
+      setSelectedCluster('')
+      if (nameRef.current) {
+        nameRef.current.value = ''
+      }
+    }
+  }, [wasReset])
+
   return (
     <FadeInOut disable={isDisable}>
       <section id={'form'}>
         <div className={s.content}>
           <h2 className={s.formQuestion}>What is your name?</h2>
-          <input type="text" placeholder={'Name'} onChange={handleNameChange} />
+          <input
+            ref={nameRef}
+            placeholder={'Name'}
+            onChange={handleNameChange}
+          />
         </div>
         <div className={s.content}>
           <h2 className={s.formQuestion}>Which cluster are you in?</h2>

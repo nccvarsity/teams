@@ -106,15 +106,31 @@ export const QuizQuestions = () => {
             }
           })
         ),
-        hasImages: imagesCount > 0,
-        selection: null
+        hasImages: imagesCount > 0
       }
     })
   }, [])
 
+  function onReset() {
+    // Flush the user data for other components to flush
+    setUserData({})
+
+    // Reset to initial state
+    setTimeout(() => {
+      setUserData({
+        name: '',
+        cluster: '',
+        answerTags: new Map(),
+        answeredQns: new Set()
+      })
+    }, 500)
+  }
+
+  const wasReset = userData.name === undefined && userData.cluster === undefined
+
   return (
     <>
-      <Form setData={setData} />
+      <Form setData={setData} wasReset={wasReset} />
       {questionsData.map((question: QuestionType, index: number) => {
         return (
           <Question
@@ -122,10 +138,11 @@ export const QuizQuestions = () => {
             key={question.question}
             question={question}
             incrementTag={incrementTag}
+            wasReset={wasReset}
           />
         )
       })}
-      <Results id={questionsData.length} data={userData} />
+      <Results id={questionsData.length} data={userData} onReset={onReset} />
     </>
   )
 }

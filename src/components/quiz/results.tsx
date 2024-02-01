@@ -11,7 +11,15 @@ import s from './quiz.module.scss'
 
 const MINIMUM_ANSWERED_QNS = 5
 
-const Results = ({ id, data }: { id: number; data: UserData }) => {
+const Results = ({
+  id,
+  data,
+  onReset
+}: {
+  id: number
+  data: UserData
+  onReset: () => void
+}) => {
   const { name, cluster } = data
 
   const [displayedArchetype, setDisplayedArchetype] = useState<string>('')
@@ -121,7 +129,14 @@ const Results = ({ id, data }: { id: number; data: UserData }) => {
               Sign Up Now!
             </a>
           </button>
-          <button onClick={() => navigateToElementId('form')}>Restart</button>
+          <button
+            onClick={() => {
+              navigateToElementId('form')
+              onReset()
+            }}
+          >
+            Restart
+          </button>
         </div>
       </section>
     </FadeInOut>
