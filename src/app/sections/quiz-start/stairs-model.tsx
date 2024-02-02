@@ -47,7 +47,8 @@ const StairsModel = () => {
     (state: { viewport: { width: any } }) => state.viewport.width
   )
 
-  const isMobileSize = useMedia('(max-width: 768px)')
+  const isMobileSize = useMedia('(max-width: 767px)')
+  const isTablet = useMedia('(max-width: 1239px)')
 
   let prevProgress = 0
 
@@ -73,7 +74,9 @@ const StairsModel = () => {
     <Float floatIntensity={0.1} rotationIntensity={0.5}>
       <group
         dispose={null}
-        scale={isMobileSize ? width * 0.42 : width * 0.18}
+        scale={
+          isMobileSize ? width * 0.42 : isTablet ? width * 0.3 : width * 0.18
+        }
         ref={innerRef}
       >
         <group scale={[scale, scale * 1.2, scale]}>
