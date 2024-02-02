@@ -42,7 +42,6 @@
   font-size: tovw(56px, 20px, 'desktop');
   font-weight: 600;
   font-family: var(--font-pp-rader, var(--font-system));
-  max-width: max-content;
   line-height: 0.85;
   overflow-y: visible;
   margin: 1rem 0;
@@ -109,11 +108,15 @@
 }
 
 .seesYou {
-  background-color: var(--color-expand-chevron);
+  background-color: var(--wavy-2);
 }
 
 .servingTraits {
   background-color: var(--wavy-3);
+}
+
+.teams {
+  color: var(--color-orange);
 }
 
 .common {

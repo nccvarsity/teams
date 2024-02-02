@@ -27,7 +27,18 @@ const Results = ({
   const [seesYou, setSeesYou] = useState<string[]>([])
   const [teams, setTeams] = useState<string[]>([])
 
+  const notEnoughAnsweredQns = data.answeredQns
+    ? data.answeredQns.size < MINIMUM_ANSWERED_QNS
+    : true
+
   useEffect(() => {
+    if (notEnoughAnsweredQns) {
+      setServingTraits([])
+      setSeesYou([])
+      setTeams([])
+      return
+    }
+
     // Tabulate the highest archetype
     const archetypeScore = new Map<string, number>()
     archetypes.data.forEach((team) => {
@@ -67,10 +78,6 @@ const Results = ({
     setSeesYou(archetypeData?.sees_you || [])
     setTeams(archetypeData?.teams || [])
   }, [data])
-
-  const notEnoughAnsweredQns = data.answeredQns
-    ? data.answeredQns.size < MINIMUM_ANSWERED_QNS
-    : true
 
   return (
     <FadeInOut disable={true}>
@@ -112,7 +119,9 @@ const Results = ({
               </div>
               <p>
                 We believe that you will be a huge blessing in these teams:{' '}
-                {teams.join(', ')}.
+                <span className={s.teams}>
+                  <b>{teams.join(', ')}.</b>
+                </span>
               </p>
             </>
           )}
