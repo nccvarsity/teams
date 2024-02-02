@@ -33,7 +33,7 @@ const scale = 0.1
 
 useGLTF.preload(modelUrl)
 
-const StairsModel = ({ onPress }: { onPress: () => void }) => {
+const StairsModel = () => {
   const { timeline } = useScrollytelling()
   const { nodes } = useGLTF(modelUrl) as GLTFResult
 
@@ -70,7 +70,7 @@ const StairsModel = ({ onPress }: { onPress: () => void }) => {
   })
 
   return (
-    <Float onClick={onPress} floatIntensity={0.1} rotationIntensity={0.5}>
+    <Float floatIntensity={0.1} rotationIntensity={0.5}>
       <group
         dispose={null}
         scale={isMobileSize ? width * 0.42 : width * 0.18}
@@ -83,20 +83,6 @@ const StairsModel = ({ onPress }: { onPress: () => void }) => {
             geometry={nodes.Column.geometry}
             material={vMaterials.m_transparent}
           />
-          {/* <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.GuardRail.geometry}
-            material={vMaterials.m_transparent}
-            position={[0, 4.2, 0]}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Rail.geometry}
-            material={vMaterials.m_transparent}
-            position={[0, 2.2, 0]}
-          /> */}
           <mesh
             castShadow
             receiveShadow
@@ -144,11 +130,12 @@ export const CanvasWithStairsModel = ({ onPress }: { onPress: () => void }) => {
         style={{ opacity: 0, scale: 1 }}
         ref={canvasRef}
         data-mac-canvas-container
+        onClick={onPress}
       >
         <pointLight position={[1, 0, 0]} intensity={1.5} />
         <pointLight position={[0, 0, 1]} intensity={1.7} />
         <pointLight position={[0, -1, 0]} intensity={2.2} />
-        <StairsModel onPress={onPress} />
+        <StairsModel />
         <ArrowModel
           locations={[
             { position: [-1.48, 0.8, 0], rotation: [0.4, -0.1, -0.4] },
