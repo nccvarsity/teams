@@ -41,6 +41,8 @@ export const Welcome = () => {
                 </svg>
                 <p>
                   We can’t wait to have you in our teams–see you soon!
+                  <br />
+                  ↓↓↓ scroll down to find out more! ↓↓↓
                 </p>
               </div>
             </div>
