@@ -26,7 +26,7 @@ export const Welcome = () => {
             <div className={s["content"]}>
               <div className={s["footer"]}>
                 <p>
-                  We are the Varsity dream team, serving in the Father's house as His chosen and beloved sons and daughters. We come with what we have—sometimes only empty hands yet with hearts full and fully open. Open to hear His heart, and open to be the channel through which His heartbeat can be heard.
+                  Hi fam! If you’ve landed on this page, there is room just for you. The V Dream Team is all about gathering the heart of our ministry home – A place for any and everyone in V to discover your giftings, to participate in sowing into God-moments and a channel to be an expression of God’s heart in this house.
                 </p>
                 <br />
                 <svg
@@ -40,15 +40,7 @@ export const Welcome = () => {
                   />
                 </svg>
                 <p>
-                  We are intentional in creating God-moments, and experiencing them ourselves. Wherever you or the state of your heart may be, there will always be a seat at the table—with your name on it! 
-                </p>
-                <br />
-                <p>
-                  So what are you waiting for? We know that eternity is too great for us to spare a second for hesitation. Surely, we were called for such a time as this.
-                  <br />
-                  <br />
-                  <br />
-                  Come home to the heartbeat of the house.
+                  We can’t wait to have you in our teams–see you soon!
                 </p>
               </div>
             </div>
