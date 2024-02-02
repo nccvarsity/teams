@@ -46,10 +46,6 @@ export const QuizQuestions = () => {
     setUserData(newUserData)
   }
 
-  useEffect(() => {
-    console.log(userData)
-  }, [userData])
-
   function groupBy(array: any[], key: string) {
     const grouped: any = {}
     array.forEach(function (item) {
