@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import { Form } from '~/components/form/form'
 import { Question, QuestionType } from '~/components/quiz/question'
