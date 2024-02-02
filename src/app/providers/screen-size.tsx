@@ -7,8 +7,16 @@ export const ScreenSizeContext = createContext(null)
 export const ScreenSizeProvider = ({ children }: { children: ReactNode }) => {
   const [hide, setHide] = useState(false)
 
+  let width = 0
+
   useEffect(() => {
+    width = window.innerWidth
+
     const handleResize = () => {
+      if (width === window.innerWidth) {
+        return
+      }
+      width = window.innerWidth
       setHide(true)
       setTimeout(() => {
         setHide(false)
