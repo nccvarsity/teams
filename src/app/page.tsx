@@ -14,13 +14,13 @@ const HomePage = () => {
   return (
     <main>
       <ScreenSizeProvider>
-        <Welcome />
         <Outro />
         <Marquee />
         <TeamsTileboard />
         <Highlight />
         <Quiz />
         <QuizQuestions />
+        <Welcome />
       </ScreenSizeProvider>
     </main>
   )
