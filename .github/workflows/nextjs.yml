@@ -56,13 +56,13 @@ jobs:
           node-version-file: ".nvmrc"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
+        # NOTE: `static_site_generator: next` is intentionally omitted. It makes this
+        # action try to auto-edit next.config.js to inject `output: 'export'`, which
+        # fails on our config because `module.exports` is a function call
+        # (`withBundleAnalyzer(nextConfig)`), not a plain object literal. We already set
+        # output/images.unoptimized/basePath ourselves in next.config.js, so no injection
+        # is needed.
         uses: actions/configure-pages@v5
-        with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v4
         with:
