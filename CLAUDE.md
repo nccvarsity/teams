@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Single-page, scroll-driven marketing + personality-quiz site for **V Teams** (NCC Varsity serving-team recruitment). Visitors answer a quiz that maps their answers to a "serving archetype" and recommends ministry teams, then links to a sign-up form. Built as an immersive scrollytelling experience with 3D models.
+Single-page, scroll-driven marketing site for **V Teams** (NCC Varsity serving-team recruitment). It introduces the serving teams and links visitors to a sign-up form. Built as an immersive scrollytelling experience with 3D models.
 
 It is a **statically-exported** Next.js App Router site (`output: 'export'`) deployed to **GitHub Pages** — there is no server, no API routes, and no runtime image optimization.
 
@@ -34,12 +34,12 @@ These version choices are deliberate. Keep them unless you verify the blockers a
 
 ## Architecture
 
-- **App Router, single page.** `src/app/layout.tsx` (fonts, metadata, mounts `AppHooks`) → `src/app/page.tsx` composes the ordered sections in `src/app/sections/*` (`welcome`, `marquee`, `teams-tileboard`, `highlight`, `quiz-start`, `quiz-questions`, `outro`). No `pages/`, no `_app`/`_document`.
+- **App Router, single page.** `src/app/layout.tsx` (fonts, metadata, mounts `AppHooks`) → `src/app/page.tsx` composes the ordered sections in `src/app/sections/*` (`welcome`, `marquee`, `teams-tileboard`, `highlight`, `outro`). No `pages/`, no `_app`/`_document`.
 - **Client boundaries.** `src/app/app-hooks.tsx` (`'use client'`) mounts client-side app hooks (fonts-loaded, tab detection, dev inspector) incl. Google Analytics (`src/lib/ga.tsx`, wired via `usePathname` from `next/navigation`). `src/app/providers/screen-size.tsx` gates rendering during resize.
 - **3D (react-three-fiber + drei).** Section components render a `<Canvas>` with `*-model.tsx` components. GLB models live in `public/models/` and are loaded **by URL** via `useGLTF(...)` — never imported into JS. Model URLs are prefixed with the base path at runtime via `` (isProd ? '/teams' : '') + '/models/...' `` (`isProd` from `src/lib/constants.ts`).
 - **Scrollytelling.** `@bsmnt/scrollytelling`; wrapper at `src/lib/scrollytelling-client.tsx`. GSAP for animation.
-- **State.** `zustand` store at `src/context/use-app-store.ts` (tracks `fontsLoaded`). Quiz answer state is local to `src/app/sections/quiz-questions/`.
-- **Quiz is data-driven.** Logic in `src/app/sections/quiz-questions/` and `src/components/quiz/` reads `src/data/{questions,archetypes,clusters}.json`. `results.tsx` scores answer tags against archetype tags (random tie-break among the top matches) and builds the sign-up link via `src/lib/utils/signuplink.ts`.
+- **State.** `zustand` store at `src/context/use-app-store.ts` (tracks `fontsLoaded`).
+- **Sign-up links.** The `teams-tileboard` section renders team tiles via `src/components/tileboard/`; each tile links to the external Google sign-up form built by `src/lib/utils/signuplink.ts` (`createLinkFromTeamClusterName`, keyed off the `Teams` enum).
 - **Styling.** SCSS Modules (`*.module.scss`) + global styles in `src/css/`; `clsx` for conditional classes. Shared SCSS functions/variables live in `src/css/helpers.scss` and are pulled in with `@use '~/css/helpers' as *;` (the `~` alias resolves to `src/`). There is no Tailwind and no CSS-in-JS.
 
 ## Static-export & deploy constraints

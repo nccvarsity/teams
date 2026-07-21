@@ -5,8 +5,6 @@ import { Welcome } from '~/app/sections/welcome'
 import { ScreenSizeProvider } from './providers/screen-size'
 import { Highlight } from './sections/highlight'
 import { Outro } from './sections/outro'
-import { QuizQuestions } from './sections/quiz-questions'
-import { Quiz } from './sections/quiz-start'
 
 const HomePage = () => {
   return (
@@ -16,8 +14,6 @@ const HomePage = () => {
         <Marquee />
         <TeamsTileboard />
         <Highlight />
-        <Quiz />
-        <QuizQuestions />
         <Welcome />
       </ScreenSizeProvider>
     </main>
