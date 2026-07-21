@@ -1,5 +1,6 @@
 /* stylelint-disable custom-property-empty-line-before */
-@import '~/css/helpers';
+@use 'sass:math';
+@use '~/css/helpers' as *;
 
 .tileboard {
   position: relative;
@@ -66,7 +67,7 @@
     padding-left: 4px;
     position: absolute;
     top: calc($tile-height - 4.9rem);
-    transition-duration: 500ms / $duration;
+    transition-duration: math.div(500ms, $duration);
     font-size: 5rem;
     font-family: var(--font-pp-rader), var(--font-system);
     letter-spacing: 2px;
