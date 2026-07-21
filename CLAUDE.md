@@ -11,7 +11,7 @@ It is a **statically-exported** Next.js App Router site (`output: 'export'`) dep
 ## Toolchain & commands
 
 - **Package manager: Yarn 1 (classic), run via Corepack.** `yarn` is not installed globally; use `corepack enable` once (or prefix commands with `corepack yarn@1.22.22 ...`). `package.json` pins `packageManager: yarn@1.22.22`.
-- **Node ≥ 20.9** (`.nvmrc` → 20; Next 16 requirement).
+- **Node ≥ 22** (`.nvmrc` → 24; `engines.node` `>=22.0.0`). Next 16 only needs ≥ 20.9, but `camera-controls` (transitive via `@react-three/drei`) declares `node >=22.0.0`, which is the real floor.
 - **`NEXT_PUBLIC_SITE_URL` is required** — `src/lib/constants.ts` throws at import time if it is unset. For local work create a `.env` with `NEXT_PUBLIC_SITE_URL=http://localhost:3000` (see `.env.example`). `.env.production` holds the deployed URL.
 
 | Task | Command |
