@@ -7,6 +7,7 @@ import localFont from 'next/font/local'
 import { siteURL } from '~/lib/constants'
 
 import { AppHooks } from './app-hooks'
+import { Providers } from './providers'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body' })
 
@@ -64,8 +65,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       }}
     >
       <body style={{ opacity: 0 }} className={inter.variable}>
-        {children}
-        <AppHooks />
+        <Providers>
+          {children}
+          <AppHooks />
+        </Providers>
       </body>
     </html>
   )

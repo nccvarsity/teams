@@ -32,6 +32,16 @@ These version choices are deliberate. Keep them unless you verify the blockers a
 - **ESLint is on 9.x, not 10.x.** `eslint-plugin-react` / `eslint-plugin-import` still call `context.getFilename()`, removed in ESLint 10.
 - **`resolutions` forces `@radix-ui/react-slot`/`react-portal`/`react-compose-refs` up to React-19-compatible versions.** `@bsmnt/scrollytelling` declares these as `>=1` and Yarn would otherwise resolve old (React-18-only) copies that read the removed `element.ref`, which breaks GSAP ref-forwarding and causes hydration mismatches on React 19. Do not remove the `resolutions` block while on React 19.
 
+## Intentionally-unused utilities (do not delete)
+
+The following are kept **on purpose as a reusable toolbox, even though nothing imports them today**. Do **not** delete them as "dead code" during cleanup:
+
+- **Utils:** `src/lib/utils/` (`image.ts`, `numberUtils.ts`, `router.ts`) and `src/lib/api-responses.ts`.
+- **Hooks (`src/hooks/`):** `use-storage`, `use-device-detect`, `use-is-hydrated`, `use-mousetrap`, `use-prevent-scroll`, `use-image-fade-in`, `use-elements-observer`, `use-intersection-observer`, `use-isomorphic-layout-effect`.
+- **Components:** `src/components/container.tsx`, `src/components/aspect-box.tsx`, `src/components/portal.tsx`.
+
+Related: do not drop the `@tanstack/react-query` / `zod` dependencies (only `use-storage` uses them). `src/app/providers.tsx` wraps the app in a `QueryClientProvider` (mounted in `layout.tsx`) so `use-storage` works if wired up — keep it too.
+
 ## Architecture
 
 - **App Router, single page.** `src/app/layout.tsx` (fonts, metadata, mounts `AppHooks`) → `src/app/page.tsx` composes the ordered sections in `src/app/sections/*` (`welcome`, `marquee`, `teams-tileboard`, `highlight`, `outro`). No `pages/`, no `_app`/`_document`.
