@@ -7,7 +7,9 @@
   border-right: 0.15em solid var(--wavy-2);
   white-space: nowrap;
   margin: 1 auto;
-  animation: typing 0.5s steps(20, end), blink-caret 0.75s step-end infinite;
+  animation:
+    typing 0.5s steps(20, end),
+    blink-caret 0.75s step-end infinite;
 }
 
 /* The typing effect */

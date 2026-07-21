@@ -35,11 +35,11 @@ useGLTF.preload(modelUrl)
 
 const StairsModel = () => {
   const { timeline } = useScrollytelling()
-  const { nodes } = useGLTF(modelUrl) as GLTFResult
+  const { nodes } = useGLTF(modelUrl) as unknown as GLTFResult
 
   const { materials: vMaterials } = useGLTF(
     (isProd ? '/teams' : '') + '/models/house.glb'
-  ) as GLTFResult
+  ) as unknown as GLTFResult
 
   const innerRef = useRef<THREE.Group>(null)
 

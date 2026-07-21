@@ -25,7 +25,7 @@ export const ArrowModel = ({
 }) => {
   const { nodes, materials } = useGLTF(
     (isProd ? '/teams' : '') + '/models/arrow.glb'
-  ) as GLTFResult
+  ) as unknown as GLTFResult
 
   const width = useThree(
     (state: { viewport: { width: any } }) => state.viewport.width

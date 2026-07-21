@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, ReactNode, useEffect, useState } from 'react'
+import { createContext, ReactNode, useEffect, useState } from 'react'
 import { isSafari } from 'react-device-detect'
 
 export const ScreenSizeContext = createContext(null)

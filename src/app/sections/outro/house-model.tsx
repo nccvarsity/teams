@@ -34,7 +34,7 @@ useGLTF.preload((isProd ? '/teams' : '') + '/models/house.glb')
 const HouseModel = () => {
   const { nodes, materials } = useGLTF(
     (isProd ? '/teams' : '') + '/models/house.glb'
-  ) as GLTFResult
+  ) as unknown as GLTFResult
   const innerRef = useRef<THREE.Group>(null)
   const width = useThree(
     (state: { viewport: { width: any } }) => state.viewport.width

@@ -9,7 +9,7 @@ const speed = 77
 const typewriter = async (
   i: number,
   text: string,
-  element: RefObject<HTMLParagraphElement>
+  element: RefObject<HTMLParagraphElement | null>
 ) => {
   if (
     i < text.length &&
@@ -27,7 +27,7 @@ interface TypewriterProps {
 }
 
 export const Typewriter: FC<TypewriterProps> = ({ text }) => {
-  const pref = useRef() as RefObject<HTMLParagraphElement>
+  const pref = useRef<HTMLParagraphElement>(null)
   if (useHasRendered()) {
     typewriter(0, text, pref)
   }

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Marquee } from '~/app/sections/marquee'
 import { TeamsTileboard } from '~/app/sections/teams-tileboard'
 import { Welcome } from '~/app/sections/welcome'

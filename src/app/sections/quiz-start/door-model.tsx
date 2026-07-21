@@ -38,11 +38,11 @@ const DoorModel = ({ onPress }: { onPress: () => void }) => {
   const { timeline } = useScrollytelling()
   const { nodes, materials } = useGLTF(
     (isProd ? '/teams' : '') + '/models/door.glb'
-  ) as GLTFResult
+  ) as unknown as GLTFResult
 
   const { materials: vMaterials } = useGLTF(
     (isProd ? '/teams' : '') + '/models/house.glb'
-  ) as GLTFResult
+  ) as unknown as GLTFResult
 
   const innerRef = useRef<THREE.Group>(null)
   const width = useThree(
