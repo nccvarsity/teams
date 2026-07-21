@@ -146,9 +146,10 @@
   }
 }
 
+// Expanded height is measured from the content at runtime (see
+// expandable-tile.tsx) and applied inline so the tile stretches to fit its
+// content while still animating via the `transition` on `.tile`.
 .tileExpanded {
-  height: $tile-height-expanded;
-
   &Title {
     letter-spacing: 4px;
   }

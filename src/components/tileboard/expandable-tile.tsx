@@ -3,7 +3,9 @@
 import { Icon } from '@iconify/react'
 import clsx from 'clsx'
 import Link from 'next/link'
-import { FC, ReactNode } from 'react'
+import { FC, useRef, useState } from 'react'
+
+import { useIsomorphicLayoutEffect } from '~/hooks/use-isomorphic-layout-effect'
 
 import { Typewriter } from '../typewriter'
 import type { tileMetaData } from '.'
@@ -14,22 +16,60 @@ interface ExpandableTileProps {
   metaData: tileMetaData
   index: number
   zIndex: number
-  children?: ReactNode
 }
+
+// Breathing room left below the description when the tile is expanded.
+const BOTTOM_GAP_REM = 2.5
 
 const ExpandableTile: FC<ExpandableTileProps> = ({
   metaData,
   zIndex,
   index
 }) => {
+  const isOn = metaData.toggleState.isOn
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const descriptionRef = useRef<HTMLParagraphElement>(null)
+  const [expandedHeight, setExpandedHeight] = useState<number>()
+
+  // Measure the content so the tile can stretch to fit it. The title and
+  // description are absolutely positioned, so we derive the required height
+  // from the description's rendered bottom edge rather than from flow height.
+  // Driving the wrapper's height with a concrete pixel value keeps the
+  // expand/collapse animation (the `transition` on `.tile`).
+  useIsomorphicLayoutEffect(() => {
+    if (!isOn) {
+      setExpandedHeight(undefined)
+      return
+    }
+
+    const measure = () => {
+      const wrapper = wrapperRef.current
+      const description = descriptionRef.current
+      if (!wrapper || !description) return
+      const remInPx = parseFloat(
+        getComputedStyle(document.documentElement).fontSize
+      )
+      const wrapperTop = wrapper.getBoundingClientRect().top
+      const descriptionBottom = description.getBoundingClientRect().bottom
+      setExpandedHeight(
+        descriptionBottom - wrapperTop + BOTTOM_GAP_REM * remInPx
+      )
+    }
+
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [isOn])
+
   const tileClassName =
     index % 2 === 0
-      ? metaData.toggleState.isOn
+      ? isOn
         ? clsx(s.tilePrimaryExpanded, s.tilePrimary)
         : s.tilePrimary
-      : metaData.toggleState.isOn
+      : isOn
         ? clsx(s.tileSecondaryExpanded, s.tileSecondary)
         : s.tileSecondary
+
   function handleClick() {
     metaData.toggleState.handleToggle()
   }
@@ -39,14 +79,18 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
   const longName = metaData.name.length > 7
   const veryLongName = metaData.name.length > 10
   return (
-    <>
+    <div
+      ref={wrapperRef}
+      className={isOn ? clsx(s.tileExpanded, s.tile) : s.tile}
+      style={isOn && expandedHeight ? { height: expandedHeight } : undefined}
+    >
       <div
         onClick={handleClick}
         style={{ zIndex: zIndex }}
         className={tileClassName}
       >
         <div className={s.jd}>
-          {metaData.toggleState.isOn
+          {isOn
             ? metaData.jd.map((text) => (
                 <div key={text} className={s.jdtext}>
                   <Typewriter text={text} />
@@ -59,7 +103,7 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
             onClick={handleTitleClick}
             style={{ zIndex: zIndex + 1 }}
             className={clsx(
-              metaData.toggleState.isOn
+              isOn
                 ? clsx(s.tileExpandedTitle, s.tileTitle, s.wavyText)
                 : s.tileTitle,
               veryLongName
@@ -71,7 +115,7 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
           >
             {metaData.name}
           </h1>
-          {metaData.toggleState.isOn && (
+          {isOn && (
             <div
               style={{ zIndex: zIndex + 2 }}
               className={
@@ -86,15 +130,16 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
             </div>
           )}
         </Link>
-        <p style={{ zIndex: zIndex + 1 }} className={s.tileDescription}>
+        <p
+          ref={descriptionRef}
+          style={{ zIndex: zIndex + 1 }}
+          className={s.tileDescription}
+        >
           {metaData.description}
         </p>
-        <ExpandRetract
-          zIndex={zIndex + 2}
-          isExpanded={metaData.toggleState.isOn}
-        />
+        <ExpandRetract zIndex={zIndex + 2} isExpanded={isOn} />
       </div>
-    </>
+    </div>
   )
 }
 

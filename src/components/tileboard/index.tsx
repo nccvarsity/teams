@@ -1,7 +1,5 @@
 'use client'
 
-import clsx from 'clsx'
-
 import { ToggleState, useToggleState } from '~/hooks/use-toggle-state'
 import { createLinkFromTeamClusterName, Teams } from '~/lib/utils/signuplink'
 
@@ -155,27 +153,15 @@ export const Tileboard = () => {
   ]
 
   return (
-    <>
-      <div className={s.tileboard}>
-        {tileMetaData.map((tileMetaData, index) => (
-          <div
-            key={tileMetaData.name}
-            className={
-              tileMetaData.toggleState.isOn
-                ? clsx(s.tileExpanded, s.tile)
-                : clsx(s.tile)
-            }
-          >
-            <ExpandableTile
-              metaData={tileMetaData}
-              zIndex={(index + 1) * 100}
-              index={index}
-            >
-              {tileMetaData.name}
-            </ExpandableTile>
-          </div>
-        ))}
-      </div>
-    </>
+    <div className={s.tileboard}>
+      {tileMetaData.map((tile, index) => (
+        <ExpandableTile
+          key={tile.name}
+          metaData={tile}
+          zIndex={(index + 1) * 100}
+          index={index}
+        />
+      ))}
+    </div>
   )
 }
