@@ -3,7 +3,7 @@
 import { Icon } from '@iconify/react'
 import clsx from 'clsx'
 import Link from 'next/link'
-import React, { FC, ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 
 import { Typewriter } from '../typewriter'
 import type { tileMetaData } from '.'
@@ -28,8 +28,8 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
         ? clsx(s.tilePrimaryExpanded, s.tilePrimary)
         : s.tilePrimary
       : metaData.toggleState.isOn
-      ? clsx(s.tileSecondaryExpanded, s.tileSecondary)
-      : s.tileSecondary
+        ? clsx(s.tileSecondaryExpanded, s.tileSecondary)
+        : s.tileSecondary
   function handleClick() {
     metaData.toggleState.handleToggle()
   }
@@ -65,8 +65,8 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
               veryLongName
                 ? s.tileTitleReducedMore
                 : longName
-                ? s.tileTitleReduced
-                : s.tileTitle
+                  ? s.tileTitleReduced
+                  : s.tileTitle
             )}
           >
             {metaData.name}
@@ -78,8 +78,8 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
                 veryLongName
                   ? clsx(s.arrow, s.arrowLowest)
                   : longName
-                  ? clsx(s.arrow, s.arrowLower)
-                  : s.arrow
+                    ? clsx(s.arrow, s.arrowLower)
+                    : s.arrow
               }
             >
               <Icon icon="pixelarticons:reply" height={90} />

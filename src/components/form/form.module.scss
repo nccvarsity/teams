@@ -1,4 +1,4 @@
-@import '~/css/helpers';
+@use '~/css/helpers' as *;
 
 .pin-spacer {
   position: relative;

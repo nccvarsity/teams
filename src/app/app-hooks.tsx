@@ -1,25 +1,25 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 import { useAppStore } from '~/context/use-app-store'
 import {
-  teamsLog,
   gaTrackingId,
   isClient,
   isDev,
-  isProd
+  isProd,
+  teamsLog
 } from '~/lib/constants'
 import { GAScripts, useAppGA } from '~/lib/ga'
 
 export const AppHooks = () => {
   if (isClient) {
     if (isProd) {
-        // eslint-disable-next-line no-console
-        console.log(teamsLog)
+      // eslint-disable-next-line no-console
+      console.log(teamsLog)
     } else {
-        console.log(teamsLog)
-    } 
+      console.log(teamsLog)
+    }
   }
 
   if (gaTrackingId) useAppGA()

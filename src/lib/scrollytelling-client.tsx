@@ -1,3 +1,3 @@
-"use client";
+'use client'
 
-export * from "@bsmnt/scrollytelling";
+export * from '@bsmnt/scrollytelling'

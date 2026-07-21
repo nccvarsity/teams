@@ -1,32 +1,36 @@
-"use client";
+'use client'
 
-import * as Scrollytelling from "~/lib/scrollytelling-client";
+import * as Scrollytelling from '~/lib/scrollytelling-client'
 
-import s from "./welcome.module.scss";
 // import Link from "next/link";
-import { CanvasWithVarsityModel } from "./varsity-model";
+import { CanvasWithVarsityModel } from './varsity-model'
+import s from './welcome.module.scss'
 
 export const Welcome = () => {
   return (
     <Scrollytelling.Root
-      defaults={{ ease: "linear" }}
+      defaults={{ ease: 'linear' }}
       // debug={{ label: "Welcome" }}
     >
       <Scrollytelling.Pin
-        childHeight={"100vh"}
-        pinSpacerHeight={"300vh"}
-        pinSpacerClassName={s["pin-spacer"]}
+        childHeight={'100vh'}
+        pinSpacerHeight={'300vh'}
+        pinSpacerClassName={s['pin-spacer']}
       >
         <section>
-          <div className={s["model-container"]}>
+          <div className={s['model-container']}>
             <CanvasWithVarsityModel />
           </div>
 
           <div className="wrapper">
-            <div className={s["content"]}>
-              <div className={s["footer"]}>
+            <div className={s['content']}>
+              <div className={s['footer']}>
                 <p>
-                  Hi fam! If you’ve landed on this page, there is room just for you. The V Dream Team is all about gathering the heart of our ministry home – A place for any and everyone in V to discover your giftings, to participate in sowing into God-moments and a channel to be an expression of God’s heart in this house.
+                  Hi fam! If you’ve landed on this page, there is room just for
+                  you. The V Dream Team is all about gathering the heart of our
+                  ministry home – A place for any and everyone in V to discover
+                  your giftings, to participate in sowing into God-moments and a
+                  channel to be an expression of God’s heart in this house.
                 </p>
                 <br />
                 <svg
@@ -39,14 +43,12 @@ export const Welcome = () => {
                     fill="white"
                   />
                 </svg>
-                <p>
-                  We can’t wait to have you in our teams–see you soon!
-                </p>
+                <p>We can’t wait to have you in our teams–see you soon!</p>
               </div>
             </div>
           </div>
         </section>
       </Scrollytelling.Pin>
     </Scrollytelling.Root>
-  );
-};
+  )
+}

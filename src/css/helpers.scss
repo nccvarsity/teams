@@ -3,10 +3,10 @@
 
 /* stylelint-disable-next-line number-max-precision */
 $golden-ratio: 1.6180339887498948482;
-$reciprocal-golden-ratio: 1 / $golden-ratio;
+$reciprocal-golden-ratio: math.div(1, $golden-ratio);
 $duration: $reciprocal-golden-ratio * 1.2;
-$tile-height: 100vh / ($golden-ratio * $golden-ratio);
-$tile-height-expanded: 107vh / $golden-ratio;
+$tile-height: math.div(100vh, $golden-ratio * $golden-ratio);
+$tile-height-expanded: math.div(107vh, $golden-ratio);
 
 @function tovw($target, $min: 'placeholder', $context: 1920px) {
   @if $context == 'desktop-large' {

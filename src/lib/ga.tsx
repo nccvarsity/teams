@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import Script from 'next/script'
 import * as React from 'react'
 
@@ -75,17 +75,18 @@ export const GAScripts = () => {
   )
 }
 
-// Use this hook in _app.tsx
+// Tracks client-side navigations in the App Router. The initial pageview is
+// already sent by the inline gtag-init script, so the first render is skipped
+// to avoid double-counting.
 export const useAppGA = () => {
-  const router = useRouter()
+  const pathname = usePathname()
+  const isInitial = React.useRef(true)
 
   React.useEffect(() => {
-    const handleRouteChange = (url: string) => {
-      pageview(url)
+    if (isInitial.current) {
+      isInitial.current = false
+      return
     }
-    router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+    if (pathname) pageview(pathname)
+  }, [pathname])
 }
