@@ -1,16 +1,16 @@
 @use '../../../css/helpers' as *;
 
 .section {
-  height: 420vh;
+  height: stable-vh(420);
   position: relative;
   z-index: 1;
   font-family: var(--font-pp-mori, var(--font-system));
 }
 
 .pinned {
-  height: 61.8vh;
+  height: stable-vh(61.8);
   position: sticky;
-  top: 11.8vh;
+  top: stable-vh(11.8);
   overflow: hidden;
   display: flex;
   justify-content: flex-end;
@@ -20,7 +20,7 @@
 }
 
 .animated {
-  height: 61.8vh;
+  height: stable-vh(61.8);
   position: absolute;
   right: var(--right);
   display: flex;
