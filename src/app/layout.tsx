@@ -66,7 +66,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     >
       <body style={{ opacity: 0 }} className={inter.variable}>
         <Providers>
-          {children}
+          {/* All page content scrolls inside this element instead of the
+              document body, so mobile in-app browsers (e.g. Telegram) stop
+              showing/hiding their URL bar + toolbar on scroll. See #scroller in
+              global.scss; the scrollytelling ScrollTriggers are pointed here via
+              window.__scrollytellingScroller in lib/scrollytelling-client.tsx. */}
+          <div id="scroller">{children}</div>
           <AppHooks />
         </Providers>
       </body>
