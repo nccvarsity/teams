@@ -1,8 +1,5 @@
 'use client'
 
-import clsx from 'clsx'
-
-import { useDeviceDetect } from '~/hooks/use-device-detect'
 import { ToggleState, useToggleState } from '~/hooks/use-toggle-state'
 import { createLinkFromTeamClusterName, Teams } from '~/lib/utils/signuplink'
 
@@ -19,8 +16,6 @@ export interface tileMetaData {
 }
 
 export const Tileboard = () => {
-  const { isMobile } = useDeviceDetect()
-
   const tileMetaData: tileMetaData[] = [
     {
       name: 'PHOTOGS',
@@ -158,7 +153,7 @@ export const Tileboard = () => {
   ]
 
   return (
-    <div className={clsx(s.tileboard, isMobile && s.tileboardMobile)}>
+    <div className={s.tileboard}>
       {tileMetaData.map((tile, index) => (
         <ExpandableTile
           key={tile.name}

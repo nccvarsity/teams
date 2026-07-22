@@ -13,8 +13,8 @@ export const Welcome = () => {
       // debug={{ label: "Welcome" }}
     >
       <Scrollytelling.Pin
-        childHeight={'calc(var(--vh) * 100)'}
-        pinSpacerHeight={'calc(var(--vh) * 300)'}
+        childHeight={'100vh'}
+        pinSpacerHeight={'300vh'}
         pinSpacerClassName={s['pin-spacer']}
       >
         <section>

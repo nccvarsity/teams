@@ -38,13 +38,6 @@ $tile-height-expanded: math.div(107vh, $golden-ratio);
   @return string.unquote((math.div($target, $context) * 100) + 'vw');
 }
 
-// Returns a length in the stable viewport-height unit (see `--vh` in
-// global.scss). Use for scroll-section heights so they don't resize when a
-// mobile in-app browser toggles its URL bar mid-scroll.
-@function stable-vh($n) {
-  @return calc(var(--vh) * #{$n});
-}
-
 @function torem($target, $context: 16px) {
   @if $target == 0 {
     @return 0;
