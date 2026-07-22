@@ -1,5 +1,6 @@
 'use client'
 
+import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { useEffect } from 'react'
 
@@ -28,22 +29,36 @@ export const AppHooks = () => {
   useOverflowDebuggerInDev()
   useUserIsTabbing()
   useFontsLoaded()
-  useIgnoreMobileResize()
+  useMobileScrollNormalization()
 
   return gaTrackingId ? <GAScripts /> : null
 }
 
 /* APP HOOKS */
 
-// Mobile in-app browsers (e.g. Telegram, Instagram) show/hide their URL bar and
-// bottom nav as the user scrolls, firing `resize` events even though the width
-// never changes. By default GSAP's ScrollTrigger refreshes (recalculating every
-// pin's start/end) on those events, which repositions the pinned sections
-// mid-scroll and makes the page visibly slide/glide. `ignoreMobileResize` tells
-// ScrollTrigger to skip that refresh for height-only mobile resizes.
-const useIgnoreMobileResize = () => {
+// Tames scrolling inside mobile in-app browsers (e.g. Telegram, Instagram).
+//
+// 1. `ignoreMobileResize`: those browsers show/hide their URL bar and bottom nav
+//    as the user scrolls, firing height-only `resize` events. By default GSAP's
+//    ScrollTrigger refreshes (recalculating every pin's start/end) on resize,
+//    repositioning the pinned sections mid-scroll. This skips that refresh.
+//
+// 2. `normalizeScroll`: on the naturally-scrolling section (the teams tiles) the
+//    URL bar's show/hide on every scroll-direction change hijacks the first part
+//    of the gesture — the page briefly moves the wrong way before scrolling. This
+//    is inherent browser behaviour that CSS can't reach, because the document
+//    body is the scroller. `normalizeScroll` moves scroll handling onto the JS
+//    thread and keeps iOS from toggling the URL bar mid-scroll. Scoped to touch
+//    so desktop wheel/trackpad scrolling stays fully native.
+const useMobileScrollNormalization = () => {
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
     ScrollTrigger.config({ ignoreMobileResize: true })
+    ScrollTrigger.normalizeScroll({ type: 'touch', allowNestedScroll: true })
+
+    return () => {
+      ScrollTrigger.normalizeScroll(false)
+    }
   }, [])
 }
 

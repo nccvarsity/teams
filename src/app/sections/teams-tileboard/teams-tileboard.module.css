@@ -1,3 +1,7 @@
 .home {
+  /* lvh doesn't change when the mobile URL bar toggles (see --vh in
+     global.scss); vh fallback for browsers without lvh. */
   min-height: 100vh;
+  /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+  min-height: 100lvh;
 }
