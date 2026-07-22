@@ -5,6 +5,17 @@
 @import './reset.css';
 
 :root {
+  // Stable viewport-height unit. `lvh` is fixed to the viewport with the mobile
+  // browser UI (URL bar) retracted, so — unlike `vh`/`dvh` — it does NOT change
+  // when an in-app browser (e.g. Telegram) shows/hides its URL bar while
+  // scrolling. Sizing the scroll sections from this keeps the layout height
+  // constant during scroll, which stops the page from sliding/gliding. Falls
+  // back to `vh` on browsers without `lvh`. Consume via `stable-vh()` (SCSS) or
+  // `calc(var(--vh) * n)` (inline styles).
+  --vh: 1vh;
+  /* stylelint-disable-next-line declaration-block-no-duplicate-custom-properties */
+  --vh: 1lvh;
+
   --font-system:
     -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen, ubuntu,
     cantarell, fira sans, droid sans, helvetica neue, sans-serif;

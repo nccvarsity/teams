@@ -2,14 +2,14 @@
 
 .spacer {
   position: relative;
-  height: 277vh;
+  height: stable-vh(277);
 }
 
 .pin {
   position: relative;
   /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
   position: sticky;
-  height: 100vh;
+  height: stable-vh(100);
   display: flex;
   flex-direction: column;
   justify-content: center;
