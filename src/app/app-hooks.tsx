@@ -1,5 +1,6 @@
 'use client'
 
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { useEffect } from 'react'
 
 import { useAppStore } from '~/context/use-app-store'
@@ -27,11 +28,24 @@ export const AppHooks = () => {
   useOverflowDebuggerInDev()
   useUserIsTabbing()
   useFontsLoaded()
+  useIgnoreMobileResize()
 
   return gaTrackingId ? <GAScripts /> : null
 }
 
 /* APP HOOKS */
+
+// Mobile in-app browsers (e.g. Telegram, Instagram) show/hide their URL bar and
+// bottom nav as the user scrolls, firing `resize` events even though the width
+// never changes. By default GSAP's ScrollTrigger refreshes (recalculating every
+// pin's start/end) on those events, which repositions the pinned sections
+// mid-scroll and makes the page visibly slide/glide. `ignoreMobileResize` tells
+// ScrollTrigger to skip that refresh for height-only mobile resizes.
+const useIgnoreMobileResize = () => {
+  useEffect(() => {
+    ScrollTrigger.config({ ignoreMobileResize: true })
+  }, [])
+}
 
 const useOverflowDebuggerInDev = () => {
   useEffect(() => {
