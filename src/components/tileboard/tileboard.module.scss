@@ -9,13 +9,28 @@
   top: 0;
   padding: 0;
   background-color: var(--color-black);
+
+  // Collapsed tile height. Defaults to the viewport-height golden-ratio value
+  // used on desktop (where the viewport height is stable). It is exposed as a
+  // custom property so it can be overridden per-device — see `.tileboardMobile`.
+  --tile-height: #{$tile-height};
+}
+
+// In-app mobile browsers (e.g. Telegram, Instagram) show/hide their toolbar as
+// the user scrolls, which changes the visual viewport height (`vh`). Because
+// the collapsed tile height was derived from `vh`, the tiles visibly resized
+// while scrolling. On mobile we instead size the tiles from the viewport
+// *width*, which stays constant during vertical scrolling. Applied only on
+// mobile (via `useDeviceDetect`) so desktop keeps its viewport-height sizing.
+.tileboardMobile {
+  --tile-height: clamp(16rem, 78vw, 24rem);
 }
 
 .tile {
   position: relative;
   font-size: max(16px, 0.925vw);
   width: 100%;
-  height: $tile-height;
+  height: var(--tile-height);
   padding: 0;
   // border-radius: 0 0 1.5rem 1.5rem;
   transition: all 350ms ease-in-out;
@@ -66,7 +81,7 @@
   &Title {
     padding-left: 4px;
     position: absolute;
-    top: calc($tile-height - 4.9rem);
+    top: calc(var(--tile-height) - 4.9rem);
     transition-duration: math.div(500ms, $duration);
     font-size: 5rem;
     font-family: var(--font-pp-rader), var(--font-system);
@@ -76,19 +91,19 @@
 
     &Reduced {
       font-size: 4.6rem;
-      top: calc($tile-height - 4.75rem);
+      top: calc(var(--tile-height) - 4.75rem);
     }
 
     &ReducedMore {
       font-size: 4.3rem;
-      top: calc($tile-height - 3.9rem);
+      top: calc(var(--tile-height) - 3.9rem);
     }
   }
 
   &Description {
     padding: 0 8px;
     position: absolute;
-    top: calc($tile-height + 2.2rem);
+    top: calc(var(--tile-height) + 2.2rem);
   }
 }
 
@@ -102,7 +117,7 @@
 
 .arrow {
   position: absolute;
-  top: calc($tile-height - 3.8rem);
+  top: calc(var(--tile-height) - 3.8rem);
   right: 0;
   color: var(--color-expand-chevron);
   -webkit-animation: left-right 0.5s infinite; /* Chrome, Safari, Opera */
@@ -118,11 +133,11 @@
   }
 
   &Lower {
-    top: calc($tile-height - 3.95rem);
+    top: calc(var(--tile-height) - 3.95rem);
   }
 
   &Lowest {
-    top: calc($tile-height - 3.5rem);
+    top: calc(var(--tile-height) - 3.5rem);
   }
 }
 
