@@ -76,10 +76,33 @@ html {
   -webkit-tap-highlight-color: rgb(255 255 255 / 0) !important;
 }
 
+// The document body is kept non-scrollable so mobile in-app browsers don't
+// toggle their chrome on scroll; #scroller is the real scroll container.
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   background-color: #222;
   font-family: var(--font-pp-mori), var(--font-body);
   transition: opacity #{math.div($duration, 3) + 's'} ease-in;
+}
+
+// The single scroll container for the whole page (see layout.tsx). Every GSAP
+// ScrollTrigger the scrollytelling library creates is pointed here via
+// window.__scrollytellingScroller. `dvh` fits the current visual viewport;
+// because the body no longer scrolls, the browser chrome stays put and dvh is
+// stable.
+#scroller {
+  height: 100vh;
+  /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+  height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 body.inspect * {
