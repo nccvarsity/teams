@@ -1,5 +1,6 @@
 import { forwardRef } from 'react'
 
+import { isProd } from '~/lib/constants'
 import * as Scrollytelling from '~/lib/scrollytelling-client'
 
 import s from './marquee.module.scss'
@@ -7,6 +8,8 @@ import s from './marquee.module.scss'
 const phrase = '     THE DREAM TEAM  →'
 const splitPhrase = phrase.split('')
 const charsLength = splitPhrase.length
+
+const harveySrc = (isProd ? '/teams' : '') + '/harvey/harvey-coffee.png'
 
 export const Marquee = () => {
   return (
@@ -72,18 +75,43 @@ export const Marquee = () => {
                   })}
                 </p>
               </Scrollytelling.Animation>
-              <Scrollytelling.Animation
-                tween={{
-                  start: 90,
-                  end: 100,
-                  fromTo: [
-                    { scale: 0.8, opacity: 0 },
-                    { scale: 1.45, opacity: 1, ease: 'linear' }
-                  ]
-                }}
-              >
-                <VarsitySVG />
-              </Scrollytelling.Animation>
+              <div className={s.logoGroup}>
+                <Scrollytelling.Animation
+                  tween={{
+                    start: 90,
+                    end: 100,
+                    fromTo: [
+                      { scale: 0.8, opacity: 0 },
+                      { scale: 1.45, opacity: 1, ease: 'linear' }
+                    ]
+                  }}
+                >
+                  <VarsitySVG />
+                </Scrollytelling.Animation>
+
+                {/* Harvey slides in on the right, overlapping the V. He runs on
+                    his own tween (different range + ease) so he drifts at a
+                    different speed than the logo — a bit of parallax motion. */}
+                <div className={s.harveyAnchor}>
+                  <Scrollytelling.Animation
+                    tween={{
+                      start: 85,
+                      end: 100,
+                      fromTo: [
+                        { xPercent: 130, opacity: 0 },
+                        { xPercent: 0, opacity: 1, ease: 'power2.out' }
+                      ]
+                    }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      className={s.harvey}
+                      src={harveySrc}
+                      alt="Harvey, the V Teams mascot"
+                    />
+                  </Scrollytelling.Animation>
+                </div>
+              </div>
             </div>
           </Scrollytelling.Animation>
         </div>

@@ -33,16 +33,68 @@
   user-select: none;
 }
 
-.theSvg {
-  width: var(--svg-width);
-  height: tovw(777px);
+.logoGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: tovw(80px);
 
+  // Rendered size of the V (also drives Harvey's size + position). The SVG box
+  // is wider than it is tall on larger screens, so with the default (meet)
+  // aspect ratio the V is height-constrained and its on-screen size tracks the
+  // SVG's height. The min(..., 38vh) caps it against viewport *height*: on
+  // wide/short screens the whole group scales down to fit instead of letting
+  // Harvey's feet (and the enlarged V) spill past .pinned's overflow: hidden.
+  --v-size: min(#{tovw(777px)}, 38vh);
+
+  // Everything else is expressed as a fraction of --v-size so the composition
+  // stays put across breakpoints. Tweak these to taste:
+  --logo-shift: calc(var(--v-size) * 0.12); // nudge the V left of centre
+  --harvey-height: calc(var(--v-size) * 0.82); // Harvey vs. the V's height
+  --harvey-offset-x: calc(var(--v-size) * 0.37); // right of the V's centre
+  --harvey-bottom: calc(var(--v-size) * -0.22); // negative drops him lower
+
   @media (min-width: 900px) {
-    height: tovw(425px);
+    --v-size: min(#{tovw(425px)}, 38vh);
   }
 
   @media (min-width: 1200px) {
-    height: tovw(225px);
+    --v-size: min(#{tovw(225px)}, 38vh);
   }
+}
+
+.theSvg {
+  // position/left (not transform) so it doesn't fight the GSAP scale tween
+  position: relative;
+  left: calc(-1 * var(--logo-shift));
+  width: var(--svg-width);
+  height: var(--v-size); // capped per-breakpoint on .logoGroup (fits Harvey)
+  // Hidden until the reveal tween runs. The body is only gated on fonts-loaded,
+  // not on GSAP, so without this the logo can flash before its from-state lands.
+  // The fromTo tween (opacity 0 -> 1) overrides this at the reveal.
+  opacity: 0;
+}
+
+.harveyAnchor {
+  position: absolute;
+  left: 50%;
+  bottom: var(--harvey-bottom);
+  z-index: 2;
+  width: calc(var(--harvey-height) * 540 / 462); // preserve 540×462 aspect
+  // Centre on the V, then push right of its centre. The GSAP parallax tween
+  // lives on the inner <img>, so keep this element transform free of it.
+  transform: translateX(
+    calc(-50% - var(--logo-shift) + var(--harvey-offset-x))
+  );
+  pointer-events: none;
+}
+
+.harvey {
+  display: block;
+  width: 100%;
+  height: auto;
+  // Same reason as .theSvg — start hidden so Harvey doesn't flash on load.
+  // The fromTo tween (opacity 0 -> 1) reveals him during the slide-in.
+  opacity: 0;
 }
