@@ -33,11 +33,10 @@ export const Typewriter: FC<TypewriterProps> = ({ text }) => {
   const [revealed, setRevealed] = useState(0)
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setRevealed(graphemes.length)
-      return
-    }
-
+    // Deliberately not gated on `prefers-reduced-motion`: this is the tiles'
+    // signature effect, and revealing text in place involves none of the
+    // movement that setting is meant to suppress.
+    //
     // Derive the character count from elapsed time rather than counting
     // timeouts, so the animation runs at the same speed regardless of frame
     // rate and cannot drift if a frame is dropped.
