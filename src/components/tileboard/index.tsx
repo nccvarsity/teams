@@ -18,97 +18,15 @@ export interface tileMetaData {
 export const Tileboard = () => {
   const tileMetaData: tileMetaData[] = [
     {
-      name: 'PHOTOGS',
-      url: createLinkFromTeamClusterName([Teams.PHOTOGS]),
-      description: `
-      Hello fellow shutter-fingers! If you feel a resonance to tell stories with a camera, join us to document V life, culture, and events. Snap, don’t nap and see you soon! 
-      `,
-      jd: [
-        '♾️ Capture God-moments 🙌🏼',
-        '📸 Take photographs at V events ⚡',
-        '🪄 Edit photos to be used for publicity ✨',
-        '👩🏻‍💻 Collaborate with social media team 📱'
-      ],
-      toggleState: useToggleState()
-    },
-    {
-      name: 'SOCIAL',
-      url: createLinkFromTeamClusterName([Teams.SOCIAL]),
-      description: `
-      We’re seeking all with energy and heart to collaborate on our social team. If you have an eye for content and visuals, and have a passion for creating memories and messages for our V family, we would love to hear from you!
-      `,
-      jd: [
-        '🌐 Show V off to the world! 🔥',
-        '🤳🏽 Create content for IG - reels/visuals 🎨',
-        '🤔 Ideate for social media content 💭'
-      ],
-      toggleState: useToggleState()
-    },
-    {
-      name: 'FOYER EXP',
-      url: createLinkFromTeamClusterName([Teams.FOYER_EXP]),
-      description: `
-      Pre-service is where the party begins! If you have hands available and time to sow into the pre-service experience, come and be part of our ninja team doing the creative setup and installations. Legend has it that some make a friend or two during this magic hour.
-      `,
-      jd: [
-        '🛠️ Be part of building God’s house 🏠',
-        '🏗️ Set up pre-service activities 🏓',
-        '🤲🏻 Be the creative hands and feet 👟'
-      ],
-      toggleState: useToggleState()
-    },
-    {
-      name: 'LORO',
-      url: createLinkFromTeamClusterName([Teams.LORO]),
-      description: `
-      If you have a love for befriending new faces, and have a desire to grow into our hosting team here in the Fathers’ house, we can’t wait to meet you. LORO is where your warmth and love can go a long way for one person–come speak to us and we’ll tell you more!
-      `,
-      jd: [
-        '🤗 Welcome the V fam ✌🏽',
-        '🆕 Be a friend to newcomers 🤝🏼',
-        '🔗 Connect with NBNCs after service ☕',
-        '🙏🏼 Be a prayer warrior! ⚔️'
-      ],
-      toggleState: useToggleState()
-    },
-    {
-      name: 'FOYER OPS',
-      url: createLinkFromTeamClusterName([Teams.FOYER_OPS]),
-      description: `
-      We make sure you get where you need to be, bringing you from the entrance all the way into the Father’s embrace—safely and swiftly. Wayfinding doesn’t get more meaningful than this! 
-      `,
-      jd: [
-        '🚶🏻‍♀️ Manage and direct the flow of people 🚶🏻‍♂️',
-        '🚧 Control access points 🚦',
-        '🍞 Prepare Holy Communion elements 🍷'
-      ],
-      toggleState: useToggleState()
-    },
-    {
-      name: 'AUDI OPS',
-      url: createLinkFromTeamClusterName([Teams.AUDI_OPS]),
-      description: `
-      V is family. We believe that every V youth has a seat at the table in the Father’s house with their name on it. We make sure that they find it—with warm smiles and even warmer hearts!
-      `,
-      jd: [
-        '🚪 Doorkeep the Father’s house ✋🏼',
-        '👉🏻 Guide lost sheep in the auditorium 🐑',
-        '🚩 Direct people to unoccupied seats 🪑',
-        '🙇🏻‍♀️ Support during ministering 🤲🏽'
-      ],
-      toggleState: useToggleState()
-    },
-    {
       name: 'LOGS',
       url: createLinkFromTeamClusterName([Teams.LOGS]),
       description: `
-      First to arrive on scene, we ensure everything is up and running for a smooth Varsity experience! Whether it’s moving items on stage or anywhere else, we’re always ready—all while having the best time in His house!
+      As V Logs, we help to provide the V serving teams with what they need to carry out the Father’s business. Every item we account for and distribute to the teams is a means of blessing the people, be it the servers who carry out their roles or the newcomers that come for our services. We move things around with the sole purpose of making room for Him to move! 📦
       `,
       jd: [
-        '📋 Account for logistics ✅',
-        '📻 Distribute and collect walkies 🗣️',
-        '🪧 Set up spaces/equipment 📺',
-        '💪🏼 Assist production on stage 🪨'
+        'Account for and distribute logistics to the various teams pre-service 📤',
+        'Assist in setting up and tearing down of spaces/equipment 🏗️',
+        'Collect and account for logistics post-service and bring them to be transported 🚛'
       ],
       toggleState: useToggleState()
     },
@@ -116,24 +34,117 @@ export const Tileboard = () => {
       name: 'SECURITY',
       url: createLinkFromTeamClusterName([Teams.SECURITY]),
       description: `
-      Alert and swift to respond to changes on the ground,
-      our desire is to create a safe space for everyone to enjoy V
-      freely! If you share our heart, come join us!
+      The V Security Team is here to create a safe and welcoming space for every youth and server—we look out for their well-being so that they can be on the look out for what the Lord is doing 🙌🏼 If you share our heart, come join us!
       `,
-      jd: ['🙌🏼 Create a safe space for V events 🥰'],
+      jd: ['Create a safe and welcoming space for V events 🥰'],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'FOYER OPS',
+      url: createLinkFromTeamClusterName([Teams.FOYER_OPS]),
+      description: `
+      The Foyer Ops team are like the doorkeepers of the Father’s house, preparing the way for His people. By helping them navigate safely to the right place, we serve so that every individual is ready to meet with Him. Every smile, every direction, and every welcome is but a set up for someone to encounter God face-to-face 🌞
+      `,
+      jd: [
+        'Make the Ops-y things feel more like family 😌',
+        'Guide the V youths to the right place, safely and orderly 🚧',
+        'Prepare and serve Holy Communion elements 🍞'
+      ],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'FOYER EXP',
+      url: createLinkFromTeamClusterName([Teams.FOYER_EXP]),
+      description: `
+      Ever wondered who arranges the snacks outside or gives the stage that fresh yet familiar look? That’s us, the Foyer Experience Team! We transform the foyer space into one that’s fun and welcoming for everyone. It’s all about making a first impression of the One who first made an impression on our hearts, and to get you excited for what’s to come!
+      `,
+      jd: [
+        'Beautify the service venue and set up stage props ✨',
+        'Set up pre-service snackies and activities 🥨',
+        'Manage post-service supper booth 🍜'
+      ],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'COFFEE',
+      url: createLinkFromTeamClusterName([Teams.COFFEE]),
+      description: `
+      More than placing a cup into your hand, we’re crafting a warm experience for everyone in V—right from the very first step into the venue! Every cup has a name on it, just like every seat at the table in the Father’s house 😌 come have a cuppa on us!
+      `,
+      jd: [
+        'Set up coffee/drinks booth for services ☕',
+        'Craft and serve beverages to create a warm experience ♨️',
+        'Tear down and clean up post-service 🧼'
+      ],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'AMBS',
+      url: createLinkFromTeamClusterName([Teams.AMBS]),
+      description: `
+      The V Ambassadors are the first friendly faces that newcomers meet. We welcome and host the V family as well as new friends with the love of Jesus—creating a warm space to connect with, encourage, pray for, and celebrate every youth who walks through our doors 🫶🏼
+      `,
+      jd: [
+        'Welcome the V family and friends with the warmth of His embrace 🤗',
+        'Host newcomers and be a friend to them 🤝🏻',
+        'Connect newcomers and new believers to VG 🔗',
+        'Pray for people and encourage them 🙏🏻'
+      ],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'PHOTOGS',
+      url: createLinkFromTeamClusterName([Teams.PHOTOGS]),
+      description: `
+      Every photograph tells a story. As V Photographers, we get front row seats to the stories God is writing! We trust Him to place us where He is moving—to capture moments that reveal His goodness, and to invite others to come taste and see that the LORD is good 🙂‍↕️
+      `,
+      jd: [
+        'Capture stories of grace, through His lens of grace 📸',
+        'Post-edit to post edifying photos 🪄',
+        'Collaborate with the Social team to tell V’s story 👩🏻‍💻',
+        'Hone our photography through friendships 🎯'
+      ],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'SOCIAL',
+      url: createLinkFromTeamClusterName([Teams.SOCIAL]),
+      description: `
+      We are the team that captures God moments, even in the smallest of details that no one sees—but God does! If you love taking pics and short clips for the keeps, you’re at the right place. Come join us to write on the pages of V’s story for the world to see!
+      `,
+      jd: [
+        'Capture God moments, big or small 🔍',
+        'Ideate for social media campaigns 📱',
+        'Write sermon recaps to recount His goodness 💭',
+        'Create windows for a glimpse of heaven on earth! 🕊️'
+      ],
+      toggleState: useToggleState()
+    },
+    {
+      name: 'AUDI OPS',
+      url: createLinkFromTeamClusterName([Teams.AUDI_OPS]),
+      description: `
+      We serve as being Jesus’ hands and feet—ready to warmly welcome and serve anyone who steps into the Father’s house. As the Lord moves during service, the Audi Ops team moves to support and ensure that every V youth is in the best place to experience His embrace, and receive from all that He is doing! 🤲🏼
+      `,
+      jd: [
+        'Welcome every son & daughter home with a smile 😊',
+        'Guide the lost sheep and fill the front row seats 🐑',
+        'Look out for newcomers and connect them with V Ambs 👀',
+        'Support service programme (e.g. handing out HC elements or other items, ministering ops) 🙋🏻‍♂️'
+      ],
       toggleState: useToggleState()
     },
     {
       name: 'VIDEO',
       url: createLinkFromTeamClusterName([Teams.VIDEO]),
       description: `
-      Excited about the dazzling visuals on screen? From lyrics and verses—to videos and more, we make known the invisible God through magnifying the visible!
+      We’re about pointing people to Jesus! With every Bible verse, lyric, graphic and media we project on screen, we’re saying—Look at Him! He is altogether lovely. It doesn’t take much but our little hands to make His hands known to all who come and meet a loving and gracious Saviour ☺️
       `,
       jd: [
-        '🎵 Lead Praise &amp; Worship through lyrics🖱️',
-        '💻 Prepare slides with verses and media 🖼️',
-        '📽️ Project content on screen during service 🎞️',
-        '😎 Operate camera for live feed 📹'
+        'Prepare and project lyrics, Bible verses and other media 💻',
+        'Flow with the worship team and speakers with audiovisual content 🎞️',
+        'Operate live camera feed 📹',
+        'Curate and cue graphics during praise and worship 🖼️'
       ],
       toggleState: useToggleState()
     },
@@ -141,12 +152,12 @@ export const Tileboard = () => {
       name: 'STAGE',
       url: createLinkFromTeamClusterName([Teams.STAGE]),
       description: `
-      This is where behind-the-scenes fully comes alive! If you have a gift to articulate, to anticipate and would love to participate in programme and production, come and make V happen with us!
+      The stage team are the ninjas that manage everything that happens on stage! 🥷🏿 we ensure that all who come for service are able to enjoy a smooth programme, and that those who take the stage can flow with God’s heart without distractions 🙌🏼
       `,
       jd: [
-        '🎬 Produce amazing V services 💫',
-        '📢 Liaise with showcaller and talents 🙋🏻‍♂️',
-        '🎤 Manage the movement of mics ✊🏽'
+        'Produce smooth V service programmes through tech rehearsals and stage preparation 🎬',
+        'Ensure the safety and confidence of all who go on stage 📢',
+        'Manage the movement of people, mics, stage props or illustrations 🎤'
       ],
       toggleState: useToggleState()
     }
