@@ -61,14 +61,12 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
     return () => window.removeEventListener('resize', measure)
   }, [isOn])
 
-  const tileClassName =
-    index % 2 === 0
-      ? isOn
-        ? clsx(s.tilePrimaryExpanded, s.tilePrimary)
-        : s.tilePrimary
-      : isOn
-        ? clsx(s.tileSecondaryExpanded, s.tileSecondary)
-        : s.tileSecondary
+  const isPrimary = index % 2 === 0
+  const tileClassName = clsx(
+    isPrimary ? s.tilePrimary : s.tileSecondary,
+    isOn && (isPrimary ? s.tilePrimaryExpanded : s.tileSecondaryExpanded),
+    isOn && s.expanded
+  )
 
   function handleClick() {
     metaData.toggleState.handleToggle()
@@ -98,7 +96,7 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
               ))
             : null}
         </div>
-        <Link href={metaData.url} target="_blank">
+        <Link className={s.tileLink} href={metaData.url} target="_blank">
           <h1
             onClick={handleTitleClick}
             style={{ zIndex: zIndex + 1 }}

@@ -100,6 +100,46 @@
   padding: 2px 0px;
 }
 
+// While collapsed the title and description sit at fixed offsets, which is
+// what keeps the title pinned near the bottom edge of the tile. Once the roles
+// are showing they can wrap onto any number of lines, so the expanded tile
+// switches to normal flow and lets the list push everything below it down —
+// otherwise a long list is drawn straight over the title.
+.expanded {
+  .jd {
+    // Reserve the gap the collapsed tile leaves above its title, so a tile
+    // with only one or two roles doesn't yank its title upwards on expand.
+    box-sizing: border-box;
+    min-height: calc($tile-height - 4.9rem);
+  }
+
+  .tileLink {
+    display: block;
+    position: relative;
+  }
+
+  .tileTitle {
+    position: static;
+
+    // The 1.5 body line-height leaves a lot of air around a 5rem heading.
+    line-height: 1.1;
+  }
+
+  // Now anchored to the link, so it tracks the title at any font size and the
+  // per-length offsets below are no longer needed.
+  .arrow,
+  .arrowLower,
+  .arrowLowest {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .tileDescription {
+    position: static;
+    margin-top: 2.2rem;
+  }
+}
+
 .arrow {
   position: absolute;
   top: calc($tile-height - 3.8rem);

@@ -1,29 +1,41 @@
 .typewriter {
-  width: max-content;
+  position: relative;
+  margin: 0;
+
+  /* The role lines are long enough to overflow a narrow tile, so let them wrap
+     instead of being clipped by the tile's `overflow: hidden`. */
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
-.typewriter p {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
+/* Lays out the finished line to reserve its height; painted over by
+   `.revealed`. Kept at zero opacity rather than `visibility: hidden` so it
+   still carries the text for assistive tech. */
+.reserved {
+  opacity: 0;
+}
+
+.revealed {
+  position: absolute;
+  inset: 0;
+
+  /* Selecting the tile text should copy the whole line from `.reserved`, not
+     however much of it happens to be on screen. */
+  user-select: none;
+}
+
+/* The caret trails the last revealed character, so it is drawn inline rather
+   than as a border on the paragraph (which would pin it to the right edge of
+   the tile once lines wrap). */
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  vertical-align: text-bottom;
   border-right: 0.15em solid var(--wavy-2);
-  white-space: nowrap;
-  margin: 1 auto;
-  animation:
-    typing 0.5s steps(20, end),
-    blink-caret 0.75s step-end infinite;
+  animation: blink-caret 0.75s step-end infinite;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-/* The typewriter cursor effect */
 @keyframes blink-caret {
   from,
   to {
