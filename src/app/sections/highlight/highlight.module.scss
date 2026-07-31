@@ -1,15 +1,19 @@
 @use '../../../css/helpers' as *;
 
+// dvh, not vh, to match #scroller (global.scss). On iOS Safari the two differ
+// by the height of the browser chrome, which never collapses here because the
+// body doesn't scroll — a 100vh pin inside a 100dvh scrollport hangs below it
+// and slides up out of view at the end of the section.
 .spacer {
   position: relative;
-  height: 277vh;
+  height: 277dvh;
 }
 
 .pin {
   position: relative;
   /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
   position: sticky;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;

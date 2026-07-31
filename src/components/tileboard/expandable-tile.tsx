@@ -2,8 +2,9 @@
 
 import { Icon } from '@iconify/react'
 import clsx from 'clsx'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
-import { FC, useRef, useState } from 'react'
+import { FC, useEffect, useRef, useState } from 'react'
 
 import { useIsomorphicLayoutEffect } from '~/hooks/use-isomorphic-layout-effect'
 
@@ -60,6 +61,26 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
     window.addEventListener('resize', measure)
     return () => window.removeEventListener('resize', measure)
   }, [isOn])
+
+  // Expanding a tile moves everything below the tileboard further down the
+  // page. ScrollTrigger caches the scroll positions each section starts and
+  // ends at, and only recomputes them on a refresh — so without this the
+  // sections below keep the offsets they had before the tile opened, and their
+  // animations run early. Wait for the height transition to settle first, so
+  // the positions are measured where they finally land.
+  useEffect(() => {
+    const wrapper = wrapperRef.current
+    if (!wrapper) return
+
+    const handleTransitionEnd = (event: TransitionEvent) => {
+      if (event.target !== wrapper || event.propertyName !== 'height') return
+      ScrollTrigger.refresh()
+    }
+
+    wrapper.addEventListener('transitionend', handleTransitionEnd)
+    return () =>
+      wrapper.removeEventListener('transitionend', handleTransitionEnd)
+  }, [])
 
   const isPrimary = index % 2 === 0
   const tileClassName = clsx(
