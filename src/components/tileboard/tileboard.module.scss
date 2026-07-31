@@ -2,6 +2,10 @@
 @use 'sass:math';
 @use '~/css/helpers' as *;
 
+// Keeps the tile text off the edge of the screen. Shared by the title, the
+// roles and the description so they all line up on the same left edge.
+$text-inset: 9px;
+
 .tileboard {
   position: relative;
   width: 100%;
@@ -64,9 +68,15 @@
   }
 
   &Title {
-    padding-left: 4px;
+    padding-left: $text-inset;
     position: absolute;
     top: calc($tile-height - 4.9rem);
+
+    // Only the letter-spacing animates. Left as `all`, the expanded
+    // line-height below would ease in over the same duration, and the tile
+    // measures its expanded height immediately — against a title still 29px
+    // taller than it ends up, leaving that much dead space at the bottom.
+    transition-property: letter-spacing;
     transition-duration: math.div(500ms, $duration);
     font-size: 5rem;
     font-family: var(--font-pp-rader), var(--font-system);
@@ -86,7 +96,7 @@
   }
 
   &Description {
-    padding: 0 8px;
+    padding: 0 $text-inset;
     position: absolute;
     top: calc($tile-height + 2.2rem);
   }
@@ -98,7 +108,7 @@
 }
 
 .jd {
-  padding: 36px 6px;
+  padding: 36px $text-inset;
 }
 
 .jdtext {
