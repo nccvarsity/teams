@@ -87,7 +87,7 @@ export const Tileboard = () => {
       description: `
       The V Ambassadors are the first friendly faces that newcomers meet. We welcome and host the V family as well as new friends with the love of Jesus—creating a warm space to connect with, encourage, pray for, and celebrate every youth who walks through our doors 🫶🏼
       `,
-      note: '*Have a conversation to your VGL if you are interested to serve in the Ambs team!',
+      note: '*Have a conversation with your VGL if you are interested to serve in the Ambs team!',
       jd: [
         '🤗 Welcome the V family and friends with the warmth of His embrace',
         '🤝🏻 Host newcomers and be a friend to them',
