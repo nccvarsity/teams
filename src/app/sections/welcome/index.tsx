@@ -12,9 +12,16 @@ export const Welcome = () => {
       defaults={{ ease: 'linear' }}
       // debug={{ label: "Welcome" }}
     >
+      {/* Sized in dvh, not vh, to match #scroller (global.scss), which is
+          100dvh. On iOS Safari the two differ by the height of the browser
+          chrome — and because the body doesn't scroll, that chrome never
+          collapses, so the gap is permanent. A 100vh child inside a 100dvh
+          scrollport hangs below it, which makes the pinned section slide up
+          out of view over the last stretch of the scroll instead of holding
+          still until the timeline ends. */}
       <Scrollytelling.Pin
-        childHeight={'100vh'}
-        pinSpacerHeight={'300vh'}
+        childHeight={'100dvh'}
+        pinSpacerHeight={'300dvh'}
         pinSpacerClassName={s['pin-spacer']}
       >
         <section>
@@ -27,9 +34,9 @@ export const Welcome = () => {
               <div className={s['footer']}>
                 <p>
                   Hi fam! If you’ve landed on this page, there is room just for
-                  you. The V Dream Team is all about gathering the heart of our
-                  ministry home – A place for any and everyone in V to discover
-                  your giftings, to participate in sowing into God-moments and a
+                  you. V Teams is all about gathering the heart of our ministry
+                  home – A place for any and everyone in V to discover your
+                  giftings, to participate in sowing into God-moments and a
                   channel to be an expression of God’s heart in this house.
                 </p>
                 <br />

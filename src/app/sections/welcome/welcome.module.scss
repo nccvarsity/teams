@@ -14,8 +14,9 @@
   height: tovw(500px, 'desktop-large', 300px);
   transform: translateY(-50%);
 
+  // dvh to match the pinned child it sits in (see index.tsx).
   @media screen and (max-width: 800px) {
-    top: 45vh;
+    top: 45dvh;
   }
 }
 

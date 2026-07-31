@@ -34,7 +34,7 @@ export const Tileboard = () => {
       name: 'SECURITY',
       url: createLinkFromTeamClusterName([Teams.SECURITY]),
       description: `
-      The V Security Team is here to create a safe and welcoming space for every youth and server—we look out for their well-being so that they can be on the look out for what the Lord is doing 🙌🏼 If you share our heart, come join us!
+      The V Security Team is here to create a safe and welcoming space for every youth and server—we look out for their well-being so that they can be on the look out for what the Lord is doing 🙌🏼 if you share our heart, come join us!
       `,
       jd: ['🥰 Create a safe and welcoming space for V events'],
       toggleState: useToggleState()
