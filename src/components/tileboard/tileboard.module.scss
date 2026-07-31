@@ -2,6 +2,10 @@
 @use 'sass:math';
 @use '~/css/helpers' as *;
 
+// Keeps the tile text off the edge of the screen. Shared by the title, the
+// roles and the description so they all line up on the same left edge.
+$text-inset: 16px;
+
 .tileboard {
   position: relative;
   width: 100%;
@@ -64,7 +68,7 @@
   }
 
   &Title {
-    padding-left: 4px;
+    padding-left: $text-inset;
     position: absolute;
     top: calc($tile-height - 4.9rem);
     transition-duration: math.div(500ms, $duration);
@@ -86,7 +90,7 @@
   }
 
   &Description {
-    padding: 0 8px;
+    padding: 0 $text-inset;
     position: absolute;
     top: calc($tile-height + 2.2rem);
   }
@@ -98,7 +102,7 @@
 }
 
 .jd {
-  padding: 36px 6px;
+  padding: 36px $text-inset;
 }
 
 .jdtext {
