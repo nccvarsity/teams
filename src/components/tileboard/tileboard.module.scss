@@ -90,6 +90,11 @@
     position: absolute;
     top: calc($tile-height + 2.2rem);
   }
+
+  // Sits a blank line below the description.
+  &Note {
+    margin-top: 1.5em;
+  }
 }
 
 .jd {

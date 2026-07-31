@@ -28,7 +28,7 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
 }) => {
   const isOn = metaData.toggleState.isOn
   const wrapperRef = useRef<HTMLDivElement>(null)
-  const descriptionRef = useRef<HTMLParagraphElement>(null)
+  const descriptionRef = useRef<HTMLDivElement>(null)
   const [expandedHeight, setExpandedHeight] = useState<number>()
 
   // Measure the content so the tile can stretch to fit it. The title and
@@ -76,6 +76,26 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
   }
   const longName = metaData.name.length > 7
   const veryLongName = metaData.name.length > 10
+
+  const title = (
+    // Only linked titles swallow the click (the link handles it); otherwise let
+    // it bubble to the tile so tapping the name expands it like anywhere else.
+    <h1
+      onClick={metaData.url ? handleTitleClick : undefined}
+      style={{ zIndex: zIndex + 1 }}
+      className={clsx(
+        isOn ? clsx(s.tileExpandedTitle, s.tileTitle, s.wavyText) : s.tileTitle,
+        veryLongName
+          ? s.tileTitleReducedMore
+          : longName
+            ? s.tileTitleReduced
+            : s.tileTitle
+      )}
+    >
+      {metaData.name}
+    </h1>
+  )
+
   return (
     <div
       ref={wrapperRef}
@@ -96,45 +116,37 @@ const ExpandableTile: FC<ExpandableTileProps> = ({
               ))
             : null}
         </div>
-        <Link className={s.tileLink} href={metaData.url} target="_blank">
-          <h1
-            onClick={handleTitleClick}
-            style={{ zIndex: zIndex + 1 }}
-            className={clsx(
-              isOn
-                ? clsx(s.tileExpandedTitle, s.tileTitle, s.wavyText)
-                : s.tileTitle,
-              veryLongName
-                ? s.tileTitleReducedMore
-                : longName
-                  ? s.tileTitleReduced
-                  : s.tileTitle
+        {metaData.url ? (
+          <Link className={s.tileLink} href={metaData.url} target="_blank">
+            {title}
+            {isOn && (
+              <div
+                style={{ zIndex: zIndex + 2 }}
+                className={
+                  veryLongName
+                    ? clsx(s.arrow, s.arrowLowest)
+                    : longName
+                      ? clsx(s.arrow, s.arrowLower)
+                      : s.arrow
+                }
+              >
+                <Icon icon="pixelarticons:reply" height={90} />
+              </div>
             )}
-          >
-            {metaData.name}
-          </h1>
-          {isOn && (
-            <div
-              style={{ zIndex: zIndex + 2 }}
-              className={
-                veryLongName
-                  ? clsx(s.arrow, s.arrowLowest)
-                  : longName
-                    ? clsx(s.arrow, s.arrowLower)
-                    : s.arrow
-              }
-            >
-              <Icon icon="pixelarticons:reply" height={90} />
-            </div>
-          )}
-        </Link>
-        <p
+          </Link>
+        ) : (
+          // Teams without a sign-up form get no link, and no arrow pointing at
+          // one — their note says how to join instead.
+          <div className={s.tileLink}>{title}</div>
+        )}
+        <div
           ref={descriptionRef}
           style={{ zIndex: zIndex + 1 }}
           className={s.tileDescription}
         >
-          {metaData.description}
-        </p>
+          <p>{metaData.description}</p>
+          {metaData.note && <p className={s.tileNote}>{metaData.note}</p>}
+        </div>
         <ExpandRetract zIndex={zIndex + 2} isExpanded={isOn} />
       </div>
     </div>

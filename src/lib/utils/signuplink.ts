@@ -20,9 +20,9 @@ export enum Teams {
 // Store the options verbatim (spaces, dashes and all); `encodeOption` below
 // handles the URL encoding.
 //
-// `Teams.AMBS` is deliberately absent: the form has no Ambassadors option yet,
-// so the Ambs tile links to the form with the team question left unanswered.
-// Add an entry here once the option exists.
+// `Teams.AMBS` is deliberately absent: Ambs doesn't take sign-ups through this
+// form at all, so its tile has no link and tells people to speak to their VGL
+// instead. Add an entry here if that ever changes.
 const teamToLinkMap = new Map<string, string>([
   [
     Teams.PHOTOGS,
