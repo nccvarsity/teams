@@ -71,6 +71,12 @@ $text-inset: 16px;
     padding-left: $text-inset;
     position: absolute;
     top: calc($tile-height - 4.9rem);
+
+    // Only the letter-spacing animates. Left as `all`, the expanded
+    // line-height below would ease in over the same duration, and the tile
+    // measures its expanded height immediately — against a title still 29px
+    // taller than it ends up, leaving that much dead space at the bottom.
+    transition-property: letter-spacing;
     transition-duration: math.div(500ms, $duration);
     font-size: 5rem;
     font-family: var(--font-pp-rader), var(--font-system);

@@ -20,7 +20,7 @@ interface ExpandableTileProps {
 }
 
 // Breathing room left below the description when the tile is expanded.
-const BOTTOM_GAP_REM = 2.5
+const BOTTOM_GAP_REM = 3
 
 const ExpandableTile: FC<ExpandableTileProps> = ({
   metaData,
