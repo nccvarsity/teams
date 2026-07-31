@@ -9,8 +9,11 @@ import s from './tileboard.module.scss'
 export interface tileMetaData {
   icon?: string
   name: string
-  url: string
+  /** Sign-up form link. Omitted for teams that don't take sign-ups this way. */
+  url?: string
   description: string
+  /** Optional line below the description, e.g. how to join without the form. */
+  note?: string
   jd: string[]
   toggleState: ToggleState
 }
@@ -80,10 +83,11 @@ export const Tileboard = () => {
     },
     {
       name: 'AMBS',
-      url: createLinkFromTeamClusterName([Teams.AMBS]),
+      // No sign-up form for Ambs — the note below points people to their VGL.
       description: `
       The V Ambassadors are the first friendly faces that newcomers meet. We welcome and host the V family as well as new friends with the love of Jesus—creating a warm space to connect with, encourage, pray for, and celebrate every youth who walks through our doors 🫶🏼
       `,
+      note: '*Have a conversation with your VGL if you are interested to serve in the Ambs team!',
       jd: [
         '🤗 Welcome the V family and friends with the warmth of His embrace',
         '🤝🏻 Host newcomers and be a friend to them',
@@ -115,6 +119,7 @@ export const Tileboard = () => {
       jd: [
         '🔍 Capture God moments, big or small',
         '📱 Ideate for social media campaigns',
+        '📸 Collaborate with the Photogs team!',
         '💭 Write sermon recaps to recount His goodness',
         '🕊️ Create windows for a glimpse of heaven on earth!'
       ],
