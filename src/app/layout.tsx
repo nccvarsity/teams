@@ -41,7 +41,7 @@ const ppMori = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: 'V Dream Team',
+    default: 'V Teams',
     template: '%s | V Teams'
   },
   metadataBase: siteURL,

@@ -66,7 +66,8 @@ export const CanvasWithVarsityModel = () => {
       onCreated={() => {
         gsap.set(canvasRef.current, {
           width: '100%',
-          height: '100vh'
+          // dvh to match the pinned child it sits in (see index.tsx).
+          height: '100dvh'
         })
         gsap.to(
           canvasRef.current?.closest('[data-vlogo-canvas-container="true"]') ||
